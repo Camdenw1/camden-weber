@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About — Camden Weber',
@@ -15,12 +16,15 @@ export default function About() {
           Hey, I'm Camden.
         </h1>
 
-        {/* Photo placeholder */}
-        <div className="w-full h-72 md:h-96 bg-moss/20 mb-12 overflow-hidden">
-          {/* Replace with: <Image src="/images/about.jpg" alt="Camden Weber" fill className="object-cover" /> */}
-          <div className="w-full h-full flex items-center justify-center text-stone text-sm font-sans">
-            [ Add a photo in /public/images/about.jpg ]
-          </div>
+        {/* About photo */}
+        <div className="relative w-full h-72 md:h-96 mb-12 overflow-hidden">
+          <Image
+            src="/images/about.jpg"
+            alt="Camden Weber"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Bio */}

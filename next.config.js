@@ -3,6 +3,5 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
-}
-
-module.exports = nextConfig
+  experimental: {
+    turbo: {}

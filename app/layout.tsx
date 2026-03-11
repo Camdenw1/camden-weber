@@ -8,12 +8,14 @@ const lora = Lora({
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
+  preload: false,
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
+  preload: false,
 })
 
 export const metadata: Metadata = {

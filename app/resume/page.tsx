@@ -4,13 +4,6 @@ export const metadata: Metadata = {
   title: 'Resume — Camden Weber',
 }
 
-const skills = {
-  'Languages': ['Python', 'R', 'SQL', 'C++'],
-  'ML & Modeling': ['scikit-learn', 'Neural Networks', 'Reinforcement Learning', 'K-Means Clustering', 'Regression', 'NLP'],
-  'Data & Stats': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Network Theory', 'Statistical Modeling', 'Probability'],
-  'Math': ['Linear Algebra', 'Optimization', 'Multivariate Calculus', 'Graph Theory', 'Mathematical Modeling'],
-  'Tools': ['R Shiny', 'Git & GitHub', 'Jupyter', 'Google Sheets', 'Excel'],
-}
 
 const experience = [
   {
@@ -18,8 +11,8 @@ const experience = [
     company: 'Vail Resorts',
     period: '2025 — Present',
     bullets: [
-      'Add your bullets here — what data/tools are you working with?',
-      'What problems are you solving or analyses are you running?',
+      'Process Improvement and Automation',
+      'Data analysis, reporting, and visualizations',
     ],
   },
   {
@@ -35,7 +28,23 @@ const experience = [
   },
 ]
 
+const skills = {
+  'Languages': ['Python', 'R', 'SQL', 'C++'],
+  'ML & Modeling': ['Neural Networks', 'Reinforcement Learning', 'K-Means Clustering', 'Regression', 'NLP'],
+  'Data & Stats': ['Network Theory', 'Statistical Modeling', 'Probability'],
+  'Math': ['Linear Algebra', 'Optimization', 'Multivariate Calculus', 'Graph Theory'],
+  'Tools': ['R Shiny', 'Git & GitHub', 'Jupyter', 'Google Sheets', 'Excel'],
+}
+
 const extracurriculars = [
+  {
+    role: 'Lacrosse Coach',
+    org: 'Westview High School',
+    period: 'February 2026 — Present',
+    bullets: [
+      'Defensive coach of the JV team at my High School',
+    ],
+  },
   {
     role: 'Client Project Team Member',
     org: 'Data Science Union — UCLA',
@@ -79,6 +88,17 @@ const projects = [
 
 const education = [
   {
+    degree: 'In progress: MS in Computer Science at Georgia Tech',
+    school: 'Georgia Institute of Technology',
+    period: 'Present',
+    details: [
+      'Graduation ETA: 2028',
+    ],
+    coursework: [
+      'Machine Learning', 'Artificial Intelligence',
+    ],
+  },
+  {
     degree: 'B.S. in Data Theory',
     school: 'University of California, Los Angeles',
     period: 'September 2021 — June 2025',
@@ -106,8 +126,8 @@ export default function Resume() {
           <div>
             <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-3">Resume</p>
             <h1 className="font-serif text-4xl font-semibold">Camden Weber</h1>
-            <p className="text-stone mt-2 text-sm">Data Scientist & ML Engineer — UCLA, B.S. Data Theory, 2025</p>
-            <p className="text-stone text-sm mt-1">San Diego, CA · camdenweber18@gmail.com</p>
+            <p className="text-stone mt-2 text-sm">Data Scientist - UCLA, B.S. Data Theory, 2025</p>
+            <p className="text-stone text-sm mt-1">San Diego, CA - camdenweber18@gmail.com</p>
           </div>
           <a
             href="/Camden_Weber_Resume.pdf"
@@ -255,7 +275,7 @@ export default function Resume() {
             <div>
               <p className="text-xs uppercase tracking-widest text-stone mb-2">Outside the Screen</p>
               <p className="text-sm text-bark/80 leading-relaxed">
-                Marathons, backpacking, skiing, sports, bass guitar
+                Running, hiking, backpacking, skiing, sports, bass guitar
               </p>
             </div>
           </div>
