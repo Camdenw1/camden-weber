@@ -98,23 +98,24 @@ export default function BlogIndex() {
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                     <div className="relative aspect-square overflow-hidden bg-stone/10">
                       {post.coverImage ? (
-                        <Image
-                          src={post.coverImage}
-                          alt={post.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
+                        <>
+                          <Image
+                            src={post.coverImage}
+                            alt={post.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          {/* Gradient overlay + title only for real images */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-bark/75 via-bark/10 to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-3">
+                            <p className="font-serif text-cream text-sm leading-tight line-clamp-2">
+                              {post.title}
+                            </p>
+                          </div>
+                        </>
                       ) : (
                         <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
                       )}
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-bark/75 via-bark/10 to-transparent" />
-                      {/* Title */}
-                      <div className="absolute bottom-0 left-0 right-0 p-3">
-                        <p className="font-serif text-cream text-sm leading-tight line-clamp-2">
-                          {post.title}
-                        </p>
-                      </div>
                     </div>
                   </Link>
                 ))}

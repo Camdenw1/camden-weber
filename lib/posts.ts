@@ -34,7 +34,7 @@ function calcReadingTime(content: string): number {
 }
 
 export function getAllPosts(): PostMeta[] {
-  const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'))
+  const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.md') && !f.startsWith('_'))
 
   const posts = files.map((filename) => {
     const slug = filename.replace('.md', '')
