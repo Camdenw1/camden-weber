@@ -60,9 +60,9 @@ export default function About() {
         {/* Quick facts */}
         <div className="grid grid-cols-2 gap-6">
           {[
-            { label: 'Based in', value: '[Your City]' },
-            { label: 'Education', value: '[Your School]' },
-            { label: 'Currently', value: '[Open to work / Company]' },
+            { label: 'Based in', value: 'San Diego, CA' },
+            { label: 'Education', value: 'UCLA, B.S. Data Theory' },
+            { label: 'Currently', value: 'Vail Resorts' },
             { label: 'Outside', value: 'Mountains, rivers, trails' },
           ].map(({ label, value }) => (
             <div key={label}>

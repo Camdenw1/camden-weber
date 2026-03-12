@@ -4,14 +4,15 @@ import html from 'remark-html'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-type Props = { params: { slug: string } }
+type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return getAllPosts().map(p => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = getPostBySlug(slug)
   return { title: `${post.title} — Camden Weber` }
 }
 
@@ -21,7 +22,8 @@ async function markdownToHtml(markdown: string) {
 }
 
 export default async function BlogPost({ params }: Props) {
-  const post = getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = getPostBySlug(slug)
   const contentHtml = await markdownToHtml(post.content)
 
   return (

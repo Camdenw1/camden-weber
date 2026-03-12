@@ -3,9 +3,6 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
-  experimental: {
-    turbo: {},
-  },
 }
 
 module.exports = nextConfig
