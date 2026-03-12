@@ -1,17 +1,18 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="relative min-h-screen flex items-end pb-24 px-6">
-        {/* Background photo placeholder — replace src with your own image in /public/images/ */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero.jpg')",
-            backgroundColor: '#4A5240', // fallback color if no image
-          }}
+        {/* Background image */}
+        <Image
+          src="/images/hero.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover object-center"
+          priority
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-bark/80 via-bark/20 to-transparent" />
