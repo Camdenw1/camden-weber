@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/posts'
+import PostCoverFallback from '@/components/PostCoverFallback'
 
 export const metadata: Metadata = {
   title: 'Blog — Camden Weber',
@@ -45,9 +46,7 @@ export default function BlogIndex() {
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
-                          <div className="w-full h-full bg-moss/15 flex items-center justify-center">
-                            <span className="font-serif text-5xl text-moss/30">{post.title[0]}</span>
-                          </div>
+                          <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
                         )}
                       </div>
 
@@ -106,9 +105,7 @@ export default function BlogIndex() {
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       ) : (
-                        <div className="w-full h-full bg-moss/15 flex items-center justify-center">
-                          <span className="font-serif text-5xl text-moss/30">{post.title[0]}</span>
-                        </div>
+                        <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
                       )}
                       {/* Gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-bark/75 via-bark/10 to-transparent" />

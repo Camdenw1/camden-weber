@@ -4,6 +4,7 @@ import html from 'remark-html'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import PostCoverFallback from '@/components/PostCoverFallback'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -33,20 +34,24 @@ export default async function BlogPost({ params }: Props) {
     <div className="pb-24">
 
       {/* Cover image */}
-      {post.coverImage && (
-        <div className="relative w-full h-64 md:h-[28rem] overflow-hidden">
-          <Image
-            src={post.coverImage}
-            alt={post.title}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/10 to-transparent" />
-        </div>
-      )}
+      <div className="relative w-full h-64 md:h-[28rem] overflow-hidden">
+        {post.coverImage ? (
+          <>
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/10 to-transparent" />
+          </>
+        ) : (
+          <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
+        )}
+      </div>
 
-      <div className={`px-6 ${post.coverImage ? 'pt-8' : 'pt-32'}`}>
+      <div className="px-6 pt-8">
         <div className="max-w-2xl mx-auto">
 
           {/* Back link */}
@@ -88,13 +93,11 @@ export default async function BlogPost({ params }: Props) {
               <div className="space-y-5">
                 {related.map(r => (
                   <Link key={r.slug} href={`/blog/${r.slug}`} className="group flex gap-4 items-center">
-                    <div className="relative w-20 h-14 shrink-0 overflow-hidden bg-stone/10">
+                    <div className="relative w-20 h-14 shrink-0 overflow-hidden">
                       {r.coverImage ? (
                         <Image src={r.coverImage} alt={r.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                       ) : (
-                        <div className="w-full h-full bg-moss/15 flex items-center justify-center">
-                          <span className="font-serif text-xl text-moss/30">{r.title[0]}</span>
-                        </div>
+                        <PostCoverFallback slug={r.slug} title={r.title} />
                       )}
                     </div>
                     <div>
