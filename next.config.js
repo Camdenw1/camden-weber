@@ -4,4 +4,8 @@ const nextConfig = {
     remotePatterns: [],
   },
   experimental: {
-    turbo: {}
+    turbo: {},
+  },
+}
+
+module.exports = nextConfig
