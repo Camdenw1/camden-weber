@@ -33,7 +33,7 @@ export default function PostCoverFallback({ slug, title, tags, readingTime }: Pr
 
       {/* Title */}
       <div className="relative flex-1 flex items-center justify-center px-2">
-        <p className="font-serif text-cream text-center leading-snug line-clamp-3">
+        <p className="font-serif text-cream text-center leading-snug line-clamp-3 text-xl md:text-2xl">
           {title}
         </p>
       </div>
