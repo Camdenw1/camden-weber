@@ -41,7 +41,7 @@ export default async function BlogPost({ params }: Props) {
               src={post.coverImage}
               alt={post.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/10 to-transparent" />

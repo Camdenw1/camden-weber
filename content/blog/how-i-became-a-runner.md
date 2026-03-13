@@ -1,6 +1,6 @@
 ---
 title: "How I Became a Runner"
-date: "2026-03-12"
+date: "2026-03-13"
 excerpt: "Everyone can be a runner. It just may take a journey to get there. Here's mine."
 tags: ["running", "outdoors", "personal"]
 coverImage: "/images/how-i-became-a-runner.jpg"
