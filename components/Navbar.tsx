@@ -16,7 +16,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-stone/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F0EDE8]/95 backdrop-blur-sm border-b border-stone/20">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-bark hover:text-moss transition-colors">
           Camden Weber

@@ -18,11 +18,11 @@ export default function BlogIndex() {
 
         {/* Header */}
         <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Writing</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4 leading-tight">
-          Notes from the field.
+        <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
+          Camden's Content
         </h1>
-        <p className="text-stone text-base mb-16 leading-relaxed max-w-xl">
-          Personal stories, lessons learned, and the occasional data rabbit hole.
+        <p className="text-stone text-sm md:text-base mb-16 leading-relaxed max-w-xl">
+          My personal stories, lessons learned, and interesting insights.
         </p>
 
         {posts.length === 0 ? (

@@ -138,16 +138,25 @@ export default function Resume() {
           </a>
         </div>
 
-        {/* Skills */}
+        {/* Education */}
         <section className="mb-14">
-          <h2 className="font-serif text-2xl mb-6 pb-2 border-b border-stone/20">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {Object.entries(skills).map(([category, items]) => (
-              <div key={category}>
-                <p className="text-xs uppercase tracking-widest text-stone mb-2">{category}</p>
+          <h2 className="font-serif text-2xl mb-6 pb-2 border-b border-stone/20">Education</h2>
+          <div className="space-y-8">
+            {education.map((ed) => (
+              <div key={ed.degree}>
+                <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
+                  <div>
+                    <h3 className="font-serif text-lg">{ed.degree}</h3>
+                    <p className="text-stone text-sm">{ed.school}</p>
+                  </div>
+                  <span className="text-stone text-sm">{ed.period}</span>
+                </div>
                 <ul className="space-y-1">
-                  {items.map(item => (
-                    <li key={item} className="text-sm text-bark/80">{item}</li>
+                  {ed.details.map((d, i) => (
+                    <li key={i} className="flex gap-3 text-sm text-bark/80">
+                      <span className="text-rust mt-1 shrink-0">—</span>
+                      <span>{d}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -174,6 +183,23 @@ export default function Resume() {
                       <span className="text-rust mt-1 shrink-0">—</span>
                       <span>{b}</span>
                     </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section className="mb-14">
+          <h2 className="font-serif text-2xl mb-6 pb-2 border-b border-stone/20">Skills</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {Object.entries(skills).map(([category, items]) => (
+              <div key={category}>
+                <p className="text-xs uppercase tracking-widest text-stone mb-2">{category}</p>
+                <ul className="space-y-1">
+                  {items.map(item => (
+                    <li key={item} className="text-sm text-bark/80">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -225,40 +251,6 @@ export default function Resume() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Education */}
-        <section className="mb-14">
-          <h2 className="font-serif text-2xl mb-6 pb-2 border-b border-stone/20">Education</h2>
-          {education.map((ed) => (
-            <div key={ed.degree}>
-              <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
-                <div>
-                  <h3 className="font-serif text-lg">{ed.degree}</h3>
-                  <p className="text-stone text-sm">{ed.school}</p>
-                </div>
-                <span className="text-stone text-sm">{ed.period}</span>
-              </div>
-              <ul className="space-y-1 mb-4">
-                {ed.details.map((d, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-bark/80">
-                    <span className="text-rust mt-1 shrink-0">—</span>
-                    <span>{d}</span>
-                  </li>
-                ))}
-              </ul>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-stone mb-2">Relevant Coursework</p>
-                <div className="flex flex-wrap gap-2">
-                  {ed.coursework.map(course => (
-                    <span key={course} className="text-xs font-sans text-stone/70 border border-stone/30 px-2 py-0.5">
-                      {course}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
         </section>
 
         {/* Certifications */}

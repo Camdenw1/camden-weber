@@ -19,14 +19,11 @@ export default function Home() {
 
         {/* Hero content */}
         <div className="relative z-10 max-w-5xl mx-auto w-full">
-          <p className="fade-up-delay-1 font-sans text-cream/70 text-sm tracking-[0.2em] uppercase mb-4">
-            Data Science & Machine Learning
-          </p>
-          <h1 className="fade-up-delay-2 font-serif text-cream text-5xl md:text-7xl font-semibold leading-tight mb-6">
+          <h1 className="fade-up-delay-1 font-serif text-cream text-5xl md:text-7xl font-semibold leading-tight mb-6">
             Camden<br />Weber
           </h1>
-          <p className="fade-up-delay-3 font-sans text-cream/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-            I build things with data, explore the world outside, and write about both.
+          <p className="fade-up-delay-2 font-sans text-cream/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
+            This is where my career, academics, and life outside work all live in one place. Data professional by day, outdoorsman whenever I can be.
           </p>
           <div className="fade-up-delay-4 flex flex-wrap gap-4">
             <Link
@@ -48,9 +45,18 @@ export default function Home() {
       {/* Intro strip */}
       <section className="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-12 border-t border-stone/20">
         <div>
+          <h2 className="font-serif text-xl mb-3">The Person</h2>
+          <p className="text-stone text-sm leading-relaxed">
+            UCLA grad, data professional at Vail Resorts, and lacrosse coach. When I'm not working with data, I'm running trails, skiing, or playing basketball. This is the full picture.
+          </p>
+          <Link href="/about" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
+            About me →
+          </Link>
+        </div>
+        <div>
           <h2 className="font-serif text-xl mb-3">The Work</h2>
           <p className="text-stone text-sm leading-relaxed">
-            Machine learning models, data pipelines, and analytical work. I care about building things that are interpretable, useful, and honest.
+            My resume — experience at Vail Resorts and Breakaway Data, projects in ML and network theory, and the skills behind the work.
           </p>
           <Link href="/resume" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             See my resume →
@@ -59,19 +65,10 @@ export default function Home() {
         <div>
           <h2 className="font-serif text-xl mb-3">The Writing</h2>
           <p className="text-stone text-sm leading-relaxed">
-            Notes on life, learning, and the outdoors. Occasionally technical. Always personal.
+            Personal stories, lessons learned, and interesting insights. Occasionally technical, always honest.
           </p>
           <Link href="/blog" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             Read the blog →
-          </Link>
-        </div>
-        <div>
-          <h2 className="font-serif text-xl mb-3">The Person</h2>
-          <p className="text-stone text-sm leading-relaxed">
-            When I'm not in front of a screen, I'm usually outside. Mountains, rivers, trails. This site lives between those two worlds.
-          </p>
-          <Link href="/about" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
-            About me →
           </Link>
         </div>
       </section>
