@@ -1,30 +1,31 @@
 ---
 title: "Why I Started This Blog"
-date: "2024-03-01"
-excerpt: "A note on why I decided to build a personal site and start writing in public."
-tags: ["personal", "writing"]
+date: "2026-03-12"
+excerpt: "A little about who I am, what this site is for, and why I decided to put my thoughts on the internet."
+tags: ["personal"]
 ---
 
-There's something uncomfortable about writing in public. You're committing thoughts to a page, leaving a record of what you believed at a specific moment in time. And yet, that's exactly why I wanted to start.
+My name is Camden Weber. I am 22 at the time I am writing this.
 
-## The honest reason
+I just graduated from UCLA with a Data Science degree and now work at Vail Resorts as a Financial Analytics Analyst. I am interested in the logistics of business and how analytics can be creatively applied to improve decision making and reshape processes.
 
-I've been keeping notes for years — scattered across Notion, Apple Notes, the margins of physical notebooks I find wedged between textbooks. The ideas were there. They just weren't going anywhere.
+On a more recreational level, I love getting outside and hanging out with my friends. Basketball, hiking, backpacking, running, golf, pool, and playing music are some of my hobbies. My friends mean everything to me and I put in a lot of time and effort to make sure I hang out with them a lot.
 
-Starting this site felt like a way to give those thoughts a destination. Not a polished, edited, carefully curated destination. Just *somewhere*.
+## Some Things That Have Shaped Me
 
-## What this won't be
+A few life experiences I believe have taught me a lot:
 
-This isn't a newsletter. It's not a content strategy. I'm not trying to build an audience or grow a brand or establish myself as a thought leader in the data science space (if I have to use the phrase "thought leader" unironically I'll shut the whole thing down).
+- Learning an instrument and playing in a band
+- Running a marathon
+- Coaching lacrosse
+- Taking the lead in planning friend events
+- Backpacking trips
+- Traveling
 
-It's just a place to write. About data, about hiking, about the strange in-between feeling of being early in a career and not quite sure what you're building toward.
+## A Shoutout
 
-## What I hope it becomes
-
-A record. Something I can look back on in five or ten years and see what I was thinking, what I cared about, what I was getting wrong.
-
-If someone else finds something useful in it, that's a bonus.
+I want to shout out my family, high school friends, college friends, coworkers, and every person that I've had positive interactions with throughout my life — because these are the people that have really made life meaningful to me.
 
 ---
 
-If you've made it this far, thanks for reading. I'll try to make it worth your time.
+I want to use this site as a home for my thoughts and a culmination of things I have learned. This website is intended to grow with me and I am excited to see where this goes.
