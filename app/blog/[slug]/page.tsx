@@ -33,24 +33,6 @@ export default async function BlogPost({ params }: Props) {
   return (
     <div className="pb-24">
 
-      {/* Cover image */}
-      <div className="relative w-full h-64 md:h-[28rem] overflow-hidden">
-        {post.coverImage ? (
-          <>
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              fill
-              className="object-cover object-top"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/10 to-transparent" />
-          </>
-        ) : (
-          <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
-        )}
-      </div>
-
       <div className="px-6 pt-8">
         <div className="max-w-2xl mx-auto">
 
@@ -58,6 +40,21 @@ export default async function BlogPost({ params }: Props) {
           <Link href="/blog" className="text-sm text-stone hover:text-bark transition-colors mb-10 inline-block">
             ← All posts
           </Link>
+
+          {/* Cover image */}
+          <div className="relative aspect-square w-full overflow-hidden mb-8">
+            {post.coverImage ? (
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
+            )}
+          </div>
 
           {/* Post header */}
           <header className="mb-12">
@@ -93,7 +90,7 @@ export default async function BlogPost({ params }: Props) {
               <div className="space-y-5">
                 {related.map(r => (
                   <Link key={r.slug} href={`/blog/${r.slug}`} className="group flex gap-4 items-center">
-                    <div className="relative w-20 h-14 shrink-0 overflow-hidden">
+                    <div className="relative w-14 h-14 shrink-0 overflow-hidden">
                       {r.coverImage ? (
                         <Image src={r.coverImage} alt={r.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                       ) : (
@@ -137,3 +134,4 @@ export default async function BlogPost({ params }: Props) {
     </div>
   )
 }
+

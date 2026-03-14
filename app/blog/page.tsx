@@ -37,7 +37,7 @@ export default function BlogIndex() {
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                     <div className="flex flex-col md:flex-row gap-6">
                       {/* Cover image */}
-                      <div className="relative w-full md:w-60 h-44 shrink-0 overflow-hidden bg-stone/10">
+                      <div className="relative w-full md:w-44 md:h-44 aspect-square shrink-0 overflow-hidden bg-stone/10">
                         {post.coverImage ? (
                           <Image
                             src={post.coverImage}
