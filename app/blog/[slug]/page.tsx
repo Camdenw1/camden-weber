@@ -42,7 +42,7 @@ export default async function BlogPost({ params }: Props) {
           </Link>
 
           {/* Cover image */}
-          <div className="relative aspect-square w-full overflow-hidden mb-8">
+          <div className="relative aspect-square w-1/2 overflow-hidden mb-8">
             {post.coverImage ? (
               <Image
                 src={post.coverImage}
