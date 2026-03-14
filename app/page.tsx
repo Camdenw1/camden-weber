@@ -23,7 +23,7 @@ export default function Home() {
             Camden<br />Weber
           </h1>
           <p className="fade-up-delay-2 font-sans text-cream/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-            This is where my career, academics, and life outside work all live in one place. Data professional by day, outdoorsman whenever I can be.
+            My life resume. This is where my career, academics, and life outside work all live in one place.
           </p>
           <div className="fade-up-delay-4 flex flex-wrap gap-4">
             <Link

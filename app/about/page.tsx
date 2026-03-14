@@ -63,7 +63,7 @@ export default function About() {
             { label: 'Based in', value: 'San Diego, CA' },
             { label: 'Education', value: 'UCLA, B.S. Data Theory' },
             { label: 'Currently', value: 'Financial Analytics Analyst at Vail Resorts' },
-            { label: 'Outside', value: 'Outdoors & sports' },
+            { label: 'Interests', value: 'Outdoors & sports' },
           ].map(({ label, value }) => (
             <div key={label}>
               <p className="text-stone text-xs uppercase tracking-widest mb-1">{label}</p>
