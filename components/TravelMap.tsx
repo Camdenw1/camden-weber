@@ -32,6 +32,13 @@ const locations: { name: string; lat: number; lng: number; type: LocationType }[
   { name: 'Bozeman, MT', lat: 45.6770, lng: -111.0429, type: 'regular' },
   // US — ski resorts
   { name: 'Big Bear, CA', lat: 34.2439, lng: -116.9114, type: 'mountain' },
+  { name: 'Mammoth Mountain, CA', lat: 37.6308, lng: -119.0326, type: 'mountain' },
+  { name: 'Park City, UT', lat: 40.6461, lng: -111.4980, type: 'mountain' },
+  { name: 'Snowbird, UT', lat: 40.5830, lng: -111.6556, type: 'mountain' },
+  { name: 'Solitude, UT', lat: 40.6199, lng: -111.5922, type: 'mountain' },
+  { name: 'Brighton, UT', lat: 40.5977, lng: -111.5833, type: 'mountain' },
+  { name: 'Brian Head, UT', lat: 37.6980, lng: -112.8494, type: 'mountain' },
+  { name: 'Steamboat Springs, CO', lat: 40.4850, lng: -106.8317, type: 'mountain' },
   { name: 'Big Sky, MT', lat: 45.2857, lng: -111.4015, type: 'mountain' },
   // US — national parks
   { name: 'Sequoia National Park', lat: 36.4864, lng: -118.5658, type: 'park' },

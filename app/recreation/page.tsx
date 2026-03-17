@@ -53,6 +53,7 @@ const skiResorts = [
   { name: 'Solitude', location: 'UT' },
   { name: 'Brighton', location: 'UT' },
   { name: 'Brian Head', location: 'UT' },
+  { name: 'Steamboat', location: 'CO' },
 ]
 
 const experiences = [
@@ -110,7 +111,7 @@ export default function RecreationPage() {
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
-            38 locations across 4 continents
+            45 locations across 4 continents
           </p>
         </section>
 
@@ -236,7 +237,7 @@ export default function RecreationPage() {
             <div>
               <div className="flex items-baseline gap-3 mb-4">
                 <h3 className="font-sans text-xs uppercase tracking-widest text-stone">Ski Resorts</h3>
-                <span className="font-serif text-sm text-rust">9 resorts</span>
+                <span className="font-serif text-sm text-rust">10 resorts</span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2">
                 {skiResorts.map((resort) => (
