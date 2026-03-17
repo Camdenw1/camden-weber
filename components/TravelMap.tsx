@@ -26,16 +26,19 @@ const locations: { name: string; lat: number; lng: number; type: LocationType }[
   { name: 'Orlando, FL', lat: 28.5383, lng: -81.3792, type: 'regular' },
   { name: 'Hilton Head, SC', lat: 32.2163, lng: -80.7526, type: 'regular' },
   { name: 'Charleston, SC', lat: 32.7765, lng: -79.9311, type: 'regular' },
-  // US — mountain/ski resorts
-  { name: 'Lake Tahoe, CA', lat: 39.0968, lng: -120.0324, type: 'mountain' },
+  { name: 'Lake Tahoe, CA', lat: 39.0968, lng: -120.0324, type: 'regular' },
+  { name: 'Jackson Hole, WY', lat: 43.4799, lng: -110.7624, type: 'regular' },
+  { name: 'West Yellowstone, MT', lat: 44.6621, lng: -111.1041, type: 'regular' },
+  { name: 'Bozeman, MT', lat: 45.6770, lng: -111.0429, type: 'regular' },
+  // US — ski resorts
   { name: 'Big Bear, CA', lat: 34.2439, lng: -116.9114, type: 'mountain' },
-  { name: 'Jackson Hole, WY', lat: 43.4799, lng: -110.7624, type: 'mountain' },
-  { name: 'West Yellowstone, MT', lat: 44.6621, lng: -111.1041, type: 'mountain' },
-  { name: 'Bozeman, MT', lat: 45.6770, lng: -111.0429, type: 'mountain' },
   { name: 'Big Sky, MT', lat: 45.2857, lng: -111.4015, type: 'mountain' },
   // US — national parks
-  { name: 'Yosemite, CA', lat: 37.8651, lng: -119.5383, type: 'park' },
-  { name: 'Joshua Tree, CA', lat: 33.8734, lng: -115.9010, type: 'park' },
+  { name: 'Sequoia National Park', lat: 36.4864, lng: -118.5658, type: 'park' },
+  { name: 'Channel Islands National Park', lat: 34.0069, lng: -119.7785, type: 'park' },
+  { name: 'Joshua Tree National Park', lat: 33.8734, lng: -115.9010, type: 'park' },
+  { name: 'Yosemite National Park', lat: 37.8651, lng: -119.5383, type: 'park' },
+  { name: 'Zion National Park', lat: 37.2982, lng: -113.0263, type: 'park' },
   // International — regular
   { name: 'Cabo San Lucas, Mexico', lat: 22.8905, lng: -109.9167, type: 'regular' },
   { name: 'Puerto Vallarta, Mexico', lat: 20.6534, lng: -105.2253, type: 'regular' },
@@ -46,7 +49,7 @@ const locations: { name: string; lat: number; lng: number; type: LocationType }[
   { name: 'Amalfi Coast, Italy', lat: 40.6340, lng: 14.6027, type: 'regular' },
   { name: 'Amsterdam, Netherlands', lat: 52.3676, lng: 4.9041, type: 'regular' },
   { name: 'Oahu, Hawaii', lat: 21.3069, lng: -157.8583, type: 'regular' },
-  // International — mountain
+  // International — ski resort
   { name: 'Whistler, BC', lat: 50.1163, lng: -122.9574, type: 'mountain' },
 ]
 

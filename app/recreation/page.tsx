@@ -110,7 +110,7 @@ export default function RecreationPage() {
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
-            35 locations across 4 continents
+            38 locations across 4 continents
           </p>
         </section>
 
