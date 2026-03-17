@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect } from 'react'
-import { MapContainer, TileLayer, CircleMarker, Tooltip } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
+import { divIcon } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 type LocationType = 'regular' | 'mountain' | 'park'
@@ -55,6 +56,14 @@ const emojiFor = (type: LocationType) => {
   return '📍'
 }
 
+const makeIcon = (type: LocationType) =>
+  divIcon({
+    html: `<span style="font-size:18px;line-height:1;">${emojiFor(type)}</span>`,
+    className: '',
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+  })
+
 export default function TravelMap() {
   useEffect(() => {
     // Fix leaflet default icon path issue in Next.js
@@ -73,21 +82,15 @@ export default function TravelMap() {
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
       />
       {locations.map((loc) => (
-        <CircleMarker
+        <Marker
           key={loc.name}
-          center={[loc.lat, loc.lng]}
-          radius={6}
-          pathOptions={{
-            color: '#B5603A',
-            fillColor: '#B5603A',
-            fillOpacity: 0.85,
-            weight: 1.5,
-          }}
+          position={[loc.lat, loc.lng]}
+          icon={makeIcon(loc.type)}
         >
           <Tooltip direction="top" offset={[0, -6]} opacity={0.95}>
-            <span className="font-sans text-xs">{emojiFor(loc.type)} {loc.name}</span>
+            <span style={{ fontFamily: 'sans-serif', fontSize: '12px' }}>{loc.name}</span>
           </Tooltip>
-        </CircleMarker>
+        </Marker>
       ))}
     </MapContainer>
   )
