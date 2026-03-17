@@ -42,7 +42,7 @@ const extracurriculars = [
     org: 'Westview High School',
     period: 'February 2026 — Present',
     bullets: [
-      'Defensive coach of the JV team at my High School',
+      'Defensive coach of the JV team at my alma mater',
     ],
   },
   {
@@ -105,7 +105,6 @@ const education = [
     details: [
       'GPA: 3.993 — Summa Cum Laude',
       'Minor: Data Science Engineering',
-      "Dean's Honors List — every eligible quarter",
     ],
     coursework: [
       'Machine Learning', 'Neural Networks & Deep Learning', 'Artificial Intelligence',

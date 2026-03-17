@@ -14,8 +14,13 @@ const runningStats = [
 ]
 
 const raceLog = [
-  { race: 'Napa Valley Marathon', location: 'Napa, CA', year: '2024', time: '3:27' },
-  { race: 'Carlsbad Half Marathon', location: 'Carlsbad, CA', year: '2026', time: '1:39' },
+  { race: 'Napa Valley Marathon', location: 'Napa, CA', date: 'March 2024', time: '3:27' },
+  { race: 'Carlsbad Half Marathon', location: 'Carlsbad, CA', date: 'January 2026', time: '1:39' },
+]
+
+const upcomingRaces = [
+  { race: 'La Jolla Half Marathon', location: 'La Jolla, CA', date: 'May 2026' },
+  { race: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026' },
 ]
 
 const nationalParks = [
@@ -29,7 +34,7 @@ const nationalParks = [
 const backpackingTrips = [
   { name: 'North Dome', location: 'Yosemite National Park' },
   { name: 'Glacier Point & Half Dome', location: 'Yosemite National Park' },
-  { name: 'Cienega Camp', location: 'Los Padres National Forest' },
+  { name: 'Sespe Creek Trail', location: 'Ojai, CA' },
 ]
 
 const favoriteHikes = [
@@ -39,8 +44,15 @@ const favoriteHikes = [
 ]
 
 const skiResorts = [
-  'Big Bear', 'Mammoth', 'Whistler', 'Big Sky', 'Park City',
-  'Snowbird', 'Solitude', 'Brighton', 'Brian Head',
+  { name: 'Big Bear', location: 'CA' },
+  { name: 'Mammoth', location: 'CA' },
+  { name: 'Whistler', location: 'BC, Canada' },
+  { name: 'Big Sky', location: 'MT' },
+  { name: 'Park City', location: 'UT' },
+  { name: 'Snowbird', location: 'UT' },
+  { name: 'Solitude', location: 'UT' },
+  { name: 'Brighton', location: 'UT' },
+  { name: 'Brian Head', location: 'UT' },
 ]
 
 const experiences = [
@@ -67,12 +79,12 @@ const experiences = [
   {
     title: 'Golf',
     sub: 'Casual',
-    description: 'Casual but competent. Play for the experience, the outdoors, and the company — not the scorecard.',
+    description: 'Casual but competent. Play for the experience, the outdoors, and the company.',
   },
   {
     title: 'The Webar',
     sub: 'Home Game Room',
-    description: 'The home game room, named as a play on my last name Weber. Pool table is the main event. Open to challengers.',
+    description: 'Named after my last name, the Webar is the go-to hangout spot. Sports always on the TV, pool table front and center, and sports memorabilia covering the walls. Always a good time.',
   },
 ]
 
@@ -98,7 +110,7 @@ export default function RecreationPage() {
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
-            33 locations across 4 continents
+            35 locations across 4 continents
           </p>
         </section>
 
@@ -117,14 +129,15 @@ export default function RecreationPage() {
             ))}
           </div>
 
-          {/* Race log */}
-          <div className="overflow-x-auto">
+          {/* Past races */}
+          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Past Races</h3>
+          <div className="overflow-x-auto mb-10">
             <table className="w-full text-sm font-sans">
               <thead>
                 <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
                   <th className="text-left pb-3 pr-6 font-normal">Race</th>
                   <th className="text-left pb-3 pr-6 font-normal">Location</th>
-                  <th className="text-left pb-3 pr-6 font-normal">Year</th>
+                  <th className="text-left pb-3 pr-6 font-normal">Date</th>
                   <th className="text-left pb-3 font-normal">Time</th>
                 </tr>
               </thead>
@@ -133,8 +146,31 @@ export default function RecreationPage() {
                   <tr key={row.race} className="border-b border-stone/10">
                     <td className="py-4 pr-6 text-bark font-serif">{row.race}</td>
                     <td className="py-4 pr-6 text-stone">{row.location}</td>
-                    <td className="py-4 pr-6 text-stone">{row.year}</td>
+                    <td className="py-4 pr-6 text-stone">{row.date}</td>
                     <td className="py-4 text-bark font-medium">{row.time}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Upcoming races */}
+          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Upcoming</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm font-sans">
+              <thead>
+                <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
+                  <th className="text-left pb-3 pr-6 font-normal">Race</th>
+                  <th className="text-left pb-3 pr-6 font-normal">Location</th>
+                  <th className="text-left pb-3 font-normal">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {upcomingRaces.map((row) => (
+                  <tr key={row.race} className="border-b border-stone/10">
+                    <td className="py-4 pr-6 text-bark font-serif">{row.race}</td>
+                    <td className="py-4 pr-6 text-stone">{row.location}</td>
+                    <td className="py-4 text-stone">{row.date}</td>
                   </tr>
                 ))}
               </tbody>
@@ -164,7 +200,7 @@ export default function RecreationPage() {
                         : 'border-stone/30 text-stone'
                     }`}
                   >
-                    {park.name}
+                    🏞️ {park.name}
                   </span>
                 ))}
               </div>
@@ -204,7 +240,9 @@ export default function RecreationPage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2">
                 {skiResorts.map((resort) => (
-                  <p key={resort} className="font-sans text-sm text-bark">{resort}</p>
+                  <p key={resort.name} className="font-sans text-sm text-bark">
+                    ⛰️ {resort.name}, <span className="text-stone">{resort.location}</span>
+                  </p>
                 ))}
               </div>
             </div>
