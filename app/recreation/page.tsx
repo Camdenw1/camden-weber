@@ -19,8 +19,9 @@ const raceLog = [
   { race: 'La Jolla Half Marathon', location: 'La Jolla, CA', date: 'May 2026', time: '1:42' },
 ]
 
-const upcomingRaces = [
-  { race: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026' },
+const upcomingEvents = [
+  { event: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026' },
+  { event: 'Mount Whitney Summit', location: 'Lone Pine, CA', date: 'August 22, 2026' },
 ]
 
 const nationalParks = [
@@ -101,9 +102,8 @@ export default function RecreationPage() {
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Recreational Resume</p>
         <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
-          The resume they don&apos;t ask for.
+          Recreational Resume
         </h1>
         <p className="text-stone text-sm md:text-base mb-16 leading-relaxed max-w-xl">
           A running log of the places I&apos;ve been, mountains I&apos;ve skied, trails I&apos;ve hiked,
@@ -165,15 +165,15 @@ export default function RecreationPage() {
             <table className="w-full text-sm font-sans">
               <thead>
                 <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
-                  <th className="text-left pb-3 pr-6 font-normal">Race</th>
+                  <th className="text-left pb-3 pr-6 font-normal">Event</th>
                   <th className="text-left pb-3 pr-6 font-normal">Location</th>
                   <th className="text-left pb-3 font-normal">Date</th>
                 </tr>
               </thead>
               <tbody>
-                {upcomingRaces.map((row) => (
-                  <tr key={row.race} className="border-b border-stone/10">
-                    <td className="py-4 pr-6 text-bark font-serif">{row.race}</td>
+                {upcomingEvents.map((row) => (
+                  <tr key={row.event} className="border-b border-stone/10">
+                    <td className="py-4 pr-6 text-bark font-serif">{row.event}</td>
                     <td className="py-4 pr-6 text-stone">{row.location}</td>
                     <td className="py-4 text-stone">{row.date}</td>
                   </tr>
