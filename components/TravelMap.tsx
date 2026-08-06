@@ -46,6 +46,8 @@ const locations: { name: string; lat: number; lng: number; type: LocationType }[
   { name: 'Joshua Tree National Park', lat: 33.8734, lng: -115.9010, type: 'park' },
   { name: 'Yosemite National Park', lat: 37.8651, lng: -119.5383, type: 'park' },
   { name: 'Zion National Park', lat: 37.2982, lng: -113.0263, type: 'park' },
+  { name: 'Kings Canyon National Park', lat: 36.8879, lng: -118.5551, type: 'park' },
+  { name: 'Rocky Mountain National Park', lat: 40.3428, lng: -105.6836, type: 'park' },
   // International — regular
   { name: 'Cabo San Lucas, Mexico', lat: 22.8905, lng: -109.9167, type: 'regular' },
   { name: 'Puerto Vallarta, Mexico', lat: 20.6534, lng: -105.2253, type: 'regular' },

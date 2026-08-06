@@ -29,6 +29,8 @@ const nationalParks = [
   { name: 'Joshua Tree', visited: true },
   { name: 'Yosemite', visited: true },
   { name: 'Zion', visited: true },
+  { name: 'Kings Canyon', visited: true },
+  { name: 'Rocky Mountain', visited: true },
 ]
 
 const backpackingTrips = [
@@ -40,7 +42,8 @@ const backpackingTrips = [
 
 const favoriteHikes = [
   { name: 'Stairway to Heaven (back route)', location: 'Oahu, Hawaii' },
-  { name: 'Angels Landing', location: 'Zion National Park, Utah' },
+  { name: 'Rae Lakes Loop', location: 'Kings Canyon National Park' },
+  { name: 'Cub Lake', location: 'Rocky Mountain National Park' },
   { name: 'Peñasquitos Canyon', location: 'San Diego, CA' },
 ]
 
@@ -112,7 +115,7 @@ export default function RecreationPage() {
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
-            54 locations across 4 continents
+            56 locations across 4 continents
           </p>
         </section>
 
@@ -190,7 +193,7 @@ export default function RecreationPage() {
             <div>
               <div className="flex items-baseline gap-3 mb-4">
                 <h3 className="font-sans text-xs uppercase tracking-widest text-stone">National Parks</h3>
-                <span className="font-serif text-sm text-rust">5 of 63</span>
+                <span className="font-serif text-sm text-rust">7 of 63</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {nationalParks.map((park) => (
