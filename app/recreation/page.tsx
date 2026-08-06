@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import TravelMapClient from '@/components/TravelMapClient'
 
 export const metadata: Metadata = {
-  title: 'Recreational Resume — Camden Weber',
+  title: 'Recreation — Camden Weber',
 }
 
 // ── Data ──────────────────────────────────────────────────────────────────────
