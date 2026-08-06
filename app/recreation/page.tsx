@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import TravelMapClient from '@/components/TravelMapClient'
 
 export const metadata: Metadata = {
-  title: 'Recreation — Camden Weber',
+  title: 'Recreational Resume — Camden Weber',
 }
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -16,10 +16,10 @@ const runningStats = [
 const raceLog = [
   { race: 'Napa Valley Marathon', location: 'Napa, CA', date: 'March 2024', time: '3:27' },
   { race: 'Carlsbad Half Marathon', location: 'Carlsbad, CA', date: 'January 2026', time: '1:39' },
+  { race: 'La Jolla Half Marathon', location: 'La Jolla, CA', date: 'May 2026', time: '1:42' },
 ]
 
 const upcomingRaces = [
-  { race: 'La Jolla Half Marathon', location: 'La Jolla, CA', date: 'May 2026' },
   { race: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026' },
 ]
 
@@ -35,6 +35,7 @@ const backpackingTrips = [
   { name: 'North Dome', location: 'Yosemite National Park' },
   { name: 'Glacier Point & Half Dome', location: 'Yosemite National Park' },
   { name: 'Sespe Creek Trail', location: 'Ojai, CA' },
+  { name: 'Rae Lakes Loop', location: 'Kings Canyon National Park' },
 ]
 
 const favoriteHikes = [
@@ -75,7 +76,7 @@ const experiences = [
   {
     title: 'Competitive Rec Basketball',
     sub: 'Ongoing',
-    description: 'Play in a competitive recreational basketball league with friends. Still take it seriously.',
+    description: 'Play in a competitive recreational basketball league with friends. Won a league championship. Still take it seriously.',
   },
   {
     title: 'Golf',
@@ -97,7 +98,7 @@ export default function RecreationPage() {
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
+        <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Recreational Resume</p>
         <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
           The resume they don&apos;t ask for.
         </h1>
@@ -111,7 +112,7 @@ export default function RecreationPage() {
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
-            45 locations across 4 continents
+            54 locations across 4 continents
           </p>
         </section>
 

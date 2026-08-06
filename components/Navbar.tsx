@@ -8,7 +8,7 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/resume', label: 'Resume' },
-  { href: '/recreation', label: 'Recreation' },
+  { href: '/recreation', label: 'Recreational Resume' },
   { href: '/blog', label: 'Blog' },
 ]
 
