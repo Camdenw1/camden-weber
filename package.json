@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -19,10 +21,11 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "autoprefixer": "^10.0.1",
     "eslint": "^9.39.4",
     "eslint-config-next": "^15.5.12",

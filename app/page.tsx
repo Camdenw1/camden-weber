@@ -11,6 +11,7 @@ export default function Home() {
           src="/images/hero.jpg"
           alt="Hero background"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
@@ -47,7 +48,7 @@ export default function Home() {
         <div>
           <h2 className="font-serif text-xl mb-3">The Person</h2>
           <p className="text-stone text-sm leading-relaxed">
-            UCLA grad, data professional at Vail Resorts, and lacrosse coach. When I'm not working with data, I'm running trails, skiing, or playing basketball. This is the full picture.
+            UCLA grad, data professional at Vail Resorts, and lacrosse coach. When I&apos;m not working with data, I&apos;m running trails, skiing, or playing basketball. This is the full picture.
           </p>
           <Link href="/about" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             About me →

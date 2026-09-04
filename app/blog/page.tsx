@@ -19,7 +19,7 @@ export default function BlogIndex() {
         {/* Header */}
         <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Writing</p>
         <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
-          Camden's Content
+          Camden&apos;s Content
         </h1>
         <p className="text-stone text-sm md:text-base mb-16 leading-relaxed max-w-xl">
           My personal stories, lessons learned, and interesting insights.
@@ -43,6 +43,7 @@ export default function BlogIndex() {
                             src={post.coverImage}
                             alt={post.title}
                             fill
+                            sizes="(max-width: 767px) calc(100vw - 3rem), 11rem"
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
@@ -59,7 +60,7 @@ export default function BlogIndex() {
                         {post.tags && post.tags.length > 0 && (
                           <div className="flex flex-wrap gap-2 mb-3">
                             {post.tags.map(tag => (
-                              <span key={tag} className="text-xs font-sans text-stone/70 border border-stone/30 px-2 py-0.5">
+                              <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">
                                 {tag}
                               </span>
                             ))}
@@ -103,6 +104,7 @@ export default function BlogIndex() {
                             src={post.coverImage}
                             alt={post.title}
                             fill
+                            sizes="(max-width: 767px) 33vw, 21rem"
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                           {/* Gradient overlay + title only for real images */}

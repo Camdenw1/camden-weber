@@ -4,6 +4,7 @@ import html from 'remark-html'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import PostCoverFallback from '@/components/PostCoverFallback'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -15,6 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
+  if (!post) notFound()
   return { title: `${post.title} — Camden Weber` }
 }
 
@@ -26,6 +28,7 @@ async function markdownToHtml(markdown: string) {
 export default async function BlogPost({ params }: Props) {
   const { slug } = await params
   const post = getPostBySlug(slug)
+  if (!post) notFound()
   const contentHtml = await markdownToHtml(post.content)
   const related = getRelatedPosts(slug, post.tags || [])
   const { prev, next } = getAdjacentPosts(slug)
@@ -33,7 +36,7 @@ export default async function BlogPost({ params }: Props) {
   return (
     <div className="pb-24">
 
-      <div className="px-6 pt-8">
+      <div className="px-6 pt-24 md:pt-28">
         <div className="max-w-2xl mx-auto">
 
           {/* Back link */}
@@ -48,6 +51,7 @@ export default async function BlogPost({ params }: Props) {
                 src={post.coverImage}
                 alt={post.title}
                 fill
+                sizes="(max-width: 768px) 50vw, 21rem"
                 className="object-cover"
                 priority
               />
@@ -70,7 +74,7 @@ export default async function BlogPost({ params }: Props) {
               <span className="text-stone/50 text-sm">·</span>
               <span className="text-stone text-sm font-sans">{post.readingTime} min read</span>
               {post.tags && post.tags.map(tag => (
-                <span key={tag} className="text-xs font-sans text-stone/70 border border-stone/30 px-2 py-0.5">
+                <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">
                   {tag}
                 </span>
               ))}
@@ -92,7 +96,7 @@ export default async function BlogPost({ params }: Props) {
                   <Link key={r.slug} href={`/blog/${r.slug}`} className="group flex gap-4 items-center">
                     <div className="relative w-14 h-14 shrink-0 overflow-hidden">
                       {r.coverImage ? (
-                        <Image src={r.coverImage} alt={r.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <Image src={r.coverImage} alt={r.title} fill sizes="56px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                       ) : (
                         <PostCoverFallback slug={r.slug} title={r.title} />
                       )}
@@ -134,4 +138,3 @@ export default async function BlogPost({ params }: Props) {
     </div>
   )
 }
-

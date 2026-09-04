@@ -216,7 +216,7 @@ export default function Resume() {
                 <p className="text-sm text-bark/80 leading-relaxed mb-2">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-sans text-stone/70 border border-stone/30 px-2 py-0.5">
+                    <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">
                       {tag}
                     </span>
                   ))}

@@ -28,6 +28,10 @@ function getCoverImage(slug: string): string | null {
   return null
 }
 
+function isValidSlug(slug: string): boolean {
+  return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)
+}
+
 function calcReadingTime(content: string): number {
   const words = content.trim().split(/\s+/).length
   return Math.max(1, Math.ceil(words / 200))
@@ -54,8 +58,13 @@ export function getAllPosts(): PostMeta[] {
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export function getPostBySlug(slug: string): Post {
-  const raw = fs.readFileSync(path.join(postsDir, `${slug}.md`), 'utf8')
+export function getPostBySlug(slug: string): Post | null {
+  if (!isValidSlug(slug)) return null
+
+  const postPath = path.join(postsDir, `${slug}.md`)
+  if (!fs.existsSync(postPath)) return null
+
+  const raw = fs.readFileSync(postPath, 'utf8')
   const { data, content } = matter(raw)
   return {
     slug,

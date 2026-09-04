@@ -11,8 +11,8 @@ module.exports = {
         cream: '#F9F7F4',
         bark: '#1C1C1A',
         moss: '#4A5240',
-        stone: '#9B9590',
-        rust: '#B5603A',
+        stone: '#756F6A',
+        rust: '#AA532F',
       },
       fontFamily: {
         serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],

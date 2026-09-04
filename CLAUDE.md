@@ -34,8 +34,8 @@ Custom Tailwind color palette (defined in `tailwind.config.js`):
 - `cream` (#F9F7F4) — background
 - `bark` (#1C1C1A) — primary text
 - `moss` (#4A5240) — accent green
-- `stone` (#9B9590) — muted text
-- `rust` (#B5603A) — accent/links/CTAs
+- `stone` (#756F6A) — muted text
+- `rust` (#AA532F) — accent/links/CTAs
 
 Fonts: `serif` = Lora, `sans` = DM Sans (loaded via `next/font/google`).
 

@@ -13,7 +13,7 @@ export default function About() {
         {/* Header */}
         <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">About</p>
         <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-12 leading-tight">
-          Hey, I'm Camden.
+          Hey, I&apos;m Camden.
         </h1>
 
         {/* About photo */}
@@ -22,6 +22,7 @@ export default function About() {
             src="/images/about.jpg"
             alt="Camden Weber"
             fill
+            sizes="(max-width: 767px) calc(100vw - 3rem), 42rem"
             className="object-cover"
             priority
           />
