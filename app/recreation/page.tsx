@@ -11,11 +11,10 @@ export const metadata: Metadata = {
 const runningStats = [
   { label: 'Marathon PR', value: '3:27', sub: 'Napa Valley, 2024' },
   { label: 'Half Marathon PR', value: '1:39', sub: 'Carlsbad, 2026' },
-  { label: 'Current Goal', value: 'Sub 1:30', sub: 'Half Marathon' },
 ]
 
 const raceLog = [
-  { race: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026', time: '1:42:24' },
+  { race: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026', time: '1:42' },
   { race: 'La Jolla Half Marathon', location: 'La Jolla, CA', date: 'May 2026', time: '1:42' },
   { race: 'Carlsbad Half Marathon', location: 'Carlsbad, CA', date: 'January 2026', time: '1:39' },
   { race: 'Napa Valley Marathon', location: 'Napa, CA', date: 'March 2024', time: '3:27' },
@@ -111,13 +110,31 @@ export default function RecreationPage() {
         <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
           Recreational Resume
         </h1>
-        <p className="text-stone text-sm md:text-base mb-16 leading-relaxed max-w-xl">
+        <p className="text-stone text-sm md:text-base mb-10 leading-relaxed max-w-xl">
           A running log of the places I&apos;ve been, mountains I&apos;ve skied, trails I&apos;ve hiked,
           and everything else that makes life worth working hard for.
         </p>
 
+        <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a href="#travel" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+            <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Travel</span>
+            <span className="block font-serif text-xl text-bark">56 places, 4 continents</span>
+            <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Explore the map ↓</span>
+          </a>
+          <a href="#racing" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+            <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Racing</span>
+            <span className="block font-serif text-xl text-bark">3:27 marathon, 1:39 half</span>
+            <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">See the races ↓</span>
+          </a>
+          <a href="#outdoors" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+            <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Outdoors</span>
+            <span className="block font-serif text-xl text-bark">Whitney &amp; Rae Lakes</span>
+            <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Read the highlights ↓</span>
+          </a>
+        </nav>
+
         {/* ── Section 1: Travel Map ──────────────────────────────────────── */}
-        <section className="mb-20">
+        <section id="travel" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
@@ -125,9 +142,9 @@ export default function RecreationPage() {
           </p>
         </section>
 
-        {/* ── Section 2: Running ────────────────────────────────────────── */}
-        <section className="mb-20">
-          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Running</h2>
+        {/* ── Section 2: Racing ─────────────────────────────────────────── */}
+        <section id="racing" className="mb-20 scroll-mt-28">
+          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Racing &amp; Goals</h2>
 
           {/* Stat cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
@@ -138,12 +155,18 @@ export default function RecreationPage() {
                 <p className="font-sans text-xs text-stone">{stat.sub}</p>
               </div>
             ))}
+            <div className="border border-stone/20 px-6 py-6">
+              <p className="font-sans text-xs text-stone uppercase tracking-widest mb-2">Current Goal</p>
+              <p className="font-serif text-2xl font-semibold text-bark mb-1">Complete a half Ironman</p>
+              <p className="font-sans text-xs text-stone">Oceanside 70.3</p>
+            </div>
           </div>
 
           {/* Past races */}
           <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Past Races</h3>
+          <p className="md:hidden font-sans text-xs text-stone mb-2">Swipe to see the full race list →</p>
           <div className="overflow-x-auto mb-10">
-            <table className="w-full text-sm font-sans">
+            <table className="w-full min-w-[640px] text-sm font-sans">
               <thead>
                 <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
                   <th className="text-left pb-3 pr-6 font-normal">Race</th>
@@ -167,7 +190,7 @@ export default function RecreationPage() {
 
           <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Upcoming</h3>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm font-sans">
+            <table className="w-full min-w-[520px] text-sm font-sans">
               <thead>
                 <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
                   <th className="text-left pb-3 pr-6 font-normal">Event</th>
@@ -189,7 +212,7 @@ export default function RecreationPage() {
         </section>
 
         {/* ── Section 3: The Outdoors ───────────────────────────────────── */}
-        <section className="mb-20">
+        <section id="outdoors" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">The Outdoors</h2>
 
           <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
@@ -277,7 +300,7 @@ export default function RecreationPage() {
 
         {/* ── Section 4: Experiences ────────────────────────────────────── */}
         <section className="mb-20">
-          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Experiences</h2>
+          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Other Things I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {experiences.map((exp) => (
               <div key={exp.title} className="border border-stone/20 px-6 py-6">
