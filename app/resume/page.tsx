@@ -163,7 +163,7 @@ export default function Resume() {
                 </ul>
                 {ed.href && (
                   <Link href={ed.href} className="inline-block mt-3 text-rust text-sm hover:underline underline-offset-4">
-                    Explore my Georgia Tech learning log →
+                    What I&apos;m learning at Georgia Tech →
                   </Link>
                 )}
               </div>

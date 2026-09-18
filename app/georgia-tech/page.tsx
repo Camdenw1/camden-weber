@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { courses } from '@/lib/georgia-tech'
 
 export const metadata: Metadata = {
-  title: 'Georgia Tech Coursework — Camden Weber',
+  title: 'Georgia Tech Coursework | Camden Weber',
   description: 'A running notebook on Camden Weber’s Georgia Tech coursework.',
 }
 
@@ -14,8 +14,8 @@ export default function GeorgiaTechPage() {
         <p className="text-stone text-sm tracking-[0.15em] uppercase mb-4">Georgia Tech</p>
         <h1 className="font-serif text-4xl md:text-5xl font-semibold leading-tight mb-5">The learning log</h1>
         <p className="text-stone leading-relaxed max-w-2xl mb-14">
-          A place to track why I chose each class, what I learn, and which ideas stay with me.
-          I&apos;m just starting these courses, so the notes will grow as I do the work.
+          I&apos;m just starting these classes, so for now this is mostly why I picked them.
+          I&apos;ll add what I learn and what I think of each class as I go.
         </p>
 
         <div className="space-y-6">

@@ -31,6 +31,10 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 
 **Layout:** `app/layout.tsx` wraps all pages with `<Navbar>` and `<Footer>`. Navbar is a client component (uses `usePathname` for active link highlighting).
 
+## Writing Voice
+
+Write first-person site copy in Camden's direct, conversational voice. Keep it close to what he has actually shared, avoid polished corporate phrasing, and do not use em dashes. Do not invent course takeaways or personal details.
+
 ## Styling
 
 Custom Tailwind color palette (defined in `tailwind.config.js`):

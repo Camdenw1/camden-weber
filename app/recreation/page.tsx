@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import TravelMapClient from '@/components/TravelMapClient'
 
 export const metadata: Metadata = {
@@ -20,6 +21,15 @@ const raceLog = [
   { race: 'Napa Valley Marathon', location: 'Napa, CA', date: 'March 2024', time: '3:27' },
 ]
 
+const upcomingEvents = [
+  { event: 'IRONMAN 70.3 Oceanside', location: 'Oceanside, CA', date: 'Date TBD' },
+]
+
+const outdoorMilestones = [
+  { title: 'Mount Whitney summit', detail: 'Lone Pine, CA · August 22, 2026' },
+  { title: 'Rae Lakes Loop, solo', detail: 'Kings Canyon National Park · 3 days, 42 miles', href: '/blog/rae-lakes-loop-solo' },
+]
+
 const nationalParks = [
   { name: 'Sequoia', visited: true },
   { name: 'Channel Islands', visited: true },
@@ -34,7 +44,7 @@ const backpackingTrips = [
   { name: 'North Dome', location: 'Yosemite National Park' },
   { name: 'Glacier Point & Half Dome', location: 'Yosemite National Park' },
   { name: 'Sespe Creek Trail', location: 'Ojai, CA' },
-  { name: 'Rae Lakes Loop', location: 'Kings Canyon National Park' },
+  { name: 'Rae Lakes Loop, solo', location: 'Kings Canyon National Park' },
 ]
 
 const favoriteHikes = [
@@ -155,16 +165,46 @@ export default function RecreationPage() {
             </table>
           </div>
 
+          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Upcoming</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm font-sans">
+              <thead>
+                <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
+                  <th className="text-left pb-3 pr-6 font-normal">Event</th>
+                  <th className="text-left pb-3 pr-6 font-normal">Location</th>
+                  <th className="text-left pb-3 font-normal">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {upcomingEvents.map((row) => (
+                  <tr key={row.event} className="border-b border-stone/10">
+                    <td className="py-4 pr-6 text-bark font-serif">{row.event}</td>
+                    <td className="py-4 pr-6 text-stone">{row.location}</td>
+                    <td className="py-4 text-stone">{row.date}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
 
         {/* ── Section 3: The Outdoors ───────────────────────────────────── */}
         <section className="mb-20">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">The Outdoors</h2>
 
-          <div className="border-l-2 border-rust pl-5 mb-14">
-            <p className="font-sans text-xs uppercase tracking-widest text-stone mb-2">Recent milestone</p>
-            <h3 className="font-serif text-xl text-bark">Mount Whitney summit</h3>
-            <p className="font-sans text-sm text-stone mt-1">Lone Pine, CA · August 22, 2026</p>
+          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
+          <div className="space-y-6 mb-14">
+            {outdoorMilestones.map((milestone) => (
+              <div key={milestone.title} className="border-l-2 border-rust pl-5">
+                <h4 className="font-serif text-xl text-bark">{milestone.title}</h4>
+                <p className="font-sans text-sm text-stone mt-1">{milestone.detail}</p>
+                {milestone.href && (
+                  <Link href={milestone.href} className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
+                    Read the story →
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="space-y-14">

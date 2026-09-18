@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -85,10 +84,6 @@ const makeIcon = (type: LocationType) =>
   })
 
 export default function TravelMap() {
-  useEffect(() => {
-    // Fix leaflet default icon path issue in Next.js
-  }, [])
-
   return (
     <MapContainer
       center={[30, 10]}
@@ -98,8 +93,8 @@ export default function TravelMap() {
       className="rounded-sm"
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {locations.map((loc) => (
         <Marker

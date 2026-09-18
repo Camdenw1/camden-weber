@@ -14,21 +14,15 @@ export const courses: Course[] = [
     title: 'Database Systems',
     code: 'CS 6400',
     status: 'In progress',
-    why: 'I chose this class because good data and strong database systems are foundational to useful AI. I work with data often, so I also want a deeper understanding of the systems behind it and knowledge I can bring back to work.',
+    why: "I use data a lot at work, and I think database systems are basically the backbone of AI. Having good data makes the AI work so much better. I want to understand that side of things more deeply, both because I'm interested in it and because it'll be useful at work.",
     takeaways: [],
   },
   {
     slug: 'financial-modeling',
     title: 'Financial Modeling',
-    status: 'In progress',
-    why: 'I want to understand businesses and business valuations more deeply—the numbers behind them and what those numbers mean. My goal is to strengthen the business side of how I think and make decisions.',
-    takeaways: [],
-  },
-  {
-    slug: 'management',
-    title: 'Management',
     code: 'MGT 8813',
     status: 'In progress',
+    why: "I'm taking Financial Modeling because I want to understand businesses better. I want to know how valuations work and what the numbers behind a business actually mean. I think it'll help me think about businesses more clearly.",
     takeaways: [],
   },
 ]
