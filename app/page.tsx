@@ -57,10 +57,13 @@ export default function Home() {
         <div>
           <h2 className="font-serif text-xl mb-3">The Work</h2>
           <p className="text-stone text-sm leading-relaxed">
-            My resume — experience at Vail Resorts and Breakaway Data, projects in ML and network theory, and the skills behind the work.
+            My resume — experience at Vail Resorts and Breakaway Data, projects in ML and network theory, and what I&apos;m learning at Georgia Tech.
           </p>
           <Link href="/resume" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             See my resume →
+          </Link>
+          <Link href="/georgia-tech" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
+            Georgia Tech learning log →
           </Link>
         </div>
         <div>

@@ -15,14 +15,17 @@ No test suite is currently configured.
 
 ## Architecture
 
-Next.js 14 App Router personal portfolio site. Pages live in `app/`, shared UI in `components/`.
+Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI in `components/`.
 
 **Routes:**
 - `/` — Hero + intro strip (`app/page.tsx`)
 - `/about` — Bio page (`app/about/page.tsx`)
 - `/resume` — Resume page (`app/resume/page.tsx`)
+- `/recreation` — Recreation page (`app/recreation/page.tsx`)
 - `/blog` — Post listing (`app/blog/page.tsx`)
 - `/blog/[slug]` — Individual post (`app/blog/[slug]/page.tsx`)
+- `/georgia-tech` — Learning log (`app/georgia-tech/page.tsx`)
+- `/georgia-tech/[slug]` — Individual class notes (`app/georgia-tech/[slug]/page.tsx`)
 
 **Blog system:** Markdown files in `content/blog/` are read at build time via `lib/posts.ts` using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for rendering. The filename becomes the URL slug. Required frontmatter fields: `title`, `date`, `excerpt`. Optional: `tags` (array).
 

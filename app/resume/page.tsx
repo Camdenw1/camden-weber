@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Resume — Camden Weber',
@@ -97,6 +98,7 @@ const education = [
     coursework: [
       'Machine Learning', 'Artificial Intelligence',
     ],
+    href: '/georgia-tech',
   },
   {
     degree: 'B.S. in Data Theory',
@@ -112,6 +114,7 @@ const education = [
       'Algorithms', 'Linear Algebra', 'Optimization', 'Graph Theory & Networks',
       'Data Science in R & Python', 'Object-Oriented Programming (C++)', 'Multivariate Calculus',
     ],
+    href: null,
   },
 ]
 
@@ -158,6 +161,11 @@ export default function Resume() {
                     </li>
                   ))}
                 </ul>
+                {ed.href && (
+                  <Link href={ed.href} className="inline-block mt-3 text-rust text-sm hover:underline underline-offset-4">
+                    Explore my Georgia Tech learning log →
+                  </Link>
+                )}
               </div>
             ))}
           </div>

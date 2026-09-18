@@ -1,9 +1,9 @@
 # Camden Weber — Personal Site
 
-Personal portfolio, blog, and career hub. Built with Next.js 14, Tailwind CSS, and deployed on Vercel.
+Personal portfolio, blog, and career hub. Built with Next.js 15, Tailwind CSS, and deployed on Vercel.
 
 ## Stack
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 15 (App Router)
 - **Styling**: Tailwind CSS
 - **Blog**: Markdown files via gray-matter + remark
 - **Fonts**: Lora (serif) + DM Sans
@@ -34,6 +34,10 @@ Your content here. Write in standard Markdown.
 ```
 
 The post will automatically appear on the `/blog` page. The filename becomes the URL slug.
+
+## Updating Georgia Tech Class Notes
+
+Edit the course entries in `lib/georgia-tech.ts`. Each entry has a page at `/georgia-tech/<slug>` and appears on the learning-log index. Add course codes only when confirmed, and add takeaways as the class progresses.
 
 ## Customizing
 

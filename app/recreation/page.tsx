@@ -14,14 +14,10 @@ const runningStats = [
 ]
 
 const raceLog = [
-  { race: 'Napa Valley Marathon', location: 'Napa, CA', date: 'March 2024', time: '3:27' },
-  { race: 'Carlsbad Half Marathon', location: 'Carlsbad, CA', date: 'January 2026', time: '1:39' },
+  { race: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026', time: '1:42:24' },
   { race: 'La Jolla Half Marathon', location: 'La Jolla, CA', date: 'May 2026', time: '1:42' },
-]
-
-const upcomingEvents = [
-  { event: "America's Finest City Half Marathon", location: 'San Diego, CA', date: 'August 2026' },
-  { event: 'Mount Whitney Summit', location: 'Lone Pine, CA', date: 'August 22, 2026' },
+  { race: 'Carlsbad Half Marathon', location: 'Carlsbad, CA', date: 'January 2026', time: '1:39' },
+  { race: 'Napa Valley Marathon', location: 'Napa, CA', date: 'March 2024', time: '3:27' },
 ]
 
 const nationalParks = [
@@ -159,33 +155,17 @@ export default function RecreationPage() {
             </table>
           </div>
 
-          {/* Upcoming races */}
-          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Upcoming</h3>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm font-sans">
-              <thead>
-                <tr className="border-b border-stone/20 text-stone text-xs uppercase tracking-widest">
-                  <th className="text-left pb-3 pr-6 font-normal">Event</th>
-                  <th className="text-left pb-3 pr-6 font-normal">Location</th>
-                  <th className="text-left pb-3 font-normal">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {upcomingEvents.map((row) => (
-                  <tr key={row.event} className="border-b border-stone/10">
-                    <td className="py-4 pr-6 text-bark font-serif">{row.event}</td>
-                    <td className="py-4 pr-6 text-stone">{row.location}</td>
-                    <td className="py-4 text-stone">{row.date}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </section>
 
         {/* ── Section 3: The Outdoors ───────────────────────────────────── */}
         <section className="mb-20">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">The Outdoors</h2>
+
+          <div className="border-l-2 border-rust pl-5 mb-14">
+            <p className="font-sans text-xs uppercase tracking-widest text-stone mb-2">Recent milestone</p>
+            <h3 className="font-serif text-xl text-bark">Mount Whitney summit</h3>
+            <p className="font-sans text-sm text-stone mt-1">Lone Pine, CA · August 22, 2026</p>
+          </div>
 
           <div className="space-y-14">
 
