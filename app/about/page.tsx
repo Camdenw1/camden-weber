@@ -40,6 +40,18 @@ export default function About() {
             passion for skiing with my data background.
           </p>
           <p>
+            More recently, I&apos;ve become fascinated by AI. I see it as a
+            powerful tool that we have a responsibility to use for good. At its
+            best, it can make life easier, free us from mundane administrative
+            work, and give us more time to focus on what matters most. I&apos;m
+            especially hopeful about its potential to drive meaningful
+            innovation in health and the environment. If we can harness this
+            technology responsibly—boosting productivity while improving
+            people&apos;s lives—it could become one of humanity&apos;s greatest
+            success stories. The risks are real, though, and I hope we can come
+            together to guide its development toward the greater good.
+          </p>
+          <p>
             Outside of work, I spend most of my time outdoors. I love running, 
             hiking, skiing, and backpacking as ways to explore the world. I also play 
             basketball with my friends multiple times a week and I coach the 
