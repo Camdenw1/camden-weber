@@ -15,6 +15,7 @@ const locations: { name: string; lat: number; lng: number; type: LocationType }[
   { name: 'Ventura, CA', lat: 34.2805, lng: -119.2945, type: 'regular' },
   { name: 'Laguna Beach, CA', lat: 33.5427, lng: -117.7854, type: 'regular' },
   { name: 'Palm Springs, CA', lat: 33.8303, lng: -116.5453, type: 'regular' },
+  { name: 'Lake Havasu, AZ', lat: 34.4756, lng: -114.3286, type: 'regular' },
   { name: 'Catalina Island, CA', lat: 33.3894, lng: -118.4160, type: 'regular' },
   { name: 'Denver, CO', lat: 39.7392, lng: -104.9903, type: 'regular' },
   { name: 'Boulder, CO', lat: 40.0150, lng: -105.2705, type: 'regular' },
