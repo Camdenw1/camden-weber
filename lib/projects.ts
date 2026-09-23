@@ -32,8 +32,8 @@ export const projects: Project[] = [
       {
         heading: 'Why I built it',
         paragraphs: [
-          'I work full time, I just started a master’s at Georgia Tech, I’m training for a half Ironman, and I coach lacrosse. None of that is the hard part. The hard part is the admin around it: reading email, figuring out what’s due, planning the week, and checking whether training is on track.',
-          'That’s exactly the kind of tedious work I think AI should take off people’s plates, so I started with my own.',
+          'I work full time, I just started a master’s at Georgia Tech, I’m training for a half Ironman, and I coach lacrosse. With all of that going on, the admin piles up: reading email, figuring out what’s due, planning the week, and checking whether training is on track.',
+          'That’s the kind of work I think AI should handle, so I started with my own life.',
         ],
       },
       {
@@ -77,7 +77,7 @@ export const projects: Project[] = [
       {
         heading: 'What I learned',
         paragraphs: [
-          'Getting AI to do a task once is easy. Making it reliable is the real work. Every run needs a clear spec, somewhere to remember what happened, a check that it actually ran, and a fast way for a person to correct it. That’s the same problem any company has when it rolls AI out to a team, and it’s the part I enjoy most.',
+          'Getting AI to do a task once is easy. Making it reliable is the real work. Every run needs a clear spec, somewhere to remember what happened, a check that it actually ran, and a fast way for a person to correct it. Companies run into the same problem when they roll AI out to a team, and it’s the part of this I find most interesting.',
         ],
       },
     ],
