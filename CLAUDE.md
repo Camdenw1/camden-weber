@@ -36,7 +36,7 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 
 **SEO and sharing:** `app/layout.tsx` sets the site-wide title template (`%s | Camden Weber`) and description; each page sets its own short `title` and `description`. `app/icon.png`, `app/apple-icon.png`, `app/opengraph-image.jpg` and `app/twitter-image.jpg` are picked up automatically by Next.js. `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`. The site URL lives in `lib/site.ts`; change it there when a custom domain is added.
 
-**Resume and project rules:** Never call Camden a data scientist. The Georgia Tech specialization is Artificial Intelligence. Never list the World Cup goalscorer model (it wasn't built). Only add resume claims he can defend in an interview.
+**Resume and project rules:** Never call Camden a data scientist. The Georgia Tech specialization is Artificial Intelligence. Never list the World Cup goalscorer model (it wasn't built). Only add claims that are true and that he has confirmed. The site is personal, not a job application: skip recruiter or pitch-style framing.
 
 **Layout:** `app/layout.tsx` wraps all pages with `<Navbar>` and `<Footer>`. Navbar is a client component (uses `usePathname` for active link highlighting).
 

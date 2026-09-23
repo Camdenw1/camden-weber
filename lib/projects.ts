@@ -88,25 +88,19 @@ export const projects: Project[] = [
     context: 'Independent',
     year: '2026',
     summary:
-      'Fantasy football is why I got into data. Now I build tools for it: a draft board that combines rankings across platforms, lineup automation across my three leagues, and a pick’em tool that finds stale spreads.',
+      'Fantasy football is why I got into data. Now I build tools for it: a draft board built around my league’s scoring, lineup automation across my three leagues, and a pick’em tool that finds stale spreads.',
     tags: ['Data aggregation', 'AI agents', 'Browser automation', 'Web app'],
     link: { href: '/draft-board-2026.html', label: 'Try the 2026 draft board' },
     sections: [
       {
-        heading: 'Where it started',
-        paragraphs: [
-          'Fantasy football is what got me into data in the first place. Every week is a set of decisions under uncertainty, and I wanted to make them with numbers instead of gut feel. That curiosity turned into a Data Theory degree at UCLA and an internship at a sports data company. I still play, so I keep building tools for it.',
-        ],
-      },
-      {
         heading: 'Draft board',
         paragraphs: [
-          'Every platform ranks players differently, and those gaps are where value hides. I built and deployed an interactive draft board that pulls expert rankings from the major platforms into one consensus average, so I can spot players a platform has ranked below the market.',
+          'Public rankings assume standard scoring, and my league isn’t standard. So I built a draft board that rescores season projections for our actual rules (half PPR, a tight end premium, yardage bonuses), then blends that model with the market and an expert board. The Edge column shows where my model disagrees with the market, which is where the value is.',
         ],
         bullets: [
-          { text: 'Live draft tracking: mark players as they go off the board, or reset it.' },
-          { text: 'Player tiers and position filters, so it’s usable with the clock running.' },
-          { text: 'Built around my league’s scoring (0.5 PPR with a tight end premium). I used it for my own drafts this season.' },
+          { text: 'Syncs live with a Sleeper draft, so picks come off the board automatically.' },
+          { text: 'Tiers, position filters, and a “best available near my next pick” view, so it’s usable with the clock running.' },
+          { text: 'Separate profiles for my league and my dad’s league. I used it for my drafts this season.' },
         ],
       },
       {
@@ -125,7 +119,7 @@ export const projects: Project[] = [
       {
         heading: 'Where it’s going',
         paragraphs: [
-          'The part of fantasy most people dislike is the time it takes to manage a team. I’m interested in how far an agent can take that end to end, from waiver pickups to lineups, while keeping a person in the loop on the calls that matter.',
+          'The part I like least is the time it takes to manage a team. I’m interested in how far an agent can take that end to end, from waiver pickups to lineups, while keeping a person in the loop on the calls that matter.',
         ],
       },
     ],

@@ -1,6 +1,6 @@
 // Resume content lives here so edits never touch page layout.
 // Source of truth: ~/Documents/Career/Resume/Source Materials/resume_source_master.md
-// Only list claims Camden can defend in an interview. Never call him a data scientist.
+// Only list claims Camden has confirmed are true. Never call him a data scientist.
 
 export type Role = {
   role: string
