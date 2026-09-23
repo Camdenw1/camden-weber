@@ -90,6 +90,7 @@ export const projects: Project[] = [
     summary:
       'Fantasy football is why I got into data. Now I build tools for it: a draft board that combines rankings across platforms, lineup automation across my three leagues, and a pick’em tool that finds stale spreads.',
     tags: ['Data aggregation', 'AI agents', 'Browser automation', 'Web app'],
+    link: { href: '/draft-board-2026.html', label: 'Try the 2026 draft board' },
     sections: [
       {
         heading: 'Where it started',
