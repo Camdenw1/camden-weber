@@ -29,8 +29,8 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <div className="pt-28 pb-24 px-6">
       <article className="max-w-2xl mx-auto">
-        <Link href="/projects" className="inline-block text-sm text-stone hover:text-bark mb-10">
-          ← All projects
+        <Link href="/resume#projects" className="inline-block text-sm text-stone hover:text-bark mb-10">
+          ← Back to resume
         </Link>
         <p className="text-stone text-xs uppercase tracking-widest mb-4">
           {[project.context, project.year].filter(Boolean).join(' · ')}

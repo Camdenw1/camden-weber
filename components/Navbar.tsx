@@ -8,10 +8,16 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/resume', label: 'Resume' },
-  { href: '/projects', label: 'Projects' },
   { href: '/recreation', label: 'Recreation' },
   { href: '/blog', label: 'Blog' },
 ]
+
+// Project pages live under the resume, so highlight Resume there too.
+function isActive(href: string, pathname: string) {
+  if (href === '/') return pathname === '/'
+  if (href === '/resume' && pathname.startsWith('/projects')) return true
+  return pathname.startsWith(href)
+}
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -31,7 +37,7 @@ export default function Navbar() {
               key={href}
               href={href}
               className={`text-sm tracking-wide transition-colors ${
-                (href === '/' ? pathname === '/' : pathname.startsWith(href))
+                isActive(href, pathname)
                   ? 'text-rust font-medium'
                   : 'text-stone hover:text-bark'
               }`}
@@ -64,7 +70,7 @@ export default function Navbar() {
               href={href}
               onClick={() => setMenuOpen(false)}
               className={`text-sm tracking-wide ${
-                (href === '/' ? pathname === '/' : pathname.startsWith(href)) ? 'text-rust font-medium' : 'text-stone'
+                isActive(href, pathname) ? 'text-rust font-medium' : 'text-stone'
               }`}
             >
               {label}

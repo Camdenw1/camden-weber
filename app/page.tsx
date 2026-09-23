@@ -34,7 +34,7 @@ export default function Home() {
               View Resume
             </Link>
             <Link
-              href="/projects"
+              href="/resume#projects"
               className="px-6 py-3 border border-cream/60 text-cream font-sans text-sm font-medium tracking-wide hover:border-cream hover:bg-cream/10 transition-colors duration-300"
             >
               See What I&apos;ve Built
@@ -62,7 +62,7 @@ export default function Home() {
           <Link href="/resume" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             See my resume →
           </Link>
-          <Link href="/projects" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
+          <Link href="/resume#projects" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
             Projects →
           </Link>
           <Link href="/georgia-tech" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">

@@ -24,7 +24,7 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 - `/` — Hero + intro strip (`app/page.tsx`)
 - `/about` — Bio page (`app/about/page.tsx`)
 - `/resume` — Resume page (`app/resume/page.tsx`). Content lives in `lib/resume.ts`; the page only handles layout.
-- `/projects` — Projects index (`app/projects/page.tsx`). Content lives in `lib/projects.ts`.
+- `/projects` — Projects index (`app/projects/page.tsx`). Content lives in `lib/projects.ts`. Not in the navbar: projects are shown in the Projects section of `/resume` (anchor `#projects`), and site links point there.
 - `/projects/[slug]` — Deep-dive page, generated only for projects that have `sections`
 - `/recreation` — Recreation page (`app/recreation/page.tsx`)
 - `/blog` — Post listing (`app/blog/page.tsx`)

@@ -77,19 +77,6 @@ export default function Resume() {
         </section>
 
         <section className="mb-14">
-          <SectionTitle>Projects</SectionTitle>
-          <div className="space-y-10">
-            {featured.map((p) => <ProjectCard key={p.slug} project={p} />)}
-          </div>
-          <div className="space-y-8 mt-10">
-            {earlier.map((p) => <ProjectCard key={p.slug} project={p} />)}
-          </div>
-          <Link href="/projects" className="inline-block mt-8 text-rust text-sm hover:underline underline-offset-4">
-            All projects →
-          </Link>
-        </section>
-
-        <section className="mb-14">
           <SectionTitle>Education</SectionTitle>
           <div className="space-y-8">
             {education.map((ed) => (
@@ -116,6 +103,16 @@ export default function Resume() {
                 )}
               </div>
             ))}
+          </div>
+        </section>
+
+        <section id="projects" className="mb-14 scroll-mt-28">
+          <SectionTitle>Projects</SectionTitle>
+          <div className="space-y-10">
+            {featured.map((p) => <ProjectCard key={p.slug} project={p} />)}
+          </div>
+          <div className="space-y-8 mt-10">
+            {earlier.map((p) => <ProjectCard key={p.slug} project={p} />)}
           </div>
         </section>
 

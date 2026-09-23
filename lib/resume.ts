@@ -50,7 +50,6 @@ export const experience: Role[] = [
       'Built and deployed an internal R Shiny app that cut a multi-day support workflow down to seconds.',
       'Led a client project turning wearable GPS data from Premier League players into trainer-ready reports using R, SQL, and Google Sheets.',
       'Wrote SQL queries to handle ad hoc data requests.',
-      'Used GitHub for version control and team collaboration.',
     ],
   },
 ]
