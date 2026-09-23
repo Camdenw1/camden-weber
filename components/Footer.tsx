@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t border-stone/20 mt-24 py-10 px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-serif text-stone text-sm italic">
-          Camden Weber — built with curiosity
+          © 2026 Camden Weber
         </p>
         <div className="flex items-center gap-6 text-sm text-stone">
           <a

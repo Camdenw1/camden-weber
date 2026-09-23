@@ -3,6 +3,7 @@ title: "Your Post Title Here"
 date: "2026-03-12"
 excerpt: "One or two sentences shown on the blog listing page. Write this last — once you know what the post is really about."
 tags: ["tag1", "tag2"]
+draft: true
 ---
 
 Opening paragraph. No heading needed here — just start writing. This is the first thing readers see.
@@ -70,6 +71,7 @@ Drop the image file in /public/images/blog/ first, then reference it like this:
 
 ## Checklist Before Publishing
 
+- [ ] Delete the `draft: true` line (drafts only show up in `npm run dev`)
 - [ ] Filename is lowercase with hyphens (this becomes your URL slug)
 - [ ] Date is updated to today
 - [ ] Excerpt is written and compelling

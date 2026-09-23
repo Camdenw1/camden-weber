@@ -12,7 +12,10 @@ npm run lint      # Run ESLint
 npm run check     # Lint + typecheck + build (same as CI). Run before pushing.
 ```
 
-Custom commands: `/new-post "Title" [photo.jpg]` scaffolds a blog post (see `.claude/commands/new-post.md`).
+Custom commands (in `.claude/commands/`, run only from Claude Code, not part of the site):
+- `/new-post "Title" [photo.jpg]` scaffolds a blog post as a draft
+- `/add-place "Place" [type]` adds a pin to the travel map
+- `/log-race "Race" "Month Year" time` adds a race to the log and updates PRs
 
 No test suite is currently configured.
 
@@ -32,7 +35,7 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 - `/georgia-tech` — Learning log (`app/georgia-tech/page.tsx`)
 - `/georgia-tech/[slug]` — Individual class notes (`app/georgia-tech/[slug]/page.tsx`)
 
-**Blog system:** Markdown files in `content/blog/` are read at build time via `lib/posts.ts` using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for rendering. The filename becomes the URL slug. Required frontmatter fields: `title`, `date`, `excerpt`. Optional: `tags` (array).
+**Blog system:** Markdown files in `content/blog/` are read at build time via `lib/posts.ts` using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for rendering. The filename becomes the URL slug. Required frontmatter fields: `title`, `date`, `excerpt`. Optional: `tags` (array), `draft: true` (shows in `npm run dev` only, hidden from the live site, listing, and sitemap).
 
 **SEO and sharing:** `app/layout.tsx` sets the site-wide title template (`%s | Camden Weber`) and description; each page sets its own short `title` and `description`. `app/icon.png`, `app/apple-icon.png`, `app/opengraph-image.jpg` and `app/twitter-image.jpg` are picked up automatically by Next.js. `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`. The site URL lives in `lib/site.ts`; change it there when a custom domain is added.
 

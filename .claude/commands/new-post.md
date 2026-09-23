@@ -10,4 +10,4 @@ Create a new blog post for this site. Arguments: $ARGUMENTS
 3. If I gave a photo path: copy it to `public/images/blog/<slug>.jpg`, then shrink it with `sips -Z 1600 public/images/blog/<slug>.jpg`. The file name must match the slug exactly or the cover won't show.
 4. Don't write the post body. Leave the template's placeholder text for me.
 5. Run `npm run check` and tell me if anything fails.
-6. Tell me the file to open, and remind me the post goes live when I commit and push.
+6. Tell me the file to open. Remind me the post starts as a draft (`draft: true`): it shows up in `npm run dev` but not on the live site. To publish, delete that line, then commit and push.

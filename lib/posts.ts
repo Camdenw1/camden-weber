@@ -5,6 +5,10 @@ import matter from 'gray-matter'
 const postsDir = path.join(process.cwd(), 'content/blog')
 const blogImagesDir = path.join(process.cwd(), 'public/images/blog')
 
+// Posts with `draft: true` show up in `npm run dev` so you can preview them,
+// but are left out of the live site (listing, post pages, sitemap).
+const showDrafts = process.env.NODE_ENV !== 'production'
+
 export type PostMeta = {
   slug: string
   title: string
@@ -13,6 +17,7 @@ export type PostMeta = {
   tags?: string[]
   coverImage: string | null
   readingTime: number
+  draft: boolean
 }
 
 export type Post = PostMeta & {
@@ -52,10 +57,11 @@ export function getAllPosts(): PostMeta[] {
       tags: data.tags || [],
       coverImage: getCoverImage(slug),
       readingTime: calcReadingTime(content),
+      draft: data.draft === true,
     }
   })
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+  return posts.filter(p => showDrafts || !p.draft).sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 export function getPostBySlug(slug: string): Post | null {
@@ -66,6 +72,7 @@ export function getPostBySlug(slug: string): Post | null {
 
   const raw = fs.readFileSync(postPath, 'utf8')
   const { data, content } = matter(raw)
+  if (data.draft === true && !showDrafts) return null
   return {
     slug,
     title: data.title,
@@ -74,6 +81,7 @@ export function getPostBySlug(slug: string): Post | null {
     tags: data.tags || [],
     coverImage: getCoverImage(slug),
     readingTime: calcReadingTime(content),
+    draft: data.draft === true,
     content,
   }
 }

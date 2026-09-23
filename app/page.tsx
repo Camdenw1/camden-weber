@@ -24,7 +24,7 @@ export default function Home() {
             Camden<br />Weber
           </h1>
           <p className="fade-up-delay-2 font-sans text-cream/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-            I build AI and automation that takes the tedious work off people&apos;s plates. This is where my career, academics, and life outside work all live.
+            I build AI and automation that handles the tedious stuff so people don&apos;t have to. This is where my career, academics, and life outside work all live.
           </p>
           <div className="fade-up-delay-4 flex flex-wrap gap-4">
             <Link

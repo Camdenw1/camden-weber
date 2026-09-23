@@ -24,7 +24,7 @@ const dmSans = localFont({
 })
 
 const description =
-  'Camden Weber builds AI and automation that takes tedious work off people’s plates. Financial Analytics Analyst at Vail Resorts, M.S. Computer Science (AI) student at Georgia Tech, UCLA grad, runner and backpacker in San Diego.'
+  'Camden Weber builds AI and automation that handles the tedious stuff so people don’t have to. Financial Analytics Analyst at Vail Resorts, M.S. Computer Science (AI) student at Georgia Tech, UCLA grad, runner and backpacker in San Diego.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
