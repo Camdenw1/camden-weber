@@ -3,6 +3,7 @@ title: "How I Became a Runner"
 date: "2026-03-13"
 excerpt: "Everyone can be a runner. It just may take a journey to get there. Here's mine."
 tags: ["running", "outdoors", "personal"]
+coverPosition: "center 12%"
 ---
 
 Running is weird. Most people hate it. Yet millions of people voluntarily wake up early, lace up their shoes, and go run miles for fun. Somehow, the thing that feels miserable at first becomes something runners genuinely look forward to.

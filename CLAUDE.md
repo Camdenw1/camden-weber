@@ -35,7 +35,9 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 - `/georgia-tech` — Learning log (`app/georgia-tech/page.tsx`)
 - `/georgia-tech/[slug]` — Individual class notes (`app/georgia-tech/[slug]/page.tsx`)
 
-**Blog system:** Markdown files in `content/blog/` are read at build time via `lib/posts.ts` using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for rendering. The filename becomes the URL slug. Required frontmatter fields: `title`, `date`, `excerpt`. Optional: `tags` (array), `draft: true` (shows in `npm run dev` only, hidden from the live site, listing, and sitemap).
+**Blog system:** Markdown files in `content/blog/` are read at build time via `lib/posts.ts` using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for rendering. The filename becomes the URL slug. Required frontmatter fields: `title`, `date`, `excerpt`. Optional: `tags` (array), `coverPosition` (CSS object-position for the full-width cover, default `"center 30%"`; use e.g. `"center 12%"` if a face gets cropped), `draft: true` (shows in `npm run dev` only, hidden from the live site, listing, and sitemap).
+
+**Draft board:** `public/draft-board-2026.html` needs `public/board-data.js` beside it (it loads player data from that file). Both are copies from `~/Documents/Projects/sleeper draft guide/`; copy both when updating.
 
 **SEO and sharing:** `app/layout.tsx` sets the site-wide title template (`%s | Camden Weber`) and description; each page sets its own short `title` and `description`. `app/icon.png`, `app/apple-icon.png`, `app/opengraph-image.jpg` and `app/twitter-image.jpg` are picked up automatically by Next.js. `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`. The site URL lives in `lib/site.ts`; change it there when a custom domain is added.
 
@@ -58,6 +60,10 @@ Custom Tailwind color palette. The values live as CSS variables in `app/globals.
 - `snow` / `ink` — fixed light and dark that never switch. Use them for text and shading on top of photos (e.g. the home hero).
 
 Don't hardcode hex colors in components; use the palette so dark mode keeps working.
+
+Also in the palette: `paper` (slightly lifted card surface: race bibs, home photo cards). Extra font: `font-cond` (Barlow Condensed Bold, self-hosted in `app/fonts`) for race bib numbers and race times only.
+
+Recreation page personality: `components/Topo.tsx` draws faint topographic lines behind the header; the three summary links are moss "trail signs"; PRs and the next race are race bibs (`Bib` in `app/recreation/page.tsx`); section titles and favorite hikes use a small rust trail-blaze marker. Keep this flavor on Recreation; the rest of the site stays calmer.
 
 `components/Reveal.tsx` is a `<section>` that fades in when scrolled into view (used on Resume, Recreation, project pages, and the home intro strip). It respects the visitor's reduce-motion setting.
 

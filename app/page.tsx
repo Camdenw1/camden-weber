@@ -2,6 +2,37 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Reveal from '@/components/Reveal'
 
+const introCards = [
+  {
+    title: 'The Person',
+    image: '/images/about.jpg',
+    alt: 'Camden backpacking on a dry creek trail',
+    imagePosition: 'object-center',
+    text: 'UCLA grad, analyst at Vail Resorts, and lacrosse coach. When I’m not working with data, I’m running trails, skiing, or playing basketball.',
+    links: [{ href: '/about', label: 'About me →' }],
+  },
+  {
+    title: 'The Work',
+    image: '/images/home/draft-board.jpg',
+    alt: 'Camden’s fantasy football draft board',
+    imagePosition: 'object-top',
+    text: 'Automating finance work at Vail Resorts, the AI agents I built to run my own week, and what I’m learning in Georgia Tech’s AI program.',
+    links: [
+      { href: '/resume', label: 'See my resume →' },
+      { href: '/resume#projects', label: 'Projects →' },
+      { href: '/georgia-tech', label: 'Georgia Tech learning log →' },
+    ],
+  },
+  {
+    title: 'The Writing',
+    image: '/images/blog/an-ode-to-basketball.jpg',
+    alt: 'Camden with his basketball group',
+    imagePosition: 'object-center',
+    text: 'Personal stories, lessons learned, and interesting insights. Occasionally technical, always honest.',
+    links: [{ href: '/blog', label: 'Read the blog →' }],
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -44,41 +75,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intro strip */}
-      <Reveal className="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-12 border-t border-stone/20">
-        <div>
-          <h2 className="font-serif text-xl mb-3">The Person</h2>
-          <p className="text-bark/90 text-[0.95rem] leading-relaxed">
-            UCLA grad, analyst at Vail Resorts, and lacrosse coach. When I&apos;m not working with data, I&apos;m running trails, skiing, or playing basketball. This is the full picture.
-          </p>
-          <Link href="/about" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
-            About me →
-          </Link>
-        </div>
-        <div>
-          <h2 className="font-serif text-xl mb-3">The Work</h2>
-          <p className="text-bark/90 text-[0.95rem] leading-relaxed">
-            Automating finance work at Vail Resorts, the AI agents I built to run my own week, and what I&apos;m learning in Georgia Tech&apos;s AI program.
-          </p>
-          <Link href="/resume" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
-            See my resume →
-          </Link>
-          <Link href="/resume#projects" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
-            Projects →
-          </Link>
-          <Link href="/georgia-tech" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
-            Georgia Tech learning log →
-          </Link>
-        </div>
-        <div>
-          <h2 className="font-serif text-xl mb-3">The Writing</h2>
-          <p className="text-bark/90 text-[0.95rem] leading-relaxed">
-            Personal stories, lessons learned, and interesting insights. Occasionally technical, always honest.
-          </p>
-          <Link href="/blog" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
-            Read the blog →
-          </Link>
-        </div>
+      {/* Intro cards */}
+      <Reveal className="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-6 border-t border-stone/20">
+        {introCards.map((card) => (
+          <div key={card.title} className="group bg-paper border border-stone/20 overflow-hidden flex flex-col">
+            <Link href={card.links[0].href} className="relative block aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-stone/10">
+              <Image
+                src={card.image}
+                alt={card.alt}
+                fill
+                sizes="(max-width: 767px) calc(100vw - 3rem), 20rem"
+                className={`object-cover ${card.imagePosition} group-hover:scale-[1.03] transition-transform duration-500`}
+              />
+            </Link>
+            <div className="p-5 flex-1 flex flex-col">
+              <h2 className="font-serif text-xl mb-2">{card.title}</h2>
+              <p className="text-bark/90 text-[0.95rem] leading-relaxed">{card.text}</p>
+              <div className="mt-auto pt-4 space-y-1.5">
+                {card.links.map((link) => (
+                  <Link key={link.href} href={link.href} className="block text-rust text-sm hover:underline underline-offset-4">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </Reveal>
     </>
   )
