@@ -34,49 +34,40 @@ export default function About() {
         <div className="space-y-5 text-[1.05rem] leading-relaxed text-bark/90 font-sans">
           <p>
             My love for data started with fantasy football. I wanted to make
-            the best possible decisions with numbers instead of gut feel, and
-            that curiosity carried me through a Data Theory degree at UCLA
-            (Summa Cum Laude, minor in Data Science Engineering) and an
-            internship at a sports data startup, Breakaway Data. From there I
-            became a Financial Analytics Analyst at Vail Resorts, combining my
-            passion for skiing with my data background. I still build{' '}
+            decisions with numbers instead of gut feel. That led me to a Data
+            Theory degree at UCLA, where I graduated Summa Cum Laude, and an
+            internship at a sports data startup, Breakaway Data. Now I&apos;m a
+            Financial Analytics Analyst at Vail Resorts, which lets me combine
+            skiing with data. And I still build{' '}
             <Link href="/projects/fantasy-football" className="text-rust underline underline-offset-4 hover:text-bark">
               fantasy football tools
-            </Link>{' '}
-            today.
+            </Link>
+            .
           </p>
           <p>
-            More recently, I&apos;ve become fascinated by AI. I see it as a
-            powerful tool that we have a responsibility to use for good. At its
-            best, it can make life easier, free us from mundane administrative
-            work, and give us more time to focus on what matters most. I&apos;m
-            especially hopeful about its potential to drive meaningful
-            innovation in health and the environment. If we can harness this
-            technology responsibly, boosting productivity while improving
-            people&apos;s lives, it could become one of humanity&apos;s greatest
-            success stories. The risks are real, though, and I hope we can come
-            together to guide its development toward the greater good.
+            More recently I&apos;ve gotten really into AI. At its best it takes
+            the boring admin work off your plate so you can spend time on what
+            matters. I&apos;m most hopeful about what it could do for health and
+            the environment. The risks are real too, and I think the people
+            building with it have a responsibility to get it right.
           </p>
           <p>
             That&apos;s why I&apos;m studying AI at Georgia Tech, and why I{' '}
             <Link href="/projects/personal-automation-system" className="text-rust underline underline-offset-4 hover:text-bark">
               built a set of AI agents to run my own week
             </Link>
-            . The work I want to do is building automation that takes tedious work off people&apos;s plates.
+            . It&apos;s the kind of work I want to keep doing: building
+            automation that handles the tedious stuff so people don&apos;t have to.
           </p>
           <p>
-            Outside of work, I spend most of my time outdoors. I love running, 
-            hiking, skiing, and backpacking as ways to explore the world. I also play 
-            basketball with my friends multiple times a week and I coach the 
-            JV lacrosse team. Sports and the outdoors define a big chunk of 
-            who I am. 
+            Outside of work, I spend most of my time outdoors: running, hiking,
+            skiing, and backpacking. I also play basketball with friends a few
+            times a week and coach the JV lacrosse team. Sports and the outdoors
+            are a big part of who I am.
           </p>
           <p>
-            This site will serve as the home to my work, writing, and the things 
-            I care about, both professionally and recreationally. I want to 
-            share my experiences with the world and the insights I got out 
-            of them. I intend for this website to grow as I grow, so check 
-            back often.
+            This site is where I put my work, my writing, and the stuff I care
+            about outside of it. It&apos;ll grow as I do.
           </p>
         </div>
 
