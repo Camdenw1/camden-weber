@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { featuredProjects, getProjectBySlug } from '@/lib/projects'
+import Reveal from '@/components/Reveal'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -36,7 +37,7 @@ export default async function ProjectPage({ params }: Props) {
           {[project.context, project.year].filter(Boolean).join(' · ')}
         </p>
         <h1 className="font-serif text-4xl md:text-5xl font-semibold leading-tight mb-5">{project.title}</h1>
-        <p className="text-lg text-bark/80 leading-relaxed mb-6">{project.summary}</p>
+        <p className="text-lg text-bark/90 leading-relaxed mb-6">{project.summary}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
             <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">{tag}</span>
@@ -49,7 +50,7 @@ export default async function ProjectPage({ params }: Props) {
         )}
 
         {project.sections.map((section) => (
-          <section key={section.heading} className="border-t border-stone/30 pt-8 mt-10">
+          <Reveal key={section.heading} className="border-t border-stone/30 pt-8 mt-10">
             <h2 className="font-serif text-2xl mb-4">{section.heading}</h2>
             <div className="space-y-4 text-bark/90 leading-relaxed">
               {section.paragraphs?.map((p) => <p key={p}>{p}</p>)}
@@ -64,7 +65,7 @@ export default async function ProjectPage({ params }: Props) {
                 ))}
               </ul>
             )}
-          </section>
+          </Reveal>
         ))}
 
         {others.length > 0 && (

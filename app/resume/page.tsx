@@ -7,6 +7,7 @@ import {
 } from '@/lib/resume'
 import { projects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
+import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
   title: 'Resume',
@@ -29,7 +30,7 @@ function RoleBlock({ item }: { item: Role }) {
       </div>
       <ul className="space-y-2">
         {item.bullets.map((b) => (
-          <li key={b} className="flex gap-3 text-sm text-bark/80 leading-relaxed">
+          <li key={b} className="flex gap-3 text-[0.95rem] text-bark/90 leading-relaxed">
             <span className="text-rust mt-0.5 shrink-0">—</span>
             <span>{b}</span>
           </li>
@@ -52,7 +53,7 @@ export default function Resume() {
           <div>
             <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-3">Resume</p>
             <h1 className="font-serif text-4xl font-semibold">Camden Weber</h1>
-            <p className="text-bark/80 mt-2">{headline}</p>
+            <p className="text-bark/90 mt-2">{headline}</p>
             <p className="text-stone text-sm mt-2 flex flex-wrap gap-x-3 gap-y-1">
               <span>{location}</span>
               <a href={`mailto:${email}`} className="hover:text-rust transition-colors">{email}</a>
@@ -69,14 +70,14 @@ export default function Resume() {
           </a>
         </div>
 
-        <section className="mb-14">
+        <Reveal className="mb-14">
           <SectionTitle>Experience</SectionTitle>
           <div className="space-y-10">
             {experience.map((job) => <RoleBlock key={job.org} item={job} />)}
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mb-14">
+        <Reveal className="mb-14">
           <SectionTitle>Education</SectionTitle>
           <div className="space-y-8">
             {education.map((ed) => (
@@ -90,7 +91,7 @@ export default function Resume() {
                 </div>
                 <ul className="space-y-1">
                   {ed.details.map((d) => (
-                    <li key={d} className="flex gap-3 text-sm text-bark/80 leading-relaxed">
+                    <li key={d} className="flex gap-3 text-[0.95rem] text-bark/90 leading-relaxed">
                       <span className="text-rust mt-0.5 shrink-0">—</span>
                       <span>{d}</span>
                     </li>
@@ -104,9 +105,9 @@ export default function Resume() {
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
 
-        <section id="projects" className="mb-14 scroll-mt-28">
+        <Reveal id="projects" className="mb-14 scroll-mt-28">
           <SectionTitle>Projects</SectionTitle>
           <div className="space-y-10">
             {featured.map((p) => <ProjectCard key={p.slug} project={p} />)}
@@ -114,47 +115,47 @@ export default function Resume() {
           <div className="space-y-8 mt-10">
             {earlier.map((p) => <ProjectCard key={p.slug} project={p} />)}
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mb-14">
+        <Reveal className="mb-14">
           <SectionTitle>Skills</SectionTitle>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, items]) => (
               <div key={category}>
                 <p className="text-xs uppercase tracking-widest text-stone mb-2">{category}</p>
                 <ul className="space-y-1">
-                  {items.map((item) => <li key={item} className="text-sm text-bark/80">{item}</li>)}
+                  {items.map((item) => <li key={item} className="text-sm text-bark/90">{item}</li>)}
                 </ul>
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
 
-        <section className="mb-14">
+        <Reveal className="mb-14">
           <SectionTitle>Extracurriculars</SectionTitle>
           <div className="space-y-10">
             {extracurriculars.map((item) => <RoleBlock key={item.org} item={item} />)}
           </div>
-        </section>
+        </Reveal>
 
-        <section>
+        <Reveal>
           <SectionTitle>Certifications &amp; Interests</SectionTitle>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <p className="text-xs uppercase tracking-widest text-stone mb-2">Certifications</p>
-              <ul className="space-y-1 text-sm text-bark/80">
+              <ul className="space-y-1 text-sm text-bark/90">
                 {certifications.map((c) => <li key={c}>{c}</li>)}
               </ul>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest text-stone mb-2">Interests</p>
-              <p className="text-sm text-bark/80 leading-relaxed">{interests}</p>
+              <p className="text-sm text-bark/90 leading-relaxed">{interests}</p>
               <Link href="/recreation" className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
                 The recreational resume →
               </Link>
             </div>
           </div>
-        </section>
+        </Reveal>
 
       </div>
     </div>

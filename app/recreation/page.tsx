@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TravelMapClient from '@/components/TravelMapClient'
+import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
   title: 'Recreation',
@@ -108,26 +109,27 @@ export default function RecreationPage() {
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
+        <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
+        <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4 leading-tight">
           Recreational Resume
         </h1>
-        <p className="text-stone text-sm md:text-base mb-10 leading-relaxed max-w-xl">
+        <p className="text-bark/80 text-base mb-10 leading-relaxed max-w-xl">
           A running log of the places I&apos;ve been, mountains I&apos;ve skied, trails I&apos;ve hiked,
           and everything else that makes life worth working hard for.
         </p>
 
         <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a href="#travel" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+          <a href="#travel" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
             <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Travel</span>
             <span className="block font-serif text-xl text-bark">56 places, 4 continents</span>
             <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Explore the map ↓</span>
           </a>
-          <a href="#racing" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+          <a href="#racing" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
             <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Racing</span>
             <span className="block font-serif text-xl text-bark">3:27 marathon, 1:39 half</span>
             <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">See the races ↓</span>
           </a>
-          <a href="#outdoors" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+          <a href="#outdoors" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
             <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Outdoors</span>
             <span className="block font-serif text-xl text-bark">Whitney &amp; Rae Lakes</span>
             <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Read the highlights ↓</span>
@@ -135,16 +137,16 @@ export default function RecreationPage() {
         </nav>
 
         {/* ── Section 1: Travel Map ──────────────────────────────────────── */}
-        <section id="travel" className="mb-20 scroll-mt-28">
+        <Reveal id="travel" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
             56 locations across 4 continents
           </p>
-        </section>
+        </Reveal>
 
         {/* ── Section 2: Racing ─────────────────────────────────────────── */}
-        <section id="racing" className="mb-20 scroll-mt-28">
+        <Reveal id="racing" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Racing &amp; Goals</h2>
 
           {/* Stat cards */}
@@ -210,10 +212,10 @@ export default function RecreationPage() {
               </tbody>
             </table>
           </div>
-        </section>
+        </Reveal>
 
         {/* ── Section 3: The Outdoors ───────────────────────────────────── */}
-        <section id="outdoors" className="mb-20 scroll-mt-28">
+        <Reveal id="outdoors" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">The Outdoors</h2>
 
           <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
@@ -221,7 +223,7 @@ export default function RecreationPage() {
             {outdoorMilestones.map((milestone) => (
               <div key={milestone.title} className="border-l-2 border-rust pl-5">
                 <h4 className="font-serif text-xl text-bark">{milestone.title}</h4>
-                <p className="font-sans text-sm text-stone mt-1">{milestone.detail}</p>
+                <p className="font-sans text-[0.95rem] text-bark/80 mt-1">{milestone.detail}</p>
                 {milestone.href && (
                   <Link href={milestone.href} className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
                     Read the story →
@@ -297,10 +299,10 @@ export default function RecreationPage() {
             </div>
 
           </div>
-        </section>
+        </Reveal>
 
         {/* ── Section 4: Experiences ────────────────────────────────────── */}
-        <section className="mb-20">
+        <Reveal className="mb-20">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Other Things I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {experiences.map((exp) => (
@@ -309,11 +311,11 @@ export default function RecreationPage() {
                   <h3 className="font-serif text-lg text-bark">{exp.title}</h3>
                   <span className="font-sans text-xs text-stone uppercase tracking-widest">{exp.sub}</span>
                 </div>
-                <p className="font-sans text-sm text-stone leading-relaxed">{exp.description}</p>
+                <p className="font-sans text-[0.95rem] text-bark/80 leading-relaxed">{exp.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
 
       </div>
     </div>

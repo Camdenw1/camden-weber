@@ -33,7 +33,7 @@ export default function PostCoverFallback({ slug, title, tags, readingTime }: Pr
 
       {/* Title */}
       <div className="relative flex-1 flex items-center justify-center px-2">
-        <p className="font-serif text-cream text-center leading-snug line-clamp-3 text-xl md:text-2xl">
+        <p className="font-serif text-snow text-center leading-snug line-clamp-3 text-xl md:text-2xl">
           {title}
         </p>
       </div>
@@ -41,12 +41,12 @@ export default function PostCoverFallback({ slug, title, tags, readingTime }: Pr
       {/* Bottom meta */}
       <div className="relative flex items-center gap-2 flex-wrap">
         {tags?.slice(0, 2).map(tag => (
-          <span key={tag} className="text-xs text-cream/60 border border-cream/20 px-1.5 py-0.5 font-sans">
+          <span key={tag} className="text-xs text-snow/60 border border-snow/20 px-1.5 py-0.5 font-sans">
             {tag}
           </span>
         ))}
         {readingTime && (
-          <span className="text-xs text-cream/40 font-sans ml-auto">{readingTime} min read</span>
+          <span className="text-xs text-snow/40 font-sans ml-auto">{readingTime} min read</span>
         )}
       </div>
     </div>

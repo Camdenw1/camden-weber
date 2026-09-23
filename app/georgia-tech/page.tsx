@@ -30,7 +30,7 @@ export default function GeorgiaTechPage() {
                 <span className="text-xs uppercase tracking-widest text-stone">{course.status}</span>
               </div>
               {course.code && <p className="text-xs uppercase tracking-widest text-stone mb-2">{course.code}</p>}
-              <p className="text-sm text-bark/80 leading-relaxed mb-3">
+              <p className="text-sm text-bark/90 leading-relaxed mb-3">
                 {course.why ?? 'I’m just getting started. I’ll add my thoughts as the course progresses.'}
               </p>
               <span className="text-rust text-sm">Open class notes →</span>

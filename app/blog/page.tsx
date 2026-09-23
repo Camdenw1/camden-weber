@@ -53,7 +53,7 @@ export default function BlogIndex() {
                       <h3 className="font-serif text-xl mb-2 group-hover:text-rust transition-colors leading-snug">
                         {post.title}
                       </h3>
-                      <p className="text-stone text-sm leading-relaxed mb-3">{post.excerpt}</p>
+                      <p className="text-bark/80 text-[0.95rem] leading-relaxed mb-3">{post.excerpt}</p>
                       {post.tags && post.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-3">
                           {post.tags.map(tag => (
