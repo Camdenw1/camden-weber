@@ -109,10 +109,11 @@ export default function RecreationPage() {
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <h1 className="font-serif text-3xl md:text-5xl font-semibold mb-4 leading-tight">
+        <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
+        <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4 leading-tight">
           Recreational Resume
         </h1>
-        <p className="text-stone text-sm md:text-base mb-10 leading-relaxed max-w-xl">
+        <p className="text-bark/80 text-base mb-10 leading-relaxed max-w-xl">
           A running log of the places I&apos;ve been, mountains I&apos;ve skied, trails I&apos;ve hiked,
           and everything else that makes life worth working hard for.
         </p>
@@ -222,7 +223,7 @@ export default function RecreationPage() {
             {outdoorMilestones.map((milestone) => (
               <div key={milestone.title} className="border-l-2 border-rust pl-5">
                 <h4 className="font-serif text-xl text-bark">{milestone.title}</h4>
-                <p className="font-sans text-sm text-stone mt-1">{milestone.detail}</p>
+                <p className="font-sans text-[0.95rem] text-bark/80 mt-1">{milestone.detail}</p>
                 {milestone.href && (
                   <Link href={milestone.href} className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
                     Read the story →
@@ -310,7 +311,7 @@ export default function RecreationPage() {
                   <h3 className="font-serif text-lg text-bark">{exp.title}</h3>
                   <span className="font-sans text-xs text-stone uppercase tracking-widest">{exp.sub}</span>
                 </div>
-                <p className="font-sans text-sm text-stone leading-relaxed">{exp.description}</p>
+                <p className="font-sans text-[0.95rem] text-bark/80 leading-relaxed">{exp.description}</p>
               </div>
             ))}
           </div>
