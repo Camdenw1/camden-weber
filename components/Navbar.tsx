@@ -8,6 +8,7 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/resume', label: 'Resume' },
+  { href: '/projects', label: 'Projects' },
   { href: '/recreation', label: 'Recreation' },
   { href: '/blog', label: 'Blog' },
 ]
@@ -30,7 +31,7 @@ export default function Navbar() {
               key={href}
               href={href}
               className={`text-sm tracking-wide transition-colors ${
-                pathname === href
+                (href === '/' ? pathname === '/' : pathname.startsWith(href))
                   ? 'text-rust font-medium'
                   : 'text-stone hover:text-bark'
               }`}
@@ -63,7 +64,7 @@ export default function Navbar() {
               href={href}
               onClick={() => setMenuOpen(false)}
               className={`text-sm tracking-wide ${
-                pathname === href ? 'text-rust font-medium' : 'text-stone'
+                (href === '/' ? pathname === '/' : pathname.startsWith(href)) ? 'text-rust font-medium' : 'text-stone'
               }`}
             >
               {label}

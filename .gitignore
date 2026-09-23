@@ -25,3 +25,7 @@
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code (local only)
+.claude/settings.local.json
+.claude/worktrees/

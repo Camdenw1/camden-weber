@@ -17,7 +17,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) notFound()
-  return { title: `${post.title} — Camden Weber` }
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      // Posts with a cover photo use it as the link preview; others fall back to the site image.
+      ...(post.coverImage ? { images: [post.coverImage] } : {}),
+    },
+  }
 }
 
 async function markdownToHtml(markdown: string) {

@@ -5,7 +5,8 @@ import { getAllPosts } from '@/lib/posts'
 import PostCoverFallback from '@/components/PostCoverFallback'
 
 export const metadata: Metadata = {
-  title: 'Blog — Camden Weber',
+  title: 'Blog',
+  description: 'Personal stories, lessons learned, and interesting insights from Camden Weber.',
 }
 
 export default function BlogIndex() {

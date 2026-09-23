@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About — Camden Weber',
+  title: 'About',
+  description: 'Who Camden Weber is: how fantasy football got him into data, why he builds AI and automation, and what he does outside work.',
 }
 
 export default function About() {
@@ -31,13 +33,17 @@ export default function About() {
         {/* Bio */}
         <div className="space-y-5 text-[1.05rem] leading-relaxed text-bark/90 font-sans">
           <p>
-            Sparked from a love for fantasy football, I am a data professional 
-            who loves analyzing numbers to make the best possible decisions. I 
-            graduated Summa Cum Laude from UCLA with a degree in Data Theory and 
-            a minor in Data Science Engineering. This coupled with internship 
-            experience at a sports data startup, Breakaway Data, I got my first 
-            job as a Financial Analytics Analyst at Vail Resorts, combining my 
-            passion for skiing with my data background.
+            My love for data started with fantasy football. I wanted to make
+            the best possible decisions with numbers instead of gut feel, and
+            that curiosity carried me through a Data Theory degree at UCLA
+            (Summa Cum Laude, minor in Data Science Engineering) and an
+            internship at a sports data startup, Breakaway Data. From there I
+            became a Financial Analytics Analyst at Vail Resorts, combining my
+            passion for skiing with my data background. I still build{' '}
+            <Link href="/projects/fantasy-football" className="text-rust underline underline-offset-4 hover:text-bark">
+              fantasy football tools
+            </Link>{' '}
+            today.
           </p>
           <p>
             More recently, I&apos;ve become fascinated by AI. I see it as a
@@ -46,10 +52,17 @@ export default function About() {
             work, and give us more time to focus on what matters most. I&apos;m
             especially hopeful about its potential to drive meaningful
             innovation in health and the environment. If we can harness this
-            technology responsibly—boosting productivity while improving
-            people&apos;s lives—it could become one of humanity&apos;s greatest
+            technology responsibly, boosting productivity while improving
+            people&apos;s lives, it could become one of humanity&apos;s greatest
             success stories. The risks are real, though, and I hope we can come
             together to guide its development toward the greater good.
+          </p>
+          <p>
+            That&apos;s why I&apos;m studying AI at Georgia Tech, and why I{' '}
+            <Link href="/projects/personal-automation-system" className="text-rust underline underline-offset-4 hover:text-bark">
+              built a set of AI agents to run my own week
+            </Link>
+            . The work I want to do is building automation that takes tedious work off people&apos;s plates.
           </p>
           <p>
             Outside of work, I spend most of my time outdoors. I love running, 
@@ -76,6 +89,8 @@ export default function About() {
             { label: 'Based in', value: 'San Diego, CA' },
             { label: 'Education', value: 'UCLA, B.S. Data Theory' },
             { label: 'Currently', value: 'Financial Analytics Analyst at Vail Resorts' },
+            { label: 'Studying', value: 'M.S. Computer Science (AI), Georgia Tech' },
+            { label: 'Building', value: 'AI agents and automation' },
             { label: 'Interests', value: 'Outdoors & sports' },
           ].map(({ label, value }) => (
             <div key={label}>

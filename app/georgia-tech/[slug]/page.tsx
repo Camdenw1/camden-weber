@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const course = getCourseBySlug(slug)
   if (!course) notFound()
-  return { title: `${course.title} | Georgia Tech | Camden Weber` }
+  return { title: `${course.title} | Georgia Tech`, description: course.why }
 }
 
 export default async function CoursePage({ params }: Props) {

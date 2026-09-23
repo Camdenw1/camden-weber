@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { courses } from '@/lib/georgia-tech'
 
 export const metadata: Metadata = {
-  title: 'Georgia Tech Coursework | Camden Weber',
+  title: 'Georgia Tech Coursework',
   description: 'A running notebook on Camden Weber’s Georgia Tech coursework.',
 }
 

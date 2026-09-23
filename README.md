@@ -2,6 +2,8 @@
 
 Personal portfolio, blog, and career hub. Built with Next.js 15, Tailwind CSS, and deployed on Vercel.
 
+New blog post from Claude Code: `/new-post "Title" path/to/photo.jpg`.
+
 ## Stack
 - **Framework**: Next.js 15 (App Router)
 - **Styling**: Tailwind CSS
@@ -45,7 +47,9 @@ Edit the course entries in `lib/georgia-tech.ts`. Each entry has a page at `/geo
 - **About photo**: Replace `/public/images/about.jpg`
 - **Resume PDF**: Add your PDF as `/public/Camden_Weber_Resume.pdf`
 - **Links**: Update GitHub, LinkedIn, and email in `components/Footer.tsx`
-- **Content**: Update placeholder text in `app/about/page.tsx` and `app/resume/page.tsx`
+- **Resume**: Edit `lib/resume.ts` (experience, education, skills, certifications)
+- **Projects**: Edit `lib/projects.ts`. A project with `sections` gets its own page at `/projects/<slug>`
+- **About**: Edit `app/about/page.tsx`
 
 ## Deploying to Vercel
 
