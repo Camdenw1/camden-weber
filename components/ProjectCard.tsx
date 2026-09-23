@@ -12,7 +12,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <h3 className={`font-serif text-lg mb-1 ${hasPage ? 'group-hover:text-rust transition-colors' : ''}`}>
         {project.title}
       </h3>
-      <p className="text-sm text-bark/80 leading-relaxed mb-3">{project.summary}</p>
+      <p className="text-[0.95rem] text-bark/90 leading-relaxed mb-3">{project.summary}</p>
       <div className="flex flex-wrap gap-2">
         {project.tags.map((tag) => (
           <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   )
 
   return hasPage ? (
-    <Link href={`/projects/${project.slug}`} className="group block border-l-2 border-rust/60 pl-5 hover:border-rust transition-colors">
+    <Link href={`/projects/${project.slug}`} className="group block border-l-2 border-rust/60 pl-5 hover:border-rust hover:translate-x-1 transition-[border-color,transform] duration-300">
       {body}
     </Link>
   ) : (

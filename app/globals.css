@@ -3,8 +3,36 @@
 @tailwind utilities;
 
 :root {
+  /* Theme colors as "R G B" so Tailwind can add opacity (e.g. text-bark/80) */
+  --cream: 249 247 244;  /* #F9F7F4 background */
+  --bark: 28 28 26;      /* #1C1C1A text */
+  --moss: 74 82 64;      /* #4A5240 green accent */
+  --stone: 103 97 92;    /* #67615C muted text */
+  --rust: 170 83 47;     /* #AA532F links and highlights */
+  --nav: 240 237 232;    /* #F0EDE8 navbar */
+  --code: 238 236 232;   /* #EEECE8 inline code */
+  color-scheme: light;
+
   --font-serif: var(--font-lora), Georgia, Cambria, 'Times New Roman', serif;
   --font-sans: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* Dark mode follows the visitor's phone or computer setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: 22 22 20;     /* #161614 */
+    --bark: 236 232 225;   /* #ECE8E1 */
+    --moss: 154 168 138;   /* #9AA88A */
+    --stone: 166 159 151;  /* #A69F97 */
+    --rust: 222 124 84;    /* #DE7C54 */
+    --nav: 30 30 27;       /* #1E1E1B */
+    --code: 42 42 39;      /* #2A2A27 */
+    color-scheme: dark;
+  }
+
+  /* Darken the travel map's tiles (not the pins) so it doesn't glare */
+  .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9); }
+  .leaflet-container { background: rgb(var(--cream)); }
 }
 
 html {
@@ -12,8 +40,17 @@ html {
 }
 
 body {
-  background-color: #F9F7F4;
-  color: #1C1C1A;
+  background-color: rgb(var(--cream));
+  color: rgb(var(--bark));
+}
+
+/* Sections that fade in as you scroll to them (components/Reveal.tsx) */
+.reveal-hidden { opacity: 0; transform: translateY(16px); }
+.reveal-shown { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3, .fade-up-delay-4 { animation: none; opacity: 1; }
 }
 
 /* Typography */
@@ -43,18 +80,18 @@ h1, h2, h3 {
 .fade-up-delay-4 { animation-delay: 0.55s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.7s; }
 
 /* Prose styles for blog posts */
-.prose-camden h1 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; color: #1C1C1A; }
-.prose-camden h2 { font-family: var(--font-serif); font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; color: #1C1C1A; }
+.prose-camden h1 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; color: rgb(var(--bark)); }
+.prose-camden h2 { font-family: var(--font-serif); font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; color: rgb(var(--bark)); }
 .prose-camden h3 { font-family: var(--font-serif); font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-.prose-camden p { line-height: 1.8; margin-bottom: 1.25rem; color: #3a3a38; }
-.prose-camden a { color: #AA532F; text-decoration: underline; text-underline-offset: 3px; }
+.prose-camden p { line-height: 1.8; margin-bottom: 1.25rem; color: rgb(var(--bark) / 0.88); }
+.prose-camden a { color: rgb(var(--rust)); text-decoration: underline; text-underline-offset: 3px; }
 .prose-camden ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
 .prose-camden li { margin-bottom: 0.4rem; line-height: 1.7; }
-.prose-camden blockquote { border-left: 3px solid #AA532F; padding-left: 1.25rem; font-style: italic; color: #4A5240; margin: 1.5rem 0; }
-.prose-camden code { background: #eeece8; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.875rem; }
+.prose-camden blockquote { border-left: 3px solid rgb(var(--rust)); padding-left: 1.25rem; font-style: italic; color: rgb(var(--moss)); margin: 1.5rem 0; }
+.prose-camden code { background: rgb(var(--code)); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.875rem; }
 .prose-camden pre { background: #1C1C1A; color: #F9F7F4; padding: 1.25rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1.5rem; }
 .prose-camden pre code { background: none; padding: 0; }
-.prose-camden hr { border-color: #e0ddd8; margin: 2rem 0; }
+.prose-camden hr { border-color: rgb(var(--stone) / 0.25); margin: 2rem 0; }
 .prose-camden img { max-width: 100%; height: auto; display: block; margin: 2rem auto; border-radius: 4px; }
 .prose-camden p:has(> img) { text-align: center; margin-bottom: 0; }
-.prose-camden p:has(> img) + p > em { display: block; text-align: center; font-size: 0.8rem; color: #756F6A; font-style: normal; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+.prose-camden p:has(> img) + p > em { display: block; text-align: center; font-size: 0.8rem; color: rgb(var(--stone)); font-style: normal; margin-top: 0.5rem; margin-bottom: 1.5rem; }

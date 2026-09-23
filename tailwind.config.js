@@ -7,12 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Theme colors come from CSS variables in app/globals.css, so they
+      // switch automatically in dark mode. `snow` and `ink` never switch:
+      // use them for text and shading on top of photos.
       colors: {
-        cream: '#F9F7F4',
-        bark: '#1C1C1A',
-        moss: '#4A5240',
-        stone: '#756F6A',
-        rust: '#AA532F',
+        cream: 'rgb(var(--cream) / <alpha-value>)',
+        bark: 'rgb(var(--bark) / <alpha-value>)',
+        moss: 'rgb(var(--moss) / <alpha-value>)',
+        stone: 'rgb(var(--stone) / <alpha-value>)',
+        rust: 'rgb(var(--rust) / <alpha-value>)',
+        snow: '#F9F7F4',
+        ink: '#1C1C1A',
       },
       fontFamily: {
         serif: ['var(--font-lora)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],

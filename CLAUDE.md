@@ -49,12 +49,17 @@ Write first-person site copy in Camden's direct, conversational voice. Keep it c
 
 ## Styling
 
-Custom Tailwind color palette (defined in `tailwind.config.js`):
+Custom Tailwind color palette. The values live as CSS variables in `app/globals.css` (light values in `:root`, dark values under `prefers-color-scheme: dark`), and `tailwind.config.js` points at them, so every page gets dark mode automatically:
 - `cream` (#F9F7F4) — background
 - `bark` (#1C1C1A) — primary text
 - `moss` (#4A5240) — accent green
-- `stone` (#756F6A) — muted text
+- `stone` (#67615C) — muted text
 - `rust` (#AA532F) — accent/links/CTAs
+- `snow` / `ink` — fixed light and dark that never switch. Use them for text and shading on top of photos (e.g. the home hero).
+
+Don't hardcode hex colors in components; use the palette so dark mode keeps working.
+
+`components/Reveal.tsx` is a `<section>` that fades in when scrolled into view (used on Resume, Recreation, project pages, and the home intro strip). It respects the visitor's reduce-motion setting.
 
 Fonts: `serif` = Lora, `sans` = DM Sans, self-hosted from `app/fonts/*.woff2` and loaded in `app/layout.tsx` via `next/font/local` as the CSS variables `--font-lora` and `--font-dm-sans` (used by `tailwind.config.js` and `app/globals.css`).
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TravelMapClient from '@/components/TravelMapClient'
+import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
   title: 'Recreation',
@@ -117,17 +118,17 @@ export default function RecreationPage() {
         </p>
 
         <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a href="#travel" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+          <a href="#travel" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
             <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Travel</span>
             <span className="block font-serif text-xl text-bark">56 places, 4 continents</span>
             <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Explore the map ↓</span>
           </a>
-          <a href="#racing" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+          <a href="#racing" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
             <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Racing</span>
             <span className="block font-serif text-xl text-bark">3:27 marathon, 1:39 half</span>
             <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">See the races ↓</span>
           </a>
-          <a href="#outdoors" className="group border border-stone/20 px-5 py-5 hover:border-rust focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-colors">
+          <a href="#outdoors" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
             <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Outdoors</span>
             <span className="block font-serif text-xl text-bark">Whitney &amp; Rae Lakes</span>
             <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Read the highlights ↓</span>
@@ -135,16 +136,16 @@ export default function RecreationPage() {
         </nav>
 
         {/* ── Section 1: Travel Map ──────────────────────────────────────── */}
-        <section id="travel" className="mb-20 scroll-mt-28">
+        <Reveal id="travel" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
             56 locations across 4 continents
           </p>
-        </section>
+        </Reveal>
 
         {/* ── Section 2: Racing ─────────────────────────────────────────── */}
-        <section id="racing" className="mb-20 scroll-mt-28">
+        <Reveal id="racing" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Racing &amp; Goals</h2>
 
           {/* Stat cards */}
@@ -210,10 +211,10 @@ export default function RecreationPage() {
               </tbody>
             </table>
           </div>
-        </section>
+        </Reveal>
 
         {/* ── Section 3: The Outdoors ───────────────────────────────────── */}
-        <section id="outdoors" className="mb-20 scroll-mt-28">
+        <Reveal id="outdoors" className="mb-20 scroll-mt-28">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">The Outdoors</h2>
 
           <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
@@ -297,10 +298,10 @@ export default function RecreationPage() {
             </div>
 
           </div>
-        </section>
+        </Reveal>
 
         {/* ── Section 4: Experiences ────────────────────────────────────── */}
-        <section className="mb-20">
+        <Reveal className="mb-20">
           <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Other Things I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {experiences.map((exp) => (
@@ -313,7 +314,7 @@ export default function RecreationPage() {
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
 
       </div>
     </div>
