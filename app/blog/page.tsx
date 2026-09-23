@@ -66,7 +66,7 @@ export default function BlogIndex() {
                       <div className="flex gap-4 text-stone text-xs font-sans">
                         <time>
                           {new Date(post.date).toLocaleDateString('en-US', {
-                            year: 'numeric', month: 'long', day: 'numeric',
+                            year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
                           })}
                         </time>
                         <span>{post.readingTime} min read</span>

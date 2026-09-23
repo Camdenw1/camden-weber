@@ -11,6 +11,7 @@
   --rust: 170 83 47;     /* #AA532F links and highlights */
   --nav: 240 237 232;    /* #F0EDE8 navbar */
   --code: 238 236 232;   /* #EEECE8 inline code */
+  --paper: 255 253 248;  /* #FFFDF8 cards that sit on the background (race bibs, photo cards) */
   color-scheme: light;
 
   --font-serif: var(--font-lora), Georgia, Cambria, 'Times New Roman', serif;
@@ -27,6 +28,7 @@
     --rust: 222 124 84;    /* #DE7C54 */
     --nav: 30 30 27;       /* #1E1E1B */
     --code: 42 42 39;      /* #2A2A27 */
+    --paper: 31 30 26;     /* #1F1E1A */
     color-scheme: dark;
   }
 

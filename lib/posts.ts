@@ -18,6 +18,8 @@ export type PostMeta = {
   coverImage: string | null
   readingTime: number
   draft: boolean
+  // Optional crop for the full-width cover, e.g. "center 20%" (CSS object-position)
+  coverPosition?: string
 }
 
 export type Post = PostMeta & {
@@ -82,6 +84,7 @@ export function getPostBySlug(slug: string): Post | null {
     coverImage: getCoverImage(slug),
     readingTime: calcReadingTime(content),
     draft: data.draft === true,
+    coverPosition: data.coverPosition,
     content,
   }
 }

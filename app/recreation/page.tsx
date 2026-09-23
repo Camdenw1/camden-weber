@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TravelMapClient from '@/components/TravelMapClient'
+import Topo from '@/components/Topo'
 import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
@@ -24,6 +25,13 @@ const raceLog = [
 
 const upcomingEvents = [
   { event: 'IRONMAN 70.3 Oceanside', location: 'Oceanside, CA', date: 'April 2027' },
+]
+
+// The three summary signs at the top of the page
+const trailSigns = [
+  { href: '#travel', label: 'Travel', value: '56 places', sub: '4 continents', cta: 'Explore the map ↓' },
+  { href: '#racing', label: 'Racing', value: '3:27 marathon', sub: '1:39 half', cta: 'See the races ↓' },
+  { href: '#outdoors', label: 'Highest point', value: '14,505 ft', sub: 'Mount Whitney', cta: 'Read the highlights ↓' },
 ]
 
 const outdoorMilestones = [
@@ -101,15 +109,45 @@ const experiences = [
   },
 ]
 
+// ── Pieces ────────────────────────────────────────────────────────────────────
+
+// A painted trail blaze, used as a marker for headings and lists
+function Blaze() {
+  return <span aria-hidden="true" className="inline-block w-1.5 h-3.5 bg-rust rounded-[1px] shrink-0" />
+}
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="flex items-center gap-3 font-serif text-2xl mb-8 pb-2 border-b border-stone/20">
+      <Blaze />
+      {children}
+    </h2>
+  )
+}
+
+// A race bib: colored band on top, pin holes, big condensed number
+function Bib({ band, value, sub }: { band: string; value: string; sub: string }) {
+  return (
+    <div className="relative bg-paper border border-stone/25 rounded-[3px] text-center pb-5 overflow-hidden">
+      <p className="bg-rust text-cream font-sans text-xs font-medium uppercase tracking-[0.16em] py-2">{band}</p>
+      <span aria-hidden="true" className="absolute top-12 left-3 w-2.5 h-2.5 rounded-full border border-stone/40 bg-cream" />
+      <span aria-hidden="true" className="absolute top-12 right-3 w-2.5 h-2.5 rounded-full border border-stone/40 bg-cream" />
+      <p className="font-cond text-6xl leading-none text-bark mt-5 mb-2 tabular-nums">{value}</p>
+      <p className="font-sans text-sm text-stone">{sub}</p>
+    </div>
+  )
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function RecreationPage() {
   return (
-    <div className="pt-32 pb-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <div className="relative pt-32 pb-24 px-6">
+      <Topo className="absolute inset-x-0 top-0 h-[34rem] w-full text-moss opacity-[0.16] pointer-events-none [mask-image:linear-gradient(to_bottom,black_55%,transparent)]" />
+      <div className="relative max-w-5xl mx-auto">
 
         {/* Header */}
-        <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
+        <p className="font-sans text-moss text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
         <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4 leading-tight">
           Recreational Resume
         </h1>
@@ -118,27 +156,25 @@ export default function RecreationPage() {
           and everything else that makes life worth working hard for.
         </p>
 
-        <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a href="#travel" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
-            <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Travel</span>
-            <span className="block font-serif text-xl text-bark">56 places, 4 continents</span>
-            <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Explore the map ↓</span>
-          </a>
-          <a href="#racing" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
-            <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Racing</span>
-            <span className="block font-serif text-xl text-bark">3:27 marathon, 1:39 half</span>
-            <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">See the races ↓</span>
-          </a>
-          <a href="#outdoors" className="group border border-stone/20 px-5 py-5 hover:border-rust hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-[border-color,transform] duration-300">
-            <span className="block font-sans text-xs uppercase tracking-widest text-stone mb-2">Outdoors</span>
-            <span className="block font-serif text-xl text-bark">Whitney &amp; Rae Lakes</span>
-            <span className="block font-sans text-xs text-rust mt-3 group-hover:underline underline-offset-4">Read the highlights ↓</span>
-          </a>
+        <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
+          {trailSigns.map((sign) => (
+            <a
+              key={sign.href}
+              href={sign.href}
+              className="group relative block bg-moss text-cream rounded-[3px] px-5 py-5 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-transform duration-300"
+            >
+              <span aria-hidden="true" className="absolute -top-1.5 left-5 w-3 h-3 rotate-45 bg-moss" />
+              <span className="block font-sans text-xs uppercase tracking-widest text-cream/80 mb-2">{sign.label}</span>
+              <span className="block font-serif text-2xl leading-tight">{sign.value}</span>
+              <span className="block font-sans text-sm text-cream/85">{sign.sub}</span>
+              <span className="block font-sans text-xs mt-3 text-cream/90 group-hover:underline underline-offset-4">{sign.cta}</span>
+            </a>
+          ))}
         </nav>
 
         {/* ── Section 1: Travel Map ──────────────────────────────────────── */}
         <Reveal id="travel" className="mb-20 scroll-mt-28">
-          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Travel</h2>
+          <SectionTitle>Travel</SectionTitle>
           <TravelMapClient />
           <p className="text-stone text-xs font-sans mt-3 text-center tracking-wide">
             56 locations across 4 continents
@@ -147,22 +183,14 @@ export default function RecreationPage() {
 
         {/* ── Section 2: Racing ─────────────────────────────────────────── */}
         <Reveal id="racing" className="mb-20 scroll-mt-28">
-          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Racing &amp; Goals</h2>
+          <SectionTitle>Racing &amp; Goals</SectionTitle>
 
-          {/* Stat cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          {/* Race bibs */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
             {runningStats.map((stat) => (
-              <div key={stat.label} className="border border-stone/20 px-6 py-6">
-                <p className="font-sans text-xs text-stone uppercase tracking-widest mb-2">{stat.label}</p>
-                <p className="font-serif text-4xl font-semibold text-bark mb-1">{stat.value}</p>
-                <p className="font-sans text-xs text-stone">{stat.sub}</p>
-              </div>
+              <Bib key={stat.label} band={stat.label} value={stat.value} sub={stat.sub} />
             ))}
-            <div className="border border-stone/20 px-6 py-6">
-              <p className="font-sans text-xs text-stone uppercase tracking-widest mb-2">Current Goal</p>
-              <p className="font-serif text-2xl font-semibold text-bark mb-1">Complete a half Ironman</p>
-              <p className="font-sans text-xs text-stone">Oceanside 70.3</p>
-            </div>
+            <Bib band="Next up" value="70.3" sub={`Oceanside · ${upcomingEvents[0].date}`} />
           </div>
 
           {/* Past races */}
@@ -184,7 +212,7 @@ export default function RecreationPage() {
                     <td className="py-4 pr-6 text-bark font-serif">{row.race}</td>
                     <td className="py-4 pr-6 text-stone">{row.location}</td>
                     <td className="py-4 pr-6 text-stone">{row.date}</td>
-                    <td className="py-4 text-bark font-medium">{row.time}</td>
+                    <td className="py-4 text-bark font-cond text-lg tracking-wide tabular-nums">{row.time}</td>
                   </tr>
                 ))}
               </tbody>
@@ -216,7 +244,7 @@ export default function RecreationPage() {
 
         {/* ── Section 3: The Outdoors ───────────────────────────────────── */}
         <Reveal id="outdoors" className="mb-20 scroll-mt-28">
-          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">The Outdoors</h2>
+          <SectionTitle>The Outdoors</SectionTitle>
 
           <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
           <div className="space-y-6 mb-14">
@@ -275,9 +303,10 @@ export default function RecreationPage() {
               <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Favorite Hikes</h3>
               <div className="space-y-3">
                 {favoriteHikes.map((hike) => (
-                  <div key={hike.name} className="flex items-baseline gap-3 border-b border-stone/10 pb-3">
+                  <div key={hike.name} className="flex items-center gap-3 border-b border-stone/10 pb-3">
+                    <Blaze />
                     <span className="font-serif text-bark">{hike.name}</span>
-                    <span className="text-stone text-xs font-sans">— {hike.location}</span>
+                    <span className="text-stone text-xs font-sans">{hike.location}</span>
                   </div>
                 ))}
               </div>
@@ -303,7 +332,7 @@ export default function RecreationPage() {
 
         {/* ── Section 4: Experiences ────────────────────────────────────── */}
         <Reveal className="mb-20">
-          <h2 className="font-serif text-2xl mb-8 pb-2 border-b border-stone/20">Other Things I Do</h2>
+          <SectionTitle>Other Things I Do</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {experiences.map((exp) => (
               <div key={exp.title} className="border border-stone/20 px-6 py-6">

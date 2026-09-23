@@ -47,7 +47,22 @@ export default async function BlogPost({ params }: Props) {
   return (
     <div className="pb-24">
 
-      <div className="px-6 pt-24 md:pt-28">
+      {/* Cover photo runs full width under the navbar; the title sits below it so it's always readable */}
+      {post.coverImage && (
+        <div className="relative w-full h-[42vh] md:h-[62vh] mt-[61px] bg-stone/10">
+          <Image
+            src={post.coverImage}
+            alt={post.title}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: post.coverPosition ?? 'center 30%' }}
+            priority
+          />
+        </div>
+      )}
+
+      <div className={`px-6 ${post.coverImage ? 'pt-8 md:pt-10' : 'pt-24 md:pt-28'}`}>
         <div className="max-w-2xl mx-auto">
 
           {/* Back link */}
@@ -55,21 +70,12 @@ export default async function BlogPost({ params }: Props) {
             ← All posts
           </Link>
 
-          {/* Cover image */}
-          <div className="relative aspect-square w-1/2 overflow-hidden mb-8">
-            {post.coverImage ? (
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                fill
-                sizes="(max-width: 768px) 50vw, 21rem"
-                className="object-cover"
-                priority
-              />
-            ) : (
+          {/* Posts without a photo keep the square placeholder card */}
+          {!post.coverImage && (
+            <div className="relative aspect-square w-1/2 overflow-hidden mb-8">
               <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
-            )}
-          </div>
+            </div>
+          )}
 
           {/* Post header */}
           <header className="mb-12">
@@ -79,7 +85,7 @@ export default async function BlogPost({ params }: Props) {
             <div className="flex items-center gap-4 flex-wrap">
               <time className="text-stone text-sm font-sans">
                 {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric', month: 'long', day: 'numeric',
+                  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
                 })}
               </time>
               <span className="text-stone/50 text-sm">·</span>

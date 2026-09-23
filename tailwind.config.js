@@ -16,11 +16,13 @@ module.exports = {
         moss: 'rgb(var(--moss) / <alpha-value>)',
         stone: 'rgb(var(--stone) / <alpha-value>)',
         rust: 'rgb(var(--rust) / <alpha-value>)',
+        paper: 'rgb(var(--paper) / <alpha-value>)',
         snow: '#F9F7F4',
         ink: '#1C1C1A',
       },
       fontFamily: {
         serif: ['var(--font-lora)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        cond: ['var(--font-cond)', 'Arial Narrow', 'sans-serif'],
         sans: ['var(--font-dm-sans)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'sans-serif'],
       },
       spacing: {
