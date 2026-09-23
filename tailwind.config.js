@@ -15,8 +15,8 @@ module.exports = {
         rust: '#AA532F',
       },
       fontFamily: {
-        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'sans-serif'],
+        serif: ['var(--font-lora)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        sans: ['var(--font-dm-sans)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',

@@ -3,7 +3,8 @@ import Link from 'next/link'
 import TravelMapClient from '@/components/TravelMapClient'
 
 export const metadata: Metadata = {
-  title: 'Recreation — Camden Weber',
+  title: 'Recreation',
+  description: 'Camden Weber’s recreational resume: a travel map, race log, national parks, backpacking trips, ski resorts, and the half Ironman he’s training for.',
 }
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -21,7 +22,7 @@ const raceLog = [
 ]
 
 const upcomingEvents = [
-  { event: 'IRONMAN 70.3 Oceanside', location: 'Oceanside, CA', date: 'Date TBD' },
+  { event: 'IRONMAN 70.3 Oceanside', location: 'Oceanside, CA', date: 'April 2027' },
 ]
 
 const outdoorMilestones = [

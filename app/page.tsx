@@ -9,7 +9,7 @@ export default function Home() {
         {/* Background image */}
         <Image
           src="/images/hero.jpg"
-          alt="Hero background"
+          alt="Camden sitting on a rock summit above a mountain valley"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -24,7 +24,7 @@ export default function Home() {
             Camden<br />Weber
           </h1>
           <p className="fade-up-delay-2 font-sans text-cream/80 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-            My life resume. This is where my career, academics, and life outside work all live in one place.
+            I build AI and automation that takes the tedious work off people&apos;s plates. This is where my career, academics, and life outside work all live.
           </p>
           <div className="fade-up-delay-4 flex flex-wrap gap-4">
             <Link
@@ -34,10 +34,10 @@ export default function Home() {
               View Resume
             </Link>
             <Link
-              href="/blog"
+              href="/resume#projects"
               className="px-6 py-3 border border-cream/60 text-cream font-sans text-sm font-medium tracking-wide hover:border-cream hover:bg-cream/10 transition-colors duration-300"
             >
-              Read the Blog
+              See What I&apos;ve Built
             </Link>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function Home() {
         <div>
           <h2 className="font-serif text-xl mb-3">The Person</h2>
           <p className="text-stone text-sm leading-relaxed">
-            UCLA grad, data professional at Vail Resorts, and lacrosse coach. When I&apos;m not working with data, I&apos;m running trails, skiing, or playing basketball. This is the full picture.
+            UCLA grad, analyst at Vail Resorts, and lacrosse coach. When I&apos;m not working with data, I&apos;m running trails, skiing, or playing basketball. This is the full picture.
           </p>
           <Link href="/about" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             About me →
@@ -57,10 +57,13 @@ export default function Home() {
         <div>
           <h2 className="font-serif text-xl mb-3">The Work</h2>
           <p className="text-stone text-sm leading-relaxed">
-            My experience at Vail Resorts and Breakaway Data, some ML and network theory projects, and what I&apos;m learning at Georgia Tech.
+            Automating finance work at Vail Resorts, the AI agents I built to run my own week, and what I&apos;m learning in Georgia Tech&apos;s AI program.
           </p>
           <Link href="/resume" className="inline-block mt-4 text-rust text-sm hover:underline underline-offset-4">
             See my resume →
+          </Link>
+          <Link href="/resume#projects" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
+            Projects →
           </Link>
           <Link href="/georgia-tech" className="block mt-2 text-rust text-sm hover:underline underline-offset-4">
             Georgia Tech learning log →
