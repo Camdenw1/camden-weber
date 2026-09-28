@@ -3,6 +3,8 @@ title: "Mt. Whitney"
 date: "2026-09-28"
 excerpt: "I was prepared. I was confident. I was aware of the risks. It was hard. It was completed. Now it’s legacy."
 tags: ["outdoors", "hiking", "reflection"]
+coverLayout: "portrait"
+coverAlt: "Camden and Jake holding the Mount Whitney summit sign"
 ---
 
 I was prepared. I was confident. I was aware of the risks. It was hard. It was completed. Now it’s legacy.

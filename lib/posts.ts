@@ -16,6 +16,8 @@ export type PostMeta = {
   excerpt: string
   tags?: string[]
   coverImage: string | null
+  coverLayout?: 'portrait'
+  coverAlt?: string
   readingTime: number
   draft: boolean
   // Optional crop for the full-width cover, e.g. "center 20%" (CSS object-position)
@@ -58,6 +60,8 @@ export function getAllPosts(): PostMeta[] {
       excerpt: data.excerpt || '',
       tags: data.tags || [],
       coverImage: getCoverImage(slug),
+      coverLayout: data.coverLayout === 'portrait' ? 'portrait' as const : undefined,
+      coverAlt: data.coverAlt,
       readingTime: calcReadingTime(content),
       draft: data.draft === true,
     }
@@ -82,6 +86,8 @@ export function getPostBySlug(slug: string): Post | null {
     excerpt: data.excerpt || '',
     tags: data.tags || [],
     coverImage: getCoverImage(slug),
+    coverLayout: data.coverLayout === 'portrait' ? 'portrait' : undefined,
+    coverAlt: data.coverAlt,
     readingTime: calcReadingTime(content),
     draft: data.draft === true,
     coverPosition: data.coverPosition,

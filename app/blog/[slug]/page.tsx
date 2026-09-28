@@ -50,12 +50,22 @@ export default async function BlogPost({ params }: Props) {
       {/* Cover photo runs full width under the navbar; the title sits below it so it's always readable */}
       {post.coverImage && (
         <div className="relative w-full h-[42vh] md:h-[62vh] mt-[61px] bg-stone/10">
+          {post.coverLayout === 'portrait' && (
+            <Image
+              src={post.coverImage}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover scale-110 blur-2xl brightness-75"
+              aria-hidden="true"
+            />
+          )}
           <Image
             src={post.coverImage}
-            alt={post.title}
+            alt={post.coverAlt ?? post.title}
             fill
             sizes="100vw"
-            className="object-cover"
+            className={post.coverLayout === 'portrait' ? 'object-contain' : 'object-cover'}
             style={{ objectPosition: post.coverPosition ?? 'center 30%' }}
             priority
           />

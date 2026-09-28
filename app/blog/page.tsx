@@ -38,7 +38,7 @@ export default function BlogIndex() {
                       {post.coverImage ? (
                         <Image
                           src={post.coverImage}
-                          alt={post.title}
+                          alt={post.coverAlt ?? post.title}
                           fill
                           sizes="(max-width: 767px) calc(100vw - 3rem), 11rem"
                           className="object-cover group-hover:scale-105 transition-transform duration-500"

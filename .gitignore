@@ -29,3 +29,6 @@ next-env.d.ts
 # claude code (local only)
 .claude/settings.local.json
 .claude/worktrees/
+
+# Personal photos awaiting a publishing decision
+/private-assets/
