@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 right-0 z-50 bg-[rgb(var(--nav)/0.95)] backdrop-blur-sm border-b border-stone/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-[rgb(var(--nav))] border-b border-stone/20"
       onKeyDown={(event) => {
         if (event.key === 'Escape' && menuOpen) {
           event.preventDefault()
@@ -58,7 +58,7 @@ export default function Navbar() {
               aria-current={isActive(href, pathname) ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive(href, pathname)
-                  ? 'text-rust font-medium'
+                  ? 'text-bark font-medium underline decoration-moss decoration-2 underline-offset-8'
                   : 'text-stone hover:text-bark'
               }`}
             >
@@ -98,7 +98,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               aria-current={isActive(href, pathname) ? 'page' : undefined}
               className={`py-3 text-sm tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust ${
-                isActive(href, pathname) ? 'text-rust font-medium' : 'text-stone'
+                isActive(href, pathname) ? 'text-bark font-medium underline decoration-moss decoration-2 underline-offset-8' : 'text-stone'
               }`}
             >
               {label}

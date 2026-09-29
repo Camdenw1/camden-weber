@@ -47,28 +47,12 @@ export default async function BlogPost({ params }: Props) {
   return (
     <div className="pb-24">
 
-      {/* Cover photo runs full width under the navbar; the title sits below it so it's always readable */}
+      {/* Photographs retain their subjects and sit within the page gutters. */}
       {post.coverImage && (
-        <div className="relative w-full h-[42vh] md:h-[62vh] mt-[61px] bg-stone/10">
-          {post.coverLayout === 'portrait' && (
-            <Image
-              src={post.coverImage}
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover scale-110 blur-2xl brightness-75"
-              aria-hidden="true"
-            />
-          )}
-          <Image
-            src={post.coverImage}
-            alt={post.coverAlt ?? post.title}
-            fill
-            sizes="100vw"
-            className={post.coverLayout === 'portrait' ? 'object-contain' : 'object-cover'}
-            style={{ objectPosition: post.coverPosition ?? 'center 30%' }}
-            priority
-          />
+        <div className="px-6 pt-28 md:pt-32">
+          <div className={`relative mx-auto overflow-hidden rounded-2xl bg-sage/10 ${post.coverLayout === 'portrait' ? 'w-full max-w-[360px] aspect-[3/4]' : 'max-w-5xl aspect-[4/3] md:aspect-[2/1]'}`}>
+            <Image src={post.coverImage} alt={post.coverAlt ?? post.title} fill sizes={post.coverLayout === 'portrait' ? '(max-width: 407px) calc(100vw - 3rem), 360px' : '(max-width: 1023px) calc(100vw - 3rem), 64rem'} className={post.coverLayout === 'portrait' ? 'object-contain' : 'object-cover'} style={{ objectPosition: post.coverPosition ?? 'center 30%' }} priority />
+          </div>
         </div>
       )}
 
@@ -101,7 +85,7 @@ export default async function BlogPost({ params }: Props) {
               <span className="text-stone/50 text-sm">·</span>
               <span className="text-stone text-sm font-sans">{post.readingTime} min read</span>
               {post.tags && post.tags.map(tag => (
-                <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">
+                <span key={tag} className="text-xs font-sans text-stone rounded-md bg-sage/15 px-2 py-0.5">
                   {tag}
                 </span>
               ))}
@@ -121,7 +105,7 @@ export default async function BlogPost({ params }: Props) {
               <div className="space-y-5">
                 {related.map(r => (
                   <Link key={r.slug} href={`/blog/${r.slug}`} className="group flex gap-4 items-center">
-                    <div className="relative w-14 h-14 shrink-0 overflow-hidden">
+                    <div className="relative w-14 h-14 shrink-0 overflow-hidden rounded-lg">
                       {r.coverImage ? (
                         <Image src={r.coverImage} alt={r.title} fill sizes="56px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
                       ) : (

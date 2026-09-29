@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="font-serif text-2xl mb-6 pb-2 border-b border-stone/20">{children}</h2>
+  return <h2 className="font-serif text-2xl font-semibold mb-6 pb-2 border-b border-stone/20">{children}</h2>
 }
 
 function RoleBlock({ item }: { item: Role }) {
@@ -23,7 +23,7 @@ function RoleBlock({ item }: { item: Role }) {
     <div>
       <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
         <div>
-          <h3 className="font-serif text-lg">{item.role}</h3>
+          <h3 className="font-serif text-lg font-semibold">{item.role}</h3>
           <p className="text-stone text-sm">{[item.org, item.location].filter(Boolean).join(' · ')}</p>
         </div>
         <span className="text-stone text-sm font-sans">{item.period}</span>
@@ -64,7 +64,7 @@ export default function Resume() {
           <a
             href="/Camden_Weber_Resume.pdf"
             download
-            className="self-start mt-2 px-5 py-2.5 border border-bark text-bark text-sm font-sans hover:bg-bark hover:text-cream transition-colors duration-300"
+            className="self-start mt-2 rounded-xl px-5 py-2.5 border border-bark text-bark text-sm font-sans hover:bg-bark hover:text-cream transition-colors duration-300"
           >
             Download PDF
           </a>
@@ -84,7 +84,7 @@ export default function Resume() {
               <div key={ed.school}>
                 <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
                   <div>
-                    <h3 className="font-serif text-lg">{ed.degree}</h3>
+                    <h3 className="font-serif text-lg font-semibold">{ed.degree}</h3>
                     <p className="text-stone text-sm">{ed.school}</p>
                   </div>
                   <span className="text-stone text-sm">{ed.period}</span>

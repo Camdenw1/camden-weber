@@ -19,7 +19,7 @@ export default function About() {
         </h1>
 
         {/* About photo */}
-        <div className="relative w-full h-72 md:h-96 mb-12 overflow-hidden">
+        <div className="relative w-full h-72 md:h-96 mb-12 overflow-hidden rounded-2xl">
           <Image
             src="/images/about.jpg"
             alt="Camden Weber"

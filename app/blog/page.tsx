@@ -28,19 +28,19 @@ export default function BlogIndex() {
           <p className="text-stone italic text-sm">No posts yet. Check back soon.</p>
         ) : (
           <section>
-            <div className="space-y-8">
+            <div className="divide-y divide-stone/20">
               {posts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block py-8 first:pt-0">
                   <div className="flex items-start gap-4 md:gap-6">
                     {/* Cover image */}
-                    <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-44 md:h-44 shrink-0 overflow-hidden bg-stone/10">
+                    <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-44 md:h-44 shrink-0 overflow-hidden rounded-xl bg-stone/10">
                       {post.coverImage ? (
                         <Image
                           src={post.coverImage}
                           alt={post.coverAlt ?? post.title}
                           fill
                           sizes="(max-width: 639px) 5rem, (max-width: 767px) 7rem, 11rem"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover"
                         />
                       ) : (
                         <PostCoverFallback slug={post.slug} title={post.title} tags={post.tags} readingTime={post.readingTime} />
@@ -56,7 +56,7 @@ export default function BlogIndex() {
                       {post.tags && post.tags.length > 0 && (
                         <div className="hidden sm:flex flex-wrap gap-2 mb-3">
                           {post.tags.map(tag => (
-                            <span key={tag} className="text-xs font-sans text-stone border border-stone/30 px-2 py-0.5">
+                            <span key={tag} className="text-xs font-sans text-stone rounded-md bg-sage/15 px-2 py-0.5">
                               {tag}
                             </span>
                           ))}

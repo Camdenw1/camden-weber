@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
 
-const mapPlaceholder = <div className="h-[420px] w-full bg-stone/10 rounded-sm" />
+const mapPlaceholder = <div className="h-[420px] w-full bg-stone/10 rounded-xl overflow-hidden" />
 
 const TravelMap = dynamic(() => import('./TravelMap'), {
   ssr: false,

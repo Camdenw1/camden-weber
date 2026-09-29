@@ -24,7 +24,7 @@ No test suite is currently configured.
 Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI in `components/`.
 
 **Routes:**
-- `/` — Hero + intro strip (`app/page.tsx`)
+- `/` — Split introduction/photo + three open photo sections (`app/page.tsx`)
 - `/about` — Bio page (`app/about/page.tsx`)
 - `/resume` — Resume page (`app/resume/page.tsx`). Content lives in `lib/resume.ts`; the page only handles layout.
 - `/projects` — Projects index (`app/projects/page.tsx`). Content lives in `lib/projects.ts`. Not in the navbar: projects are shown in the Projects section of `/resume` (anchor `#projects`), and site links point there.
@@ -51,19 +51,24 @@ Write first-person site copy in Camden's direct, conversational voice. Keep it c
 
 ## Styling
 
-Custom Tailwind color palette. The values live as CSS variables in `app/globals.css` (light values in `:root`, dark values under `prefers-color-scheme: dark`), and `tailwind.config.js` points at them, so every page gets dark mode automatically:
-- `cream` (#F9F7F4) — background
-- `bark` (#1C1C1A) — primary text
-- `moss` (#4A5240) — accent green
-- `stone` (#67615C) — muted text
-- `rust` (#AA532F) — accent/links/CTAs
-- `snow` / `ink` — fixed light and dark that never switch. Use them for text and shading on top of photos (e.g. the home hero).
+Read [DESIGN.md](DESIGN.md) and the canonical Personal Web Design System linked there before visual changes. The brief records this website's composition, semantic palette, and Camden's Recreation exception.
+
+Custom Tailwind colors use CSS variables in `app/globals.css` for light and system dark themes:
+- `cream` — white page background in light mode
+- `bark` — neutral charcoal text
+- `moss` — readable green accent text
+- `terracotta` — rustic orange action fill with fixed `snow` text (Camden prefers this over green buttons)
+- `sage` — quiet supporting tints only; avoid prominent green buttons or cards
+- `clay` — soft clay fills; use fixed `ink` text on filled controls
+- `stone` — muted gray text
+- `rust` — readable clay links
+- `snow` / `ink` — fixed light and dark for photography or light accent fills
 
 Don't hardcode hex colors in components; use the palette so dark mode keeps working.
 
 Also in the palette: `paper` (slightly lifted card surface: race bibs, home photo cards). Extra font: `font-cond` (Barlow Condensed Bold, self-hosted in `app/fonts` and loaded only by `app/recreation/layout.tsx`) for race bib numbers and race times only.
 
-Recreation page personality: `components/Topo.tsx` draws faint topographic lines behind the header; the three summary links are moss "trail signs"; PRs and the next race are race bibs (`Bib` in `app/recreation/page.tsx`); section titles and favorite hikes use a small rust trail-blaze marker. Keep this flavor on Recreation; the rest of the site stays calmer.
+Recreation page personality: `components/Topo.tsx` draws faint topographic lines behind the header; the three summary links are clay "trail signs"; PRs and the next race are race bibs (`Bib` in `app/recreation/page.tsx`); section titles and favorite hikes use a small rust trail-blaze marker. Keep this flavor on Recreation; the rest of the site stays calmer.
 
 `components/Reveal.tsx` is a plain server-rendered `<section>` wrapper. Content appears immediately; do not add entrance or scroll-reveal animations.
 

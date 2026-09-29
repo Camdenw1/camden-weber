@@ -118,7 +118,7 @@ function Blaze() {
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="flex items-center gap-3 font-serif text-2xl mb-8 pb-2 border-b border-stone/20">
+    <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold mb-8 pb-2 border-b border-stone/20">
       <Blaze />
       {children}
     </h2>
@@ -128,8 +128,8 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 // A race bib: colored band on top, pin holes, big condensed number
 function Bib({ band, value, sub }: { band: string; value: string; sub: string }) {
   return (
-    <div className="relative bg-paper border border-stone/25 rounded-[3px] text-center pb-5 overflow-hidden">
-      <p className="bg-rust text-cream font-sans text-xs font-medium uppercase tracking-[0.16em] py-2">{band}</p>
+    <div className="relative bg-paper border border-stone/25 rounded-xl text-center pb-5 overflow-hidden">
+      <p className="bg-clay text-ink font-sans text-xs font-medium uppercase tracking-[0.16em] py-2">{band}</p>
       <span aria-hidden="true" className="absolute top-12 left-3 w-2.5 h-2.5 rounded-full border border-stone/40 bg-cream" />
       <span aria-hidden="true" className="absolute top-12 right-3 w-2.5 h-2.5 rounded-full border border-stone/40 bg-cream" />
       <p className="font-cond text-6xl leading-none text-bark mt-5 mb-2 tabular-nums">{value}</p>
@@ -143,11 +143,11 @@ function Bib({ band, value, sub }: { band: string; value: string; sub: string })
 export default function RecreationPage() {
   return (
     <div className="relative pt-32 pb-24 px-6">
-      <Topo className="absolute inset-x-0 top-0 h-[34rem] w-full text-moss opacity-[0.16] pointer-events-none [mask-image:linear-gradient(to_bottom,black_55%,transparent)]" />
+      <Topo className="absolute inset-x-0 top-0 h-[34rem] w-full text-rust opacity-[0.16] pointer-events-none [mask-image:linear-gradient(to_bottom,black_55%,transparent)]" />
       <div className="relative max-w-5xl mx-auto">
 
         {/* Header */}
-        <p className="font-sans text-moss text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
+        <p className="font-sans text-rust text-sm tracking-[0.15em] uppercase mb-4">Recreation</p>
         <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4 leading-tight">
           Recreational Resume
         </h1>
@@ -161,13 +161,13 @@ export default function RecreationPage() {
             <a
               key={sign.href}
               href={sign.href}
-              className="group relative block bg-moss text-cream rounded-[3px] px-5 py-5 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-transform duration-300"
+              className="group relative block bg-clay text-ink rounded-xl px-5 py-5 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-transform duration-150"
             >
-              <span aria-hidden="true" className="absolute -top-1.5 left-5 w-3 h-3 rotate-45 bg-moss" />
-              <span className="block font-sans text-xs uppercase tracking-widest text-cream/80 mb-2">{sign.label}</span>
+              <span aria-hidden="true" className="absolute -top-1.5 left-5 w-3 h-3 rotate-45 bg-clay" />
+              <span className="block font-sans text-xs uppercase tracking-widest text-ink/80 mb-2">{sign.label}</span>
               <span className="block font-serif text-2xl leading-tight">{sign.value}</span>
-              <span className="block font-sans text-sm text-cream/85">{sign.sub}</span>
-              <span className="block font-sans text-xs mt-3 text-cream/90 group-hover:underline underline-offset-4">{sign.cta}</span>
+              <span className="block font-sans text-sm text-ink/85">{sign.sub}</span>
+              <span className="block font-sans text-xs mt-3 text-ink/90 group-hover:underline underline-offset-4">{sign.cta}</span>
             </a>
           ))}
         </nav>
@@ -194,7 +194,7 @@ export default function RecreationPage() {
           </div>
 
           {/* Past races */}
-          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Past Races</h3>
+          <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone mb-4">Past Races</h3>
           <p className="md:hidden font-sans text-xs text-stone mb-2">Swipe to see the full race list →</p>
           <div className="overflow-x-auto mb-10">
             <table className="w-full min-w-[640px] text-sm font-sans">
@@ -219,7 +219,7 @@ export default function RecreationPage() {
             </table>
           </div>
 
-          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Upcoming</h3>
+          <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone mb-4">Upcoming</h3>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[520px] text-sm font-sans">
               <thead>
@@ -246,11 +246,11 @@ export default function RecreationPage() {
         <Reveal id="outdoors" className="mb-20 scroll-mt-28">
           <SectionTitle>The Outdoors</SectionTitle>
 
-          <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
+          <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone mb-4">Recent Milestones</h3>
           <div className="space-y-6 mb-14">
             {outdoorMilestones.map((milestone) => (
               <div key={milestone.title} className="border-l-2 border-rust pl-5">
-                <h4 className="font-serif text-xl text-bark">{milestone.title}</h4>
+                <h4 className="font-serif text-xl font-semibold text-bark">{milestone.title}</h4>
                 <p className="font-sans text-[0.95rem] text-bark/80 mt-1">{milestone.detail}</p>
                 {milestone.href && (
                   <Link href={milestone.href} className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
@@ -266,7 +266,7 @@ export default function RecreationPage() {
             {/* National Parks */}
             <div>
               <div className="flex items-baseline gap-3 mb-4">
-                <h3 className="font-sans text-xs uppercase tracking-widest text-stone">National Parks</h3>
+                <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone">National Parks</h3>
                 <span className="font-serif text-sm text-rust">7 of 63</span>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -287,7 +287,7 @@ export default function RecreationPage() {
 
             {/* Backpacking */}
             <div>
-              <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Backpacking Trips</h3>
+              <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone mb-4">Backpacking Trips</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {backpackingTrips.map((trip) => (
                   <div key={trip.name} className="border border-stone/20 px-5 py-5">
@@ -300,7 +300,7 @@ export default function RecreationPage() {
 
             {/* Favorite Hikes */}
             <div>
-              <h3 className="font-sans text-xs uppercase tracking-widest text-stone mb-4">Favorite Hikes</h3>
+              <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone mb-4">Favorite Hikes</h3>
               <div className="space-y-3">
                 {favoriteHikes.map((hike) => (
                   <div key={hike.name} className="flex items-center gap-3 border-b border-stone/10 pb-3">
@@ -315,7 +315,7 @@ export default function RecreationPage() {
             {/* Ski Resorts */}
             <div>
               <div className="flex items-baseline gap-3 mb-4">
-                <h3 className="font-sans text-xs uppercase tracking-widest text-stone">Ski Resorts</h3>
+                <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-stone">Ski Resorts</h3>
                 <span className="font-serif text-sm text-rust">10 resorts</span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2">
@@ -337,7 +337,7 @@ export default function RecreationPage() {
             {experiences.map((exp) => (
               <div key={exp.title} className="border border-stone/20 px-6 py-6">
                 <div className="flex items-baseline gap-3 mb-2">
-                  <h3 className="font-serif text-lg text-bark">{exp.title}</h3>
+                  <h3 className="font-serif text-lg font-semibold text-bark">{exp.title}</h3>
                   <span className="font-sans text-xs text-stone uppercase tracking-widest">{exp.sub}</span>
                 </div>
                 <p className="font-sans text-[0.95rem] text-bark/80 leading-relaxed">{exp.description}</p>

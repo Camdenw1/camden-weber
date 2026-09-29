@@ -91,7 +91,7 @@ export default function TravelMap() {
       zoom={2}
       style={{ height: '420px', width: '100%' }}
       scrollWheelZoom={false}
-      className="rounded-sm"
+      className="rounded-xl overflow-hidden"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
