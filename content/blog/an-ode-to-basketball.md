@@ -17,7 +17,7 @@ Everyone has their own unique game that they've built based on their skills, ath
 
 As we started to learn each other's skills, we built up chemistry. We were experts of each other's games. Building basketball chemistry is very similar to building group friendships. You start to learn how to work with each other, what flies, what doesn't, who wants to start the possessions, and who should defend the best opponent. Our roles became unspoken, similar to how it is in the friend group.
 
-Then college happened and everyone left. I went to UCLA, Grant went to Chapman, Cody went to Colorado State. Others went to UCSB, Cal Poly, Utah. Our rhythm was disrupted but our chemistry never died. Christmas and summer breaks were a great opportunity to reignite the basketball flame, and time after time, it did. It was truly the one thing we could count on to get everyone together.
+Then college happened and everyone left. I went to UCLA; Grant went to Chapman; Cody went to Colorado State. Others went to UCSB, Cal Poly, Utah. Our rhythm was disrupted but our chemistry never died. Christmas and summer breaks were a great opportunity to reignite the basketball flame, and time after time, it did. It was truly the one thing we could count on to get everyone together.
 
 Fast forward to post-grad. A few of us are back home. We decided to give the men's recreational basketball league a shot. We reached out to many people, and the group that ended up sticking after three seasons wound up being the same guys who started: my close friends and the basketball team.
 

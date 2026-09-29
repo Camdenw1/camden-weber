@@ -20,7 +20,7 @@ Many people claim they are not runners and can never become runners. They don't 
 
 I would like to pinpoint the start of my journey at youth team sports. These are invaluable experiences where you learn how to be an athlete, work with others, be coachable, and work towards a goal. It was here where I spent so much time as a kid running around during practice and games. I played tee ball, soccer, football, basketball, and my main sport — lacrosse.
 
-There were also times when I was younger where I ran races with my parents, which most definitely has had an influence on my running even to this day. This year, I am running the OG San Diego Triple Crown, which my parents did years ago. Through elementary school, they had one day a week where you would run laps during recess. They had creative tokens you earned including special milestone ones. I didn't realize it at the time, but those young runs were great foreshadowing of what I would end up doing later in life.
+I also ran races with my parents when I was younger, which most definitely has had an influence on my running even to this day. This year, I am running the OG San Diego Triple Crown, which my parents did years ago. In elementary school, we had one day a week when we would run laps during recess. They had creative tokens you earned including special milestone ones. I didn't realize it at the time, but those young runs were great foreshadowing of what I would end up doing later in life.
 
 Lacrosse coupled with casual basketball took over my athletic life from ages 11 to 18. Through lacrosse, I learned not only how to build legs to handle the demands of a full season, but also how to sprint for extended stretches while staying agile. The sport itself forced my body to adapt and learn how to run quicker — because often the motivation to run quicker meant scoring goals and avoiding hits.
 
@@ -48,7 +48,7 @@ I finished the Napa Valley Marathon with a time of **3:27** — a time I am very
 
 ## Post-College Days
 
-The time after a marathon is a big fork in the road for most people. Some are content and stop running. The other group continues because running gave them something positive. Running calms the mind, builds muscle, strengthens the heart, brings you on adventures, acts as a social event, and overall positively impacts people's lives. These benefits have done great things for me and I believe it is the reason I stuck with it.
+The time after a marathon is a big fork in the road for most people. Some are content and stop running. The other group continues because running gave them something positive. Running calms the mind, builds muscle, strengthens the heart, brings you on adventures, acts as a social event, and overall positively impacts people's lives. These benefits have done great things for me, and I believe they are the reason I stuck with it.
 
 So far this year, I completed a half marathon with a **1:39 finish** — about a 7:33 min/mile pace. I did this with only 10 training runs, mainly enjoyable long runs. I was in rough shape before training started and you might wonder how that's possible.
 
