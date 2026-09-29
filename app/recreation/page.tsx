@@ -153,7 +153,7 @@ export default function RecreationPage() {
         </h1>
         <p className="text-bark/80 text-base mb-10 leading-relaxed max-w-xl">
           A running log of the places I&apos;ve been, mountains I&apos;ve skied, trails I&apos;ve hiked,
-          and everything else that makes life worth working hard for.
+          along with my races, sports, and other hobbies.
         </p>
 
         <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">

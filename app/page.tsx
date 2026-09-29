@@ -28,7 +28,7 @@ const introCards = [
     image: '/images/blog/an-ode-to-basketball.jpg',
     alt: 'Camden with his basketball group',
     imagePosition: 'object-center',
-    text: 'Personal stories, lessons learned, and interesting insights. Occasionally technical, always honest.',
+    text: 'Whatever I feel like writing about.',
     links: [{ href: '/blog', label: 'Read the blog →' }],
   },
 ]
@@ -52,13 +52,13 @@ export default function Home() {
 
         {/* Hero content */}
         <div className="relative z-10 max-w-5xl mx-auto w-full">
-          <h1 className="fade-up-delay-1 font-serif text-snow text-[2.6rem] md:text-7xl font-semibold leading-tight mb-4 md:mb-6">
+          <h1 className="font-serif text-snow text-[2.6rem] md:text-7xl font-semibold leading-tight mb-4 md:mb-6">
             Camden <br className="hidden md:inline" />Weber
           </h1>
-          <p className="fade-up-delay-2 font-sans text-snow/90 text-base md:text-xl max-w-xl leading-relaxed mb-8 md:mb-10">
+          <p className="font-sans text-snow/90 text-base md:text-xl max-w-xl leading-relaxed mb-8 md:mb-10">
             I build AI and automation that handles the tedious stuff so people don&apos;t have to. This is where my career, academics, and life outside work all live.
           </p>
-          <div className="fade-up-delay-4 flex flex-wrap gap-3 md:gap-4">
+          <div className="flex flex-wrap gap-3 md:gap-4">
             <Link
               href="/resume"
               className="px-5 md:px-6 py-3 bg-snow text-ink font-sans text-sm font-medium tracking-wide hover:bg-rust hover:text-snow transition-colors duration-300"

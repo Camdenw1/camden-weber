@@ -46,13 +46,8 @@ body {
   color: rgb(var(--bark));
 }
 
-/* Sections that fade in as you scroll to them (components/Reveal.tsx) */
-.reveal-hidden { opacity: 0; transform: translateY(16px); }
-.reveal-shown { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3, .fade-up-delay-4 { animation: none; opacity: 1; }
 }
 
 /* Typography */
@@ -60,26 +55,10 @@ h1, h2, h3 {
   font-family: var(--font-serif);
 }
 
-/* Fade-in animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Load the italic face when used, while prioritizing the normal heading font. */
+.font-serif.italic, .prose-camden blockquote {
+  font-family: var(--font-lora-italic), Georgia, Cambria, 'Times New Roman', serif;
 }
-
-.fade-up {
-  animation: fadeUp 0.7s ease forwards;
-}
-
-.fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.7s; }
-.fade-up-delay-2 { animation-delay: 0.25s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.7s; }
-.fade-up-delay-3 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.7s; }
-.fade-up-delay-4 { animation-delay: 0.55s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.7s; }
 
 /* Prose styles for blog posts */
 .prose-camden h1 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; color: rgb(var(--bark)); }

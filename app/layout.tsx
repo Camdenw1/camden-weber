@@ -9,18 +9,18 @@ import { siteUrl } from '@/lib/site'
 // Font files live in app/fonts (Google Fonts, OFL licensed), so builds never depend on
 // reaching Google and visitors download them from this site.
 const lora = localFont({
-  src: [
-    { path: './fonts/Lora.woff2', weight: '400 700', style: 'normal' },
-    { path: './fonts/Lora-Italic.woff2', weight: '400 700', style: 'italic' },
-  ],
+  src: './fonts/Lora.woff2',
+  weight: '400 700',
+  style: 'normal',
   variable: '--font-lora',
   display: 'swap',
 })
-// Condensed numbers for race bibs and times on the Recreation page
-const barlowCondensed = localFont({
-  src: './fonts/BarlowCondensed-Bold.woff2',
-  weight: '700',
-  variable: '--font-cond',
+const loraItalic = localFont({
+  src: './fonts/Lora-Italic.woff2',
+  weight: '400 700',
+  style: 'italic',
+  preload: false,
+  variable: '--font-lora-italic',
   display: 'swap',
 })
 const dmSans = localFont({
@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${lora.variable} ${dmSans.variable} ${barlowCondensed.variable}`}>
+    <html lang="en" className={`${lora.variable} ${loraItalic.variable} ${dmSans.variable}`}>
       <body className="bg-cream text-bark font-sans antialiased">
         <Navbar />
         <main>{children}</main>

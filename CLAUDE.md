@@ -61,14 +61,14 @@ Custom Tailwind color palette. The values live as CSS variables in `app/globals.
 
 Don't hardcode hex colors in components; use the palette so dark mode keeps working.
 
-Also in the palette: `paper` (slightly lifted card surface: race bibs, home photo cards). Extra font: `font-cond` (Barlow Condensed Bold, self-hosted in `app/fonts`) for race bib numbers and race times only.
+Also in the palette: `paper` (slightly lifted card surface: race bibs, home photo cards). Extra font: `font-cond` (Barlow Condensed Bold, self-hosted in `app/fonts` and loaded only by `app/recreation/layout.tsx`) for race bib numbers and race times only.
 
 Recreation page personality: `components/Topo.tsx` draws faint topographic lines behind the header; the three summary links are moss "trail signs"; PRs and the next race are race bibs (`Bib` in `app/recreation/page.tsx`); section titles and favorite hikes use a small rust trail-blaze marker. Keep this flavor on Recreation; the rest of the site stays calmer.
 
-`components/Reveal.tsx` is a `<section>` that fades in when scrolled into view (used on Resume, Recreation, project pages, and the home intro strip). It respects the visitor's reduce-motion setting.
+`components/Reveal.tsx` is a plain server-rendered `<section>` wrapper. Content appears immediately; do not add entrance or scroll-reveal animations.
 
-Fonts: `serif` = Lora, `sans` = DM Sans, self-hosted from `app/fonts/*.woff2` and loaded in `app/layout.tsx` via `next/font/local` as the CSS variables `--font-lora` and `--font-dm-sans` (used by `tailwind.config.js` and `app/globals.css`).
+Fonts: `serif` = Lora, `sans` = DM Sans, self-hosted from `app/fonts/*.woff2` and loaded in `app/layout.tsx` via `next/font/local`. Normal Lora and DM Sans are preloaded; the separate Lora italic face loads when used (`preload: false`). Barlow Condensed is scoped to Recreation.
 
 Blog post body uses the custom `.prose-camden` class defined in `app/globals.css` (not Tailwind Typography plugin).
 
-Hero section uses `.fade-up-delay-{1-4}` CSS animation classes for staggered entrance animations.
+The Writing page and home writing card use “Whatever I feel like writing about.” Keep the copy broad and direct; avoid taglines such as “Occasionally technical, always honest.”

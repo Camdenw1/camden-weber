@@ -2,14 +2,14 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/resume', label: 'Resume' },
   { href: '/recreation', label: 'Recreation' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Writing' },
 ]
 
 // Project pages live under the resume, so highlight Resume there too.
@@ -22,9 +22,28 @@ function isActive(href: string, pathname: string) {
 export default function Navbar() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const toggleRef = useRef<HTMLButtonElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (menuOpen) menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus()
+  }, [menuOpen])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgb(var(--nav)/0.95)] backdrop-blur-sm border-b border-stone/20">
+    <nav
+      aria-label="Main navigation"
+      className="fixed top-0 left-0 right-0 z-50 bg-[rgb(var(--nav)/0.95)] backdrop-blur-sm border-b border-stone/20"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && menuOpen) {
+          event.preventDefault()
+          setMenuOpen(false)
+          toggleRef.current?.focus()
+        }
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false)
+      }}
+    >
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-bark hover:text-moss transition-colors">
           Camden Weber
@@ -36,6 +55,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
+              aria-current={isActive(href, pathname) ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive(href, pathname)
                   ? 'text-rust font-medium'
@@ -49,9 +69,13 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-bark"
+          ref={toggleRef}
+          type="button"
+          className="md:hidden text-bark min-w-11 min-h-11 -my-2 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           <div className="space-y-1.5">
             <span className={`block w-6 h-0.5 bg-bark transition-transform ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -62,14 +86,18 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-cream border-t border-stone/20 px-6 py-4 flex flex-col gap-4">
+      <div
+        ref={menuRef}
+        id="mobile-navigation"
+        className={`${menuOpen ? 'flex' : 'hidden'} md:hidden bg-cream border-t border-stone/20 px-6 py-4 flex-col gap-1`}
+      >
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className={`text-sm tracking-wide ${
+              aria-current={isActive(href, pathname) ? 'page' : undefined}
+              className={`py-3 text-sm tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust ${
                 isActive(href, pathname) ? 'text-rust font-medium' : 'text-stone'
               }`}
             >
@@ -77,7 +105,6 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-      )}
     </nav>
   )
 }
