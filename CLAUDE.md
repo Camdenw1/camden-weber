@@ -68,7 +68,7 @@ Don't hardcode hex colors in components; use the palette so dark mode keeps work
 
 Also in the palette: `paper` (slightly lifted card surface: race bibs, home photo cards). Extra font: `font-cond` (Barlow Condensed Bold, self-hosted in `app/fonts` and loaded only by `app/recreation/layout.tsx`) for race bib numbers and race times only.
 
-Recreation page personality: `components/Topo.tsx` draws faint topographic lines behind the header; the three summary links are clay "trail signs"; PRs and the next race are race bibs (`Bib` in `app/recreation/page.tsx`); section titles and favorite hikes use a small rust trail-blaze marker. Keep this flavor on Recreation; the rest of the site stays calmer.
+Recreation page personality: `components/Topo.tsx` draws faint topographic lines behind the header; the three summary links are compact outlined cards with rust line icons; PRs and the next race are race bibs (`Bib` in `app/recreation/page.tsx`); section titles and favorite hikes use a small rust trail-blaze marker. Keep this flavor on Recreation; the rest of the site stays calmer.
 
 `components/Reveal.tsx` is a plain server-rendered `<section>` wrapper. Content appears immediately; do not add entrance or scroll-reveal animations.
 

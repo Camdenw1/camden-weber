@@ -27,7 +27,7 @@ const upcomingEvents = [
   { event: 'IRONMAN 70.3 Oceanside', location: 'Oceanside, CA', date: 'April 2027' },
 ]
 
-// The three summary signs at the top of the page
+// Compact section summaries at the top of the page
 const trailSigns = [
   { href: '#travel', label: 'Travel', value: '56 places', sub: '4 continents', cta: 'Explore the map ↓' },
   { href: '#racing', label: 'Racing', value: '3:27 marathon', sub: '1:39 half', cta: 'See the races ↓' },
@@ -111,6 +111,14 @@ const experiences = [
 
 // ── Pieces ────────────────────────────────────────────────────────────────────
 
+function SummaryIcon({ section }: { section: string }) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="w-6 h-6 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      {section === '#travel' ? <><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c-5 5-5 12 0 17 5-5 5-12 0-17Z" /></> : section === '#racing' ? <><rect x="4" y="6" width="16" height="15" rx="3" /><path d="M9 6V3h6v3M8 11h8M9 16h6" /></> : <path d="m2 20 10-16 10 16H2Zm6-10 4 3 3-4M4 20l3-5M18 20l-4-6" />}
+    </svg>
+  )
+}
+
 // A painted trail blaze, used as a marker for headings and lists
 function Blaze() {
   return <span aria-hidden="true" className="inline-block w-1.5 h-3.5 bg-rust rounded-[1px] shrink-0" />
@@ -156,18 +164,15 @@ export default function RecreationPage() {
           along with my races, sports, and other hobbies.
         </p>
 
-        <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
+        <nav aria-label="Recreation sections" className="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {trailSigns.map((sign) => (
-            <a
-              key={sign.href}
-              href={sign.href}
-              className="group relative block bg-clay text-ink rounded-xl px-5 py-5 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust transition-transform duration-150"
-            >
-              <span aria-hidden="true" className="absolute -top-1.5 left-5 w-3 h-3 rotate-45 bg-clay" />
-              <span className="block font-sans text-xs uppercase tracking-widest text-ink/80 mb-2">{sign.label}</span>
-              <span className="block font-serif text-2xl leading-tight">{sign.value}</span>
-              <span className="block font-sans text-sm text-ink/85">{sign.sub}</span>
-              <span className="block font-sans text-xs mt-3 text-ink/90 group-hover:underline underline-offset-4">{sign.cta}</span>
+            <a key={sign.href} href={sign.href} className="group grid grid-cols-[1fr_auto] sm:block gap-x-4 rounded-xl bg-cream border border-stone/20 p-5 hover:border-terracotta/50 transition-colors duration-150">
+              <span className="col-span-2 flex items-center gap-2.5 text-terracotta dark:text-rust text-xs font-semibold uppercase tracking-widest mb-3">
+                <SummaryIcon section={sign.href} />{sign.label}
+              </span>
+              <span className="block font-serif text-xl md:text-2xl leading-tight mb-1.5">{sign.value}</span>
+              <span className="block text-sm text-stone sm:mb-4">{sign.sub}</span>
+              <span className="col-start-2 row-start-2 row-span-2 self-center max-w-[6rem] sm:max-w-none text-terracotta dark:text-rust text-xs md:text-sm leading-relaxed group-hover:underline underline-offset-4">{sign.cta}</span>
             </a>
           ))}
         </nav>
