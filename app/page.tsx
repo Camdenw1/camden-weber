@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Reveal from '@/components/Reveal'
+import PersonalCollage from '@/components/PersonalCollage'
 
 const introCards = [
   {
@@ -52,6 +53,7 @@ export default function Home() {
               See What I&apos;ve Built →
             </Link>
           </div>
+          <PersonalCollage />
         </div>
         <div className="relative aspect-[4/3] md:aspect-[5/6] overflow-hidden rounded-3xl bg-sage/15">
           <Image src="/images/hero.jpg" alt="Camden sitting on a rock summit above a mountain valley" fill sizes="(max-width: 767px) calc(100vw - 3rem), 32rem" className="object-cover object-[48%_center]" priority />

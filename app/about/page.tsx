@@ -9,8 +9,11 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="pt-32 pb-24 px-6">
-      <div className="max-w-2xl mx-auto">
+    <div className="relative pt-32 pb-24 px-6 isolate">
+      <div className="about-palm-frame" aria-hidden="true">
+        <Image src="/images/motifs/about-palms.webp" alt="" width={1402} height={1122} sizes="(min-width: 1280px) 1250px, 100vw" className="w-full h-auto" />
+      </div>
+      <div className="relative max-w-2xl mx-auto bg-cream">
 
         {/* Header */}
         <p className="font-sans text-stone text-sm tracking-[0.15em] uppercase mb-4">About</p>

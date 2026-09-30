@@ -24,4 +24,7 @@ Recreation retains more decoration because Camden explicitly likes its outdoor i
 ## Review
 Check home, writing, an article, About, and Recreation on desktop and narrow mobile; verify contrast, subject cropping, overflow, keyboard navigation, and production build. Show the local preview before pushing this revision.
 
-San Diego is an important part of Camden's identity. Explore a subtle coastal detail in a later design discussion; no new decoration is agreed yet.
+## Approved personal motifs
+- About: the natural palm grove frame sits on a separate, noninteractive background layer. The reading column has an opaque theme background. Copy length can change without positioning drawings against individual paragraphs. Small screens omit the exterior frame.
+- Resume: small, very faint rust drawings occupy desktop margins and are positioned relative to the corresponding content block: mountain/Vail, yellow jacket/Georgia Tech, Royce Hall/UCLA, football/fantasy football, nodes/automation and ML, lacrosse/coaching. They hide when the gutters cannot fit them. Never overlay text or use page-wide hardcoded vertical coordinates.
+- Home: retain the real photo. The approved quiet collage uses independent rust line drawings below the introduction actions: palm, coastline, Royce Hall, mountains, basketball, and AI nodes. Camden rejected the dense connected AI landscape; do not reuse it.

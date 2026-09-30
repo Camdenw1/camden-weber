@@ -77,3 +77,5 @@ Fonts: `serif` = Lora, `sans` = DM Sans, self-hosted from `app/fonts/*.woff2` an
 Blog post body uses the custom `.prose-camden` class defined in `app/globals.css` (not Tailwind Typography plugin).
 
 The Writing page and home writing card use “Whatever I feel like writing about.” Keep the copy broad and direct; avoid taglines such as “Occasionally technical, always honest.”
+
+Personal decorations: `components/Motif.tsx` provides small rust line drawings. `MarginMotif` belongs inside a relative content block and lives entirely in desktop gutters. Resume decoration maps explicitly associate drawings with organizations, schools, and project slugs; new entries have no drawing until one is assigned. About uses the approved natural palm frame behind an opaque reading column. `components/PersonalCollage.tsx` keeps separate sketches below the homepage actions. Follow DESIGN.md; never add dense connected illustration scenes to Home.

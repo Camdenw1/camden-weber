@@ -5,9 +5,41 @@ import {
   experience, education, skills, extracurriculars, certifications, interests,
   type Role,
 } from '@/lib/resume'
-import { projects } from '@/lib/projects'
+import { projects, type Project } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
 import Reveal from '@/components/Reveal'
+import { MarginMotif, type MotifKind } from '@/components/Motif'
+
+type Decoration = { kind: MotifKind; side: 'left' | 'right' }
+const roleDecorations: Partial<Record<string, Decoration>> = {
+  'Vail Resorts': { kind: 'mountain', side: 'left' },
+  'Breakaway Data': { kind: 'plot', side: 'right' },
+  'Westview High School': { kind: 'lacrosse', side: 'left' },
+  'Data Science Union, UCLA': { kind: 'network', side: 'right' },
+  'Phi Kappa Psi, UCLA': { kind: 'plot', side: 'right' },
+}
+const educationDecorations: Partial<Record<string, Decoration>> = {
+  'Georgia Institute of Technology (part-time, online)': { kind: 'yellowjacket', side: 'right' },
+  'University of California, Los Angeles': { kind: 'royce', side: 'left' },
+}
+const projectDecorations: Partial<Record<string, Decoration>> = {
+  'personal-automation-system': { kind: 'network', side: 'right' },
+  'fantasy-football': { kind: 'football', side: 'left' },
+  'rl-neural-architecture-search': { kind: 'network', side: 'right' },
+  'food-patterns': { kind: 'network', side: 'left' },
+  'tic-tac-toe-solver': { kind: 'grid', side: 'right' },
+}
+
+function EntryDecoration({ decoration }: { decoration?: Decoration }) {
+  return decoration ? <MarginMotif {...decoration} /> : null
+}
+
+function DecoratedProject({ project }: { project: Project }) {
+  return <div className="relative">
+    <EntryDecoration decoration={projectDecorations[project.slug]} />
+    <ProjectCard project={project} />
+  </div>
+}
 
 export const metadata: Metadata = {
   title: 'Resume',
@@ -20,7 +52,8 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 function RoleBlock({ item }: { item: Role }) {
   return (
-    <div>
+    <div className="relative">
+      <EntryDecoration decoration={roleDecorations[item.org]} />
       <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
         <div>
           <h3 className="font-serif text-lg font-semibold">{item.role}</h3>
@@ -81,7 +114,8 @@ export default function Resume() {
           <SectionTitle>Education</SectionTitle>
           <div className="space-y-8">
             {education.map((ed) => (
-              <div key={ed.school}>
+              <div key={ed.school} className="relative">
+                <EntryDecoration decoration={educationDecorations[ed.school]} />
                 <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
                   <div>
                     <h3 className="font-serif text-lg font-semibold">{ed.degree}</h3>
@@ -110,10 +144,10 @@ export default function Resume() {
         <Reveal id="projects" className="mb-14 scroll-mt-28">
           <SectionTitle>Projects</SectionTitle>
           <div className="space-y-10">
-            {featured.map((p) => <ProjectCard key={p.slug} project={p} />)}
+            {featured.map((p) => <DecoratedProject key={p.slug} project={p} />)}
           </div>
           <div className="space-y-8 mt-10">
-            {earlier.map((p) => <ProjectCard key={p.slug} project={p} />)}
+            {earlier.map((p) => <DecoratedProject key={p.slug} project={p} />)}
           </div>
         </Reveal>
 

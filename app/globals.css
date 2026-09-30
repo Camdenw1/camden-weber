@@ -93,3 +93,47 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* Artwork stays in the gutters and follows its content block as copy changes. */
+.about-palm-frame {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 3rem), 1250px);
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: -1;
+}
+.margin-motif { display: none; pointer-events: none; }
+@media (min-width: 1024px) {
+  .margin-motif { display: block; position: absolute; top: 0.25rem; width: 100px; height: 88px; color: rgb(var(--terracotta)); opacity: 0.38; }
+  .margin-motif-left { right: calc(100% + 24px); }
+  .margin-motif-right { left: calc(100% + 24px); }
+}
+@media (min-width: 1280px) {
+  .margin-motif { width: 120px; height: 100px; }
+  .margin-motif-left { right: calc(100% + 40px); }
+  .margin-motif-right { left: calc(100% + 40px); }
+}
+@media (max-width: 1023px) {
+  .about-palm-frame { opacity: 0.18; }
+}
+@media (max-width: 767px) {
+  .about-palm-frame { display: none; }
+}
+.personal-collage {
+  position: relative;
+  width: min(100%, 340px);
+  height: 132px;
+  margin-top: 24px;
+  color: rgb(var(--terracotta));
+  pointer-events: none;
+}
+.personal-collage svg { position: absolute; opacity: .5; }
+.collage-palm { left: 0; top: 0; width: 52px; height: 100px; stroke-width: 2; }
+.collage-coast { left: 52px; bottom: 6px; width: 60px; height: 32px; }
+.collage-royce { left: 112px; bottom: 5px; width: 98px; height: 57px; }
+.collage-network { left: 128px; top: 1px; width: 48px; height: 40px; }
+.collage-mountain { right: 5px; top: 6px; width: 88px; height: 74px; }
+.collage-ball { right: 28px; bottom: 2px; width: 43px; height: 36px; }
