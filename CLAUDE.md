@@ -38,7 +38,7 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 
 **Blog system:** Markdown files in `content/blog/` are read at build time via `lib/posts.ts` using `gray-matter` for frontmatter parsing and `remark`/`remark-html` for rendering. The filename becomes the URL slug. Required frontmatter fields: `title`, `date`, `excerpt`. Optional: `tags` (array), `coverPosition` (CSS object-position for the full-width cover, default `"center 30%"`; use e.g. `"center 12%"` if a face gets cropped), `draft: true` (shows in `npm run dev` only, hidden from the live site, listing, and sitemap).
 
-**Draft board:** `public/draft-board-2026.html` needs `public/board-data.js` beside it (it loads player data from that file). Both are copies from `~/Documents/Projects/sleeper draft guide/`; copy both when updating.
+**Draft board:** `public/draft-board-2026.html` needs `public/board-data.js` beside it (it loads player data from that file). Both are copies from `~/Developer/fantasy-sports-assistant/` (GitHub: Camdenw1/fantasy-sports-assistant); copy both when updating.
 
 **SEO and sharing:** `app/layout.tsx` sets the site-wide title template (`%s | Camden Weber`) and description; each page sets its own short `title` and `description`. `app/icon.png`, `app/apple-icon.png`, `app/opengraph-image.jpg` and `app/twitter-image.jpg` are picked up automatically by Next.js. `app/sitemap.ts` and `app/robots.ts` generate `/sitemap.xml` and `/robots.txt`. The site URL lives in `lib/site.ts`; change it there when a custom domain is added.
 
