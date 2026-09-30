@@ -30,7 +30,7 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <div className="pt-28 pb-24 px-6">
       <article className="max-w-2xl mx-auto">
-        <Link href="/resume#projects" className="inline-block text-sm text-stone hover:text-bark mb-10">
+        <Link href="/resume#projects" className="inline-flex items-center min-h-11 text-sm text-stone hover:text-bark mb-10">
           ← Back to resume
         </Link>
         <p className="text-stone text-xs uppercase tracking-widest mb-4">

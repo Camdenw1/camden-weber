@@ -60,7 +60,7 @@ export default async function BlogPost({ params }: Props) {
         <div className="max-w-2xl mx-auto">
 
           {/* Back link */}
-          <Link href="/blog" className="text-sm text-stone hover:text-bark transition-colors mb-10 inline-block">
+          <Link href="/blog" className="text-sm text-stone hover:text-bark transition-colors mb-10 inline-flex items-center min-h-11">
             ← All posts
           </Link>
 

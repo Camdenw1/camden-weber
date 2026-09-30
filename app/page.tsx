@@ -78,7 +78,7 @@ export default function Home() {
               <p className="text-bark/90 text-[0.95rem] leading-relaxed">{card.text}</p>
               <div className="mt-auto pt-4 space-y-1.5">
                 {card.links.map((link) => (
-                  <Link key={link.href} href={link.href} className="block text-rust text-sm hover:underline underline-offset-4">
+                  <Link key={link.href} href={link.href} className="flex items-center min-h-11 text-rust text-sm hover:underline underline-offset-4">
                     {link.label}
                   </Link>
                 ))}

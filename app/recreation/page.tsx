@@ -35,7 +35,7 @@ const trailSigns = [
 ]
 
 const outdoorMilestones = [
-  { title: 'Mount Whitney summit', detail: 'Lone Pine, CA · August 22, 2026' },
+  { title: 'Mount Whitney summit', detail: 'Lone Pine, CA · August 22, 2026', href: '/blog/mt-whitney' },
   { title: 'Rae Lakes Loop, solo', detail: 'Kings Canyon National Park · 3 days, 42 miles', href: '/blog/rae-lakes-loop-solo' },
 ]
 
@@ -258,7 +258,7 @@ export default function RecreationPage() {
                 <h4 className="font-serif text-xl font-semibold text-bark">{milestone.title}</h4>
                 <p className="font-sans text-[0.95rem] text-bark/80 mt-1">{milestone.detail}</p>
                 {milestone.href && (
-                  <Link href={milestone.href} className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
+                  <Link href={milestone.href} className="inline-flex items-center min-h-11 mt-2 text-rust text-sm hover:underline underline-offset-4">
                     Read the story →
                   </Link>
                 )}

@@ -97,7 +97,7 @@ export default function Resume() {
           <a
             href="/Camden_Weber_Resume.pdf"
             download
-            className="self-start mt-2 rounded-xl px-5 py-2.5 border border-bark text-bark text-sm font-sans hover:bg-bark hover:text-cream transition-colors duration-300"
+            className="self-start inline-flex items-center min-h-11 mt-2 rounded-xl px-5 py-2.5 border border-bark text-bark text-sm font-sans hover:bg-bark hover:text-cream transition-colors duration-300"
           >
             Download PDF
           </a>
@@ -132,7 +132,7 @@ export default function Resume() {
                   ))}
                 </ul>
                 {ed.href && (
-                  <Link href={ed.href} className="inline-block mt-3 text-rust text-sm hover:underline underline-offset-4">
+                  <Link href={ed.href} className="inline-flex items-center min-h-11 mt-3 text-rust text-sm hover:underline underline-offset-4">
                     {ed.linkLabel}
                   </Link>
                 )}
@@ -184,7 +184,7 @@ export default function Resume() {
             <div>
               <p className="text-xs uppercase tracking-widest text-stone mb-2">Interests</p>
               <p className="text-sm text-bark/90 leading-relaxed">{interests}</p>
-              <Link href="/recreation" className="inline-block mt-2 text-rust text-sm hover:underline underline-offset-4">
+              <Link href="/recreation" className="inline-flex items-center min-h-11 mt-2 text-rust text-sm hover:underline underline-offset-4">
                 The recreational resume →
               </Link>
             </div>

@@ -24,7 +24,7 @@ export default async function CoursePage({ params }: Props) {
   return (
     <div className="pt-28 pb-24 px-6">
       <article className="max-w-2xl mx-auto">
-        <Link href="/georgia-tech" className="inline-block text-sm text-stone hover:text-bark mb-10">
+        <Link href="/georgia-tech" className="inline-flex items-center min-h-11 text-sm text-stone hover:text-bark mb-10">
           ← All Georgia Tech classes
         </Link>
         <p className="text-stone text-xs uppercase tracking-widest mb-4">Georgia Tech · {course.status}</p>

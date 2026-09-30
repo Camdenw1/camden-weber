@@ -22,15 +22,28 @@ function isActive(href: string, pathname: string) {
 export default function Navbar() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (menuOpen) menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus()
+    if (!menuOpen) return
+    menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus({ preventScroll: true })
+
+    // Touch browsers can blur a link before delivering its click. Dismiss only
+    // when the pointer actually lands outside the navigation.
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (event.target instanceof Node && !navRef.current?.contains(event.target)) {
+        setMenuOpen(false)
+      }
+    }
+    document.addEventListener('pointerdown', closeOnOutsidePointer)
+    return () => document.removeEventListener('pointerdown', closeOnOutsidePointer)
   }, [menuOpen])
 
   return (
     <nav
+      ref={navRef}
       aria-label="Main navigation"
       className="fixed top-0 left-0 right-0 z-50 bg-[rgb(var(--nav))] border-b border-stone/20"
       onKeyDown={(event) => {
@@ -41,7 +54,9 @@ export default function Navbar() {
         }
       }}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false)
+        // A null relatedTarget is normal on Safari taps; don't hide the link
+        // before its click can finish. Keyboard focus leaving still dismisses.
+        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false)
       }}
     >
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -72,7 +87,7 @@ export default function Navbar() {
           ref={toggleRef}
           type="button"
           className="md:hidden text-bark min-w-11 min-h-11 -my-2 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((open) => !open)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"

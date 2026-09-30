@@ -9,7 +9,8 @@ npm install       # Install dependencies
 npm run dev       # Start dev server at localhost:3000
 npm run build     # Production build
 npm run lint      # Run ESLint
-npm run check     # Lint + typecheck + build (same as CI). Run before pushing.
+npm run test:mobile # Mobile menu tap/focus regression tests
+npm run check     # Lint + typecheck + mobile regression tests + build. Run before pushing.
 ```
 
 Custom commands (in `.claude/commands/`, run only from Claude Code, not part of the site):
@@ -17,7 +18,7 @@ Custom commands (in `.claude/commands/`, run only from Claude Code, not part of 
 - `/add-place "Place" [type]` adds a pin to the travel map
 - `/log-race "Race" "Month Year" time` adds a race to the log and updates PRs
 
-No test suite is currently configured.
+`tests/mobile-navigation.test.cjs` renders the real Navbar in jsdom and verifies Safari's blur-before-click ordering, outside taps, keyboard dismissal, and focus without scrolling. Phone-sized browser checks also cover routing, links, overflow, and the map; these complement the component tests.
 
 ## Architecture
 
@@ -44,6 +45,8 @@ Next.js 15 App Router personal portfolio site. Pages live in `app/`, shared UI i
 **Resume and project rules:** Never call Camden a data scientist. The Georgia Tech specialization is Artificial Intelligence. Never list the World Cup goalscorer model (it wasn't built). Only add claims that are true and that he has confirmed. The site is personal, not a job application: skip recruiter or pitch-style framing.
 
 **Layout:** `app/layout.tsx` wraps all pages with `<Navbar>` and `<Footer>`. Navbar is a client component (uses `usePathname` for active link highlighting).
+
+Mobile navigation must not close on a blur with a null related target: Safari can emit it before delivering a tap. Use outside pointer presses to dismiss, keep Escape and keyboard focus dismissal, and focus menu items without scrolling. Standalone action links should have at least 44px of tap height.
 
 ## Writing Voice
 

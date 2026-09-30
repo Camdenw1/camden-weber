@@ -31,5 +31,8 @@ jobs:
       - name: Type-check
         run: npm run typecheck
 
+      - name: Mobile navigation regression tests
+        run: npm run test:mobile
+
       - name: Build
         run: npm run build
