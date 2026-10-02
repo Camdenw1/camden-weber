@@ -22,11 +22,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'personal-automation-system',
-    title: 'My Personal Automation System',
+    title: 'Personal AI Assistant',
     context: 'Independent',
     year: '2026',
     summary:
-      'A set of scheduled AI agents that run the admin side of my life: a daily brief, a Sunday planner that time-blocks my calendar, a triathlon coach fed by my Garmin, and a watchdog that checks on all of them.',
+      'A “second brain” of scheduled Claude agents connected to Gmail, Calendar, and a local file system that handles personal admin and delivers one daily list of action items through a briefing email and a dashboard.',
     tags: ['AI agents', 'Workflow automation', 'Claude', 'Python', 'GitHub Actions'],
     sections: [
       {
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     context: 'UCLA capstone',
     year: '2025',
     summary:
-      'Designed a deep Q-learning agent that automates multilayer perceptron design, choosing architectures that beat the baseline models.',
+      'A deep Q-learning agent that automates multilayer perceptron (MLP) architecture design, outperforming baseline methods.',
     tags: ['Reinforcement learning', 'Deep Q-learning', 'Neural networks'],
   },
   {
@@ -142,12 +142,12 @@ export const projects: Project[] = [
     tags: ['Network theory', 'Python', 'Data visualization'],
   },
   {
-    slug: 'tic-tac-toe-solver',
-    title: 'High-Dimensional Tic-Tac-Toe Solver',
-    context: 'UCLA',
+    slug: 'stock-forecasting',
+    title: 'Stock Forecasting with LSTMs and Transformers',
+    context: '',
     summary:
-      'Implemented Minimax with alpha-beta pruning and Monte Carlo Tree Search to play well on expanded boards.',
-    tags: ['Algorithms', 'Game theory', 'C++'],
+      'Compared LSTM and transformer models for weekly S&P 500 forecasting, then fed the forecasts into a Modern Portfolio Theory optimization.',
+    tags: ['Deep learning', 'Time series', 'Portfolio optimization'],
   },
 ]
 

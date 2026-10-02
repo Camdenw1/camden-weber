@@ -27,7 +27,6 @@ const projectDecorations: Partial<Record<string, Decoration>> = {
   'fantasy-football': { kind: 'football', side: 'left' },
   'rl-neural-architecture-search': { kind: 'network', side: 'right' },
   'food-patterns': { kind: 'network', side: 'left' },
-  'tic-tac-toe-solver': { kind: 'grid', side: 'right' },
 }
 
 function EntryDecoration({ decoration }: { decoration?: Decoration }) {

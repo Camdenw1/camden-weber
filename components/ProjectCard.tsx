@@ -8,7 +8,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   const body = (
     <>
-      <p className="text-xs uppercase tracking-widest text-stone mb-2">{meta}</p>
+      {meta && <p className="text-xs uppercase tracking-widest text-stone mb-2">{meta}</p>}
       <h3 className={`font-serif text-lg mb-1 ${hasPage ? 'group-hover:text-rust transition-colors' : ''}`}>
         {project.title}
       </h3>
